@@ -1,0 +1,33 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../MNIST_CNN_FPGA.srcs/sources_1/new/TDP.v" \
+
+sv xil_defaultlib  \
+"../../../../MNIST_CNN_FPGA.srcs/sources_1/new/Accumulator.sv" \
+"../../../../MNIST_CNN_FPGA.srcs/sources_1/new/BUF1.sv" \
+"../../../../MNIST_CNN_FPGA.srcs/sources_1/new/BUF2.sv" \
+"../../../../MNIST_CNN_FPGA.srcs/sources_1/new/Bias_ROM.sv" \
+"../../../../MNIST_CNN_FPGA.srcs/sources_1/new/Comparator.sv" \
+"../../../../MNIST_CNN_FPGA.srcs/sources_1/new/FC_Bias_ROM.sv" \
+"../../../../MNIST_CNN_FPGA.srcs/sources_1/new/FC_Controller.sv" \
+"../../../../MNIST_CNN_FPGA.srcs/sources_1/new/FC_Layer.sv" \
+"../../../../MNIST_CNN_FPGA.srcs/sources_1/new/FIFO.sv" \
+"../../../../MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv" \
+"../../../../MNIST_CNN_FPGA.srcs/sources_1/new/MaxPooling_ReLU.sv" \
+"../../../../MNIST_CNN_FPGA.srcs/sources_1/new/Max_finder.sv" \
+"../../../../MNIST_CNN_FPGA.srcs/sources_1/new/PE.sv" \
+"../../../../MNIST_CNN_FPGA.srcs/sources_1/new/PE_Array.sv" \
+"../../../../MNIST_CNN_FPGA.srcs/sources_1/new/Sliding_Window.sv" \
+"../../../../MNIST_CNN_FPGA.srcs/sources_1/new/acc.sv" \
+"../../../../MNIST_CNN_FPGA.srcs/sources_1/new/glbl_controller.sv" \
+"../../../../MNIST_CNN_FPGA.srcs/sources_1/new/matmul.sv" \
+"../../../../MNIST_CNN_FPGA.srcs/sources_1/new/mul.sv" \
+"../../../../MNIST_CNN_FPGA.srcs/sources_1/new/single_port_bram.sv" \
+"../../../../MNIST_CNN_FPGA.srcs/sources_1/new/top.sv" \
+"../../../../MNIST_CNN_FPGA.srcs/sim_1/new/tb_top.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

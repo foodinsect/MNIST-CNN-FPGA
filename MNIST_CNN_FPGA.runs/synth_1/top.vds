@@ -1,0 +1,2593 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Nov 24 10:02:07 2024
+# Process ID: 26512
+# Current directory: F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/synth_1
+# Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/synth_1/top.vds
+# Journal file: F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source top.tcl -notrace
+Command: synth_design -top top -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 25496 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 728.660 ; gain = 177.094
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/top.sv:1]
+	Parameter VIVADO_PROJECT_LOCATION bound to: F:/cnn_verilog - type: string 
+WARNING: [Synth 8-567] referenced signal 'done' should be on the sensitivity list [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/top.sv:150]
+WARNING: [Synth 8-567] referenced signal 'done_z' should be on the sensitivity list [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/top.sv:150]
+WARNING: [Synth 8-567] referenced signal 'done_zz' should be on the sensitivity list [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/top.sv:150]
+WARNING: [Synth 8-567] referenced signal 'done_zzz' should be on the sensitivity list [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/top.sv:150]
+INFO: [Synth 8-6157] synthesizing module 'glbl_controller' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/glbl_controller.sv:23]
+	Parameter IMG_NUM bound to: 10 - type: integer 
+	Parameter COLS bound to: 28 - type: integer 
+WARNING: [Synth 8-151] case item 5'b01011 is unreachable [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/glbl_controller.sv:280]
+INFO: [Synth 8-6155] done synthesizing module 'glbl_controller' (1#1) [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/glbl_controller.sv:23]
+WARNING: [Synth 8-7023] instance 'global_ctrl' of module 'glbl_controller' has 31 connections declared, but only 30 given [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/top.sv:163]
+INFO: [Synth 8-6157] synthesizing module 'FC_Layer' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/FC_Layer.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'matmul' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/matmul.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'MAC' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'MAC' (2#1) [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'matmul' (3#1) [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/matmul.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'Max_finder' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/Max_finder.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'Max_finder' (4#1) [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/Max_finder.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'FC_Layer' (5#1) [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/FC_Layer.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'FC_Controller' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/FC_Controller.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'FC_Controller' (6#1) [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/FC_Controller.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'PE_Array' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/PE_Array.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'PE' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/PE.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'mul' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/mul.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'mul' (7#1) [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/mul.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'acc' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/acc.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'acc' (8#1) [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/acc.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'PE' (9#1) [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/PE.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'Accumulator' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/Accumulator.sv:3]
+WARNING: [Synth 8-6014] Unused sequential element cycle_count_reg was removed.  [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/Accumulator.sv:34]
+INFO: [Synth 8-6155] done synthesizing module 'Accumulator' (10#1) [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/Accumulator.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'PE_Array' (11#1) [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/PE_Array.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'FIFO' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/FIFO.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'Comparator' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/Comparator.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'Comparator' (12#1) [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/Comparator.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'FIFO' (13#1) [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/FIFO.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'MaxPooling_ReLU' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MaxPooling_ReLU.sv:14]
+INFO: [Synth 8-6155] done synthesizing module 'MaxPooling_ReLU' (14#1) [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MaxPooling_ReLU.sv:14]
+INFO: [Synth 8-6157] synthesizing module 'BUF1' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/BUF1.sv:3]
+WARNING: [Synth 8-5856] 3D RAM mem_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+INFO: [Synth 8-6155] done synthesizing module 'BUF1' (15#1) [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/BUF1.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'BUF2' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/BUF2.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'BUF2' (16#1) [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/BUF2.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'single_port_bram' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/single_port_bram.sv:18]
+	Parameter WIDTH bound to: 40 - type: integer 
+	Parameter DEPTH bound to: 20 - type: integer 
+	Parameter ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter INIT_FILE bound to: 312'b010001100011101000101111011000110110111001101110010111110111011001100101011100100110100101101100011011110110011100101111011001000110000101110100011000010010111101100011011011110110111001110110010111110111011101100101011010010110011101101000011101000101111101100011011010000011000100101110011101000111100001110100 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/single_port_bram.sv:32]
+INFO: [Synth 8-3876] $readmem data file 'F:/cnn_verilog/data/conv_weight_ch1.txt' is read successfully [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/single_port_bram.sv:37]
+INFO: [Synth 8-6155] done synthesizing module 'single_port_bram' (17#1) [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/single_port_bram.sv:18]
+INFO: [Synth 8-6157] synthesizing module 'single_port_bram__parameterized0' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/single_port_bram.sv:18]
+	Parameter WIDTH bound to: 40 - type: integer 
+	Parameter DEPTH bound to: 20 - type: integer 
+	Parameter ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter INIT_FILE bound to: 312'b010001100011101000101111011000110110111001101110010111110111011001100101011100100110100101101100011011110110011100101111011001000110000101110100011000010010111101100011011011110110111001110110010111110111011101100101011010010110011101101000011101000101111101100011011010000011001000101110011101000111100001110100 
+INFO: [Synth 8-3876] $readmem data file 'F:/cnn_verilog/data/conv_weight_ch2.txt' is read successfully [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/single_port_bram.sv:37]
+INFO: [Synth 8-6155] done synthesizing module 'single_port_bram__parameterized0' (17#1) [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/single_port_bram.sv:18]
+INFO: [Synth 8-6157] synthesizing module 'single_port_bram__parameterized1' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/single_port_bram.sv:18]
+	Parameter WIDTH bound to: 40 - type: integer 
+	Parameter DEPTH bound to: 20 - type: integer 
+	Parameter ADDR_WIDTH bound to: 5 - type: integer 
+	Parameter INIT_FILE bound to: 312'b010001100011101000101111011000110110111001101110010111110111011001100101011100100110100101101100011011110110011100101111011001000110000101110100011000010010111101100011011011110110111001110110010111110111011101100101011010010110011101101000011101000101111101100011011010000011001100101110011101000111100001110100 
+INFO: [Synth 8-3876] $readmem data file 'F:/cnn_verilog/data/conv_weight_ch3.txt' is read successfully [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/single_port_bram.sv:37]
+INFO: [Synth 8-6155] done synthesizing module 'single_port_bram__parameterized1' (17#1) [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/single_port_bram.sv:18]
+INFO: [Synth 8-6157] synthesizing module 'single_port_bram__parameterized2' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/single_port_bram.sv:18]
+	Parameter WIDTH bound to: 80 - type: integer 
+	Parameter DEPTH bound to: 48 - type: integer 
+	Parameter ADDR_WIDTH bound to: 6 - type: integer 
+	Parameter INIT_FILE bound to: 352'b0100011000111010001011110110001101101110011011100101111101110110011001010111001001101001011011000110111101100111001011110110010001100001011101000110000100101111011001100110001101011111011101110110010101101001011001110110100001110100010111110111010001110010011000010110111001110011011100000110111101110011011001010110010000101110011101000111100001110100 
+INFO: [Synth 8-3876] $readmem data file 'F:/cnn_verilog/data/fc_weight_transposed.txt' is read successfully [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/single_port_bram.sv:37]
+INFO: [Synth 8-6155] done synthesizing module 'single_port_bram__parameterized2' (17#1) [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/single_port_bram.sv:18]
+INFO: [Synth 8-6157] synthesizing module 'FC_Bias_ROM' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/FC_Bias_ROM.sv:23]
+	Parameter BIAS_WIDTH bound to: 8 - type: integer 
+	Parameter BIAS_DEPTH bound to: 10 - type: integer 
+	Parameter FILENAME bound to: 248'b01000110001110100010111101100011011011100110111001011111011101100110010101110010011010010110110001101111011001110010111101100100011000010111010001100001001011110110011001100011010111110110001001101001011000010111001100101110011101000111100001110100 
+WARNING: [Synth 8-2898] ignoring malformed $readmem task: invalid memory name [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/FC_Bias_ROM.sv:40]
+WARNING: [Synth 8-3848] Net Bias_Rom[0] in module/entity FC_Bias_ROM does not have driver. [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/FC_Bias_ROM.sv:35]
+WARNING: [Synth 8-3848] Net Bias_Rom[1] in module/entity FC_Bias_ROM does not have driver. [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/FC_Bias_ROM.sv:35]
+WARNING: [Synth 8-3848] Net Bias_Rom[2] in module/entity FC_Bias_ROM does not have driver. [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/FC_Bias_ROM.sv:35]
+WARNING: [Synth 8-3848] Net Bias_Rom[3] in module/entity FC_Bias_ROM does not have driver. [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/FC_Bias_ROM.sv:35]
+WARNING: [Synth 8-3848] Net Bias_Rom[4] in module/entity FC_Bias_ROM does not have driver. [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/FC_Bias_ROM.sv:35]
+WARNING: [Synth 8-3848] Net Bias_Rom[5] in module/entity FC_Bias_ROM does not have driver. [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/FC_Bias_ROM.sv:35]
+WARNING: [Synth 8-3848] Net Bias_Rom[6] in module/entity FC_Bias_ROM does not have driver. [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/FC_Bias_ROM.sv:35]
+WARNING: [Synth 8-3848] Net Bias_Rom[7] in module/entity FC_Bias_ROM does not have driver. [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/FC_Bias_ROM.sv:35]
+WARNING: [Synth 8-3848] Net Bias_Rom[8] in module/entity FC_Bias_ROM does not have driver. [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/FC_Bias_ROM.sv:35]
+WARNING: [Synth 8-3848] Net Bias_Rom[9] in module/entity FC_Bias_ROM does not have driver. [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/FC_Bias_ROM.sv:35]
+INFO: [Synth 8-6155] done synthesizing module 'FC_Bias_ROM' (18#1) [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/FC_Bias_ROM.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'xilinx_true_dual_port_no_change_1_clock_ram' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/TDP.v:8]
+	Parameter RAM_WIDTH bound to: 8 - type: integer 
+	Parameter RAM_DEPTH bound to: 7840 - type: integer 
+	Parameter RAM_PERFORMANCE bound to: LOW_LATENCY - type: string 
+	Parameter INIT_FILE bound to: 312'b010001100011101000101111011000110110111001101110010111110111011001100101011100100110100101101100011011110110011100101111010010010100111001010100001110000101111101101001011011100111000001110101011101000101111101101001011011010110000101100111011001010101111101101000011001010111100000101110011101000111100001110100 
+INFO: [Synth 8-3876] $readmem data file 'F:/cnn_verilog/INT8_input_image_hex.txt' is read successfully [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/TDP.v:39]
+INFO: [Synth 8-6155] done synthesizing module 'xilinx_true_dual_port_no_change_1_clock_ram' (19#1) [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/TDP.v:8]
+INFO: [Synth 8-6157] synthesizing module 'Sliding_Window' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/Sliding_Window.sv:3]
+	Parameter DATA_WIDHT bound to: 8 - type: integer 
+	Parameter PCS bound to: 2 - type: integer 
+	Parameter ROWS bound to: 6 - type: integer 
+	Parameter COLS bound to: 28 - type: integer 
+WARNING: [Synth 8-5856] 3D RAM BUF_Slide_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+WARNING: [Synth 8-5856] 3D RAM BUF_SHIFT_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+INFO: [Synth 8-6155] done synthesizing module 'Sliding_Window' (20#1) [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/Sliding_Window.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'Bias_ROM' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/Bias_ROM.sv:1]
+	Parameter BIAS_WIDTH bound to: 8 - type: integer 
+	Parameter BIAS_DEPTH bound to: 3 - type: integer 
+	Parameter FILENAME1 bound to: 272'b01000110001110100010111101100011011011100110111001011111011101100110010101110010011010010110110001101111011001110010111101100100011000010111010001100001001011110110001101101111011011100111011000110001010111110110001001101001011000010111001100101110011101000111100001110100 
+	Parameter FILENAME2 bound to: 272'b01000110001110100010111101100011011011100110111001011111011101100110010101110010011010010110110001101111011001110010111101100100011000010111010001100001001011110110001101101111011011100111011000110010010111110110001001101001011000010111001100101110011101000111100001110100 
+WARNING: [Synth 8-2898] ignoring malformed $readmem task: invalid memory name [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/Bias_ROM.sv:19]
+WARNING: [Synth 8-2898] ignoring malformed $readmem task: invalid memory name [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/Bias_ROM.sv:20]
+WARNING: [Synth 8-3848] Net bias_conv1[0] in module/entity Bias_ROM does not have driver. [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/Bias_ROM.sv:14]
+WARNING: [Synth 8-3848] Net bias_conv2[0] in module/entity Bias_ROM does not have driver. [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/Bias_ROM.sv:15]
+WARNING: [Synth 8-3848] Net bias_conv1[1] in module/entity Bias_ROM does not have driver. [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/Bias_ROM.sv:14]
+WARNING: [Synth 8-3848] Net bias_conv2[1] in module/entity Bias_ROM does not have driver. [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/Bias_ROM.sv:15]
+WARNING: [Synth 8-3848] Net bias_conv1[2] in module/entity Bias_ROM does not have driver. [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/Bias_ROM.sv:14]
+WARNING: [Synth 8-3848] Net bias_conv2[2] in module/entity Bias_ROM does not have driver. [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/Bias_ROM.sv:15]
+INFO: [Synth 8-6155] done synthesizing module 'Bias_ROM' (21#1) [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/Bias_ROM.sv:1]
+WARNING: [Synth 8-3848] Net FC_en in module/entity top does not have driver. [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/top.sv:489]
+INFO: [Synth 8-6155] done synthesizing module 'top' (22#1) [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/top.sv:1]
+WARNING: [Synth 8-3917] design top has port result[4] driven by constant 0
+WARNING: [Synth 8-3331] design Sliding_Window has unconnected port clear_i
+WARNING: [Synth 8-3331] design xilinx_true_dual_port_no_change_1_clock_ram has unconnected port rsta
+WARNING: [Synth 8-3331] design xilinx_true_dual_port_no_change_1_clock_ram has unconnected port rstb
+WARNING: [Synth 8-3331] design xilinx_true_dual_port_no_change_1_clock_ram has unconnected port regcea
+WARNING: [Synth 8-3331] design xilinx_true_dual_port_no_change_1_clock_ram has unconnected port regceb
+WARNING: [Synth 8-3331] design BUF1 has unconnected port clear_i
+WARNING: [Synth 8-3331] design PE_Array has unconnected port Layer_change_i
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 858.133 ; gain = 306.566
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 858.133 ; gain = 306.566
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 858.133 ; gain = 306.566
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/constrs_1/imports/01_SoC/Zybo-Z7-Master.xdc]
+Finished Parsing XDC File [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/constrs_1/imports/01_SoC/Zybo-Z7-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/constrs_1/imports/01_SoC/Zybo-Z7-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1046.594 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.132 . Memory (MB): peak = 1046.594 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1046.594 ; gain = 495.027
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1046.594 ; gain = 495.027
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1046.594 ; gain = 495.027
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'glbl_controller'
+INFO: [Synth 8-5546] ROM "PE_clear" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "PE_en" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "Bias_Sel" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "Layer_change" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ACC_wr_en" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "ACC_rd_en" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Slide_rd_en" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "Slide_clear" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "BUF1_wr_en" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "FIFO_valid" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "conv_done" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "Image_rom_control" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "rPE_valid_i" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "all_clear" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "IMG_CNT" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cnt_en" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "ACC_clear" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "Weight_base" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "Conv_Layer" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'FC_Controller'
+INFO: [Synth 8-5544] ROM "data_sel_o" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "p_6_in" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                  000000000000001 |                            00000
+          WAIT_SLIDE_BUF |                  000000000000010 |                            00001
+              WAIT_FIRST |                  000000000000100 |                            00010
+                CONV_RUN |                  000000000001000 |                            00011
+               WAIT_BUF1 |                  000000000010000 |                            00100
+               SET_CONV2 |                  000000000100000 |                            00101
+                 SET_ACC |                  000000001000000 |                            01001
+               WAIT_BUF2 |                  000000010000000 |                            01010
+                  FC_SET |                  000000100000000 |                            01011
+                 WAIT_FC |                  000001000000000 |                            01100
+               CHECK_CNT |                  000010000000000 |                            01101
+                    DONE |                  000100000000000 |                            01110
+             WAIT_WEIGHT |                  001000000000000 |                            00110
+             WAIT_SECOND |                  010000000000000 |                            00111
+               CONV2_RUN |                  100000000000000 |                            01000
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'one-hot' in module 'glbl_controller'
+WARNING: [Synth 8-327] inferring latch for variable 'Weight_base_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/glbl_controller.sv:267]
+WARNING: [Synth 8-327] inferring latch for variable 'Conv_Layer_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/glbl_controller.sv:273]
+WARNING: [Synth 8-327] inferring latch for variable 'all_clear_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/glbl_controller.sv:255]
+WARNING: [Synth 8-327] inferring latch for variable 'cnt_en_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/glbl_controller.sv:258]
+WARNING: [Synth 8-327] inferring latch for variable 'IMG_CNT_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/glbl_controller.sv:256]
+WARNING: [Synth 8-327] inferring latch for variable 'ACC_clear_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/glbl_controller.sv:266]
+WARNING: [Synth 8-327] inferring latch for variable 'IMG_BASE_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/glbl_controller.sv:257]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_next_state_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/FC_Controller.sv:151]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_next_state_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/FC_Controller.sv:151]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                         00000001 |                             0000
+                     SET |                         00000010 |                             0001
+                 RUN_CH1 |                         00000100 |                             0010
+                 RUN_CH2 |                         00001000 |                             0011
+                 RUN_CH3 |                         00010000 |                             0100
+                   CLEAR |                         00100000 |                             0101
+                    WAIT |                         01000000 |                             0110
+                    DONE |                         10000000 |                             0111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'one-hot' in module 'FC_Controller'
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_next_state_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/FC_Controller.sv:151]
+INFO: [Synth 8-3971] The signal "xilinx_true_dual_port_no_change_1_clock_ram:/BRAM_reg" was recognized as a true dual port RAM template.
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1046.594 ; gain = 495.027
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------+------------+----------+
+|      |RTL Partition |Replication |Instances |
++------+--------------+------------+----------+
+|1     |Accumulator   |           3|     11783|
+|2     |PE_Array__GC0 |           1|     17734|
+|3     |BUF1          |           3|     13600|
+|4     |top__GC0      |           1|     18553|
++------+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     20 Bit       Adders := 160   
+	   3 Input     13 Bit       Adders := 1     
+	   2 Input     13 Bit       Adders := 2     
+	   2 Input     12 Bit       Adders := 12    
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 6     
+	   2 Input      6 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 21    
+	   2 Input      4 Bit       Adders := 11    
+	   2 Input      3 Bit       Adders := 2     
+	   2 Input      2 Bit       Adders := 3     
++---Registers : 
+	               80 Bit    Registers := 1     
+	               40 Bit    Registers := 3     
+	               20 Bit    Registers := 354   
+	               13 Bit    Registers := 1     
+	               12 Bit    Registers := 658   
+	               10 Bit    Registers := 2     
+	                8 Bit    Registers := 324   
+	                7 Bit    Registers := 3     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 4     
+	                4 Bit    Registers := 18    
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 61    
++---Multipliers : 
+	                 3x32  Multipliers := 1     
++---RAMs : 
+	              61K Bit         RAMs := 1     
+	               3K Bit         RAMs := 1     
+	              800 Bit         RAMs := 3     
++---Muxes : 
+	   2 Input     20 Bit        Muxes := 189   
+	  15 Input     15 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 14    
+	   2 Input     12 Bit        Muxes := 28    
+	   4 Input     12 Bit        Muxes := 7     
+	   2 Input      8 Bit        Muxes := 159   
+	   8 Input      8 Bit        Muxes := 1     
+	   3 Input      8 Bit        Muxes := 3     
+	   5 Input      8 Bit        Muxes := 27    
+	   4 Input      8 Bit        Muxes := 18    
+	   2 Input      5 Bit        Muxes := 2     
+	  15 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 24    
+	   3 Input      4 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 1     
+	  15 Input      3 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   4 Input      3 Bit        Muxes := 2     
+	   5 Input      3 Bit        Muxes := 27    
+	   2 Input      2 Bit        Muxes := 7     
+	   8 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1040  
+	  15 Input      1 Bit        Muxes := 18    
+	   8 Input      1 Bit        Muxes := 6     
+	   3 Input      1 Bit        Muxes := 1     
+	   7 Input      1 Bit        Muxes := 25    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module top 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     13 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 75    
+	                3 Bit    Registers := 1     
++---Multipliers : 
+	                 3x32  Multipliers := 1     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 8     
+	   4 Input     12 Bit        Muxes := 7     
+	   5 Input      8 Bit        Muxes := 27    
+	   2 Input      8 Bit        Muxes := 141   
+	   4 Input      8 Bit        Muxes := 18    
+	   4 Input      3 Bit        Muxes := 2     
+	   5 Input      3 Bit        Muxes := 27    
+	   3 Input      1 Bit        Muxes := 1     
+	   7 Input      1 Bit        Muxes := 25    
+Module Accumulator 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     20 Bit       Adders := 2     
+	   2 Input     12 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 2     
++---Registers : 
+	               20 Bit    Registers := 64    
+	                7 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     20 Bit        Muxes := 63    
+	   2 Input      1 Bit        Muxes := 127   
+Module acc__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     20 Bit       Adders := 24    
++---Registers : 
+	               20 Bit    Registers := 27    
+Module mul__49 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__48 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__47 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__46 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__45 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__44 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__43 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__42 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__41 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__40 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__39 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__38 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__37 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__36 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__35 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__34 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__33 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__32 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__31 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__30 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__29 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__28 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__27 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__26 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__25 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module PE__1 
+Detailed RTL Component Info : 
++---Registers : 
+	               12 Bit    Registers := 25    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module acc__2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     20 Bit       Adders := 24    
++---Registers : 
+	               20 Bit    Registers := 27    
+Module mul__74 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__73 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__72 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__71 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__70 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__69 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__68 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__67 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__66 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__65 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__64 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__63 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__62 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__61 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__60 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__59 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__58 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__57 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__56 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__55 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__54 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__53 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__52 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__51 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__50 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module PE__2 
+Detailed RTL Component Info : 
++---Registers : 
+	               12 Bit    Registers := 25    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module acc__3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     20 Bit       Adders := 24    
++---Registers : 
+	               20 Bit    Registers := 27    
+Module mul__99 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__98 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__97 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__96 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__95 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__94 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__93 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__92 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__91 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__90 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__89 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__88 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__87 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__86 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__85 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__84 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__83 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__82 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__81 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__80 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__79 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__78 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__77 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__76 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__75 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module PE__3 
+Detailed RTL Component Info : 
++---Registers : 
+	               12 Bit    Registers := 25    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module acc__4 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     20 Bit       Adders := 24    
++---Registers : 
+	               20 Bit    Registers := 27    
+Module mul__124 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__123 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__122 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__121 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__120 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__119 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__118 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__117 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__116 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__115 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__114 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__113 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__112 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__111 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__110 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__109 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__108 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__107 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__106 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__105 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__104 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__103 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__102 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__101 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__100 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module PE__4 
+Detailed RTL Component Info : 
++---Registers : 
+	               12 Bit    Registers := 25    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module acc__5 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     20 Bit       Adders := 24    
++---Registers : 
+	               20 Bit    Registers := 27    
+Module mul__149 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__148 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__147 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__146 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__145 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__144 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__143 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__142 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__141 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__140 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__139 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__138 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__137 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__136 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__135 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__134 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__133 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__132 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__131 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__130 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__129 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__128 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__127 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__126 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__125 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module PE__5 
+Detailed RTL Component Info : 
++---Registers : 
+	               12 Bit    Registers := 25    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module acc 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     20 Bit       Adders := 24    
++---Registers : 
+	               20 Bit    Registers := 27    
+Module mul__1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__2 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__3 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__4 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__5 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__6 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__7 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__8 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__9 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__10 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__11 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__12 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__13 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__14 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__15 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__16 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__17 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__18 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__19 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__20 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__21 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__22 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__23 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul__24 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module mul 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module PE 
+Detailed RTL Component Info : 
++---Registers : 
+	               12 Bit    Registers := 25    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module PE_Array 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     12 Bit       Adders := 6     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 6     
+	   2 Input      8 Bit        Muxes := 3     
+Module BUF1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 5     
+	   2 Input      4 Bit       Adders := 3     
++---Registers : 
+	               12 Bit    Registers := 144   
+	                4 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 158   
+Module glbl_controller 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     13 Bit       Adders := 1     
+	   2 Input     13 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 6     
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               13 Bit    Registers := 1     
+	               10 Bit    Registers := 2     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 4     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	  15 Input     15 Bit        Muxes := 1     
+	   2 Input     15 Bit        Muxes := 14    
+	   2 Input      5 Bit        Muxes := 2     
+	  15 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	  15 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 23    
+	  15 Input      1 Bit        Muxes := 18    
+Module MAC__1 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
+Module MAC__2 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
+Module MAC__3 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
+Module MAC__4 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
+Module MAC__5 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
+Module MAC__6 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
+Module MAC__7 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
+Module MAC__8 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
+Module MAC__9 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
+Module MAC 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
+Module matmul 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     20 Bit       Adders := 10    
+Module Max_finder 
+Detailed RTL Component Info : 
++---Registers : 
+	               12 Bit    Registers := 10    
+	                4 Bit    Registers := 11    
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 8     
+	   3 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 16    
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   2 Input      2 Bit        Muxes := 3     
+Module FC_Controller 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 1     
++---Registers : 
+	                6 Bit    Registers := 1     
++---Muxes : 
+	   8 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 5     
+	   8 Input      4 Bit        Muxes := 1     
+	   8 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 6     
+Module Comparator__1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+Module FIFO__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               12 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module Comparator__2 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+Module FIFO__2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               12 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module Comparator 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+Module FIFO 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               12 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module MaxPooling_ReLU__1 
+Detailed RTL Component Info : 
++---Registers : 
+	               12 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module MaxPooling_ReLU__2 
+Detailed RTL Component Info : 
++---Registers : 
+	               12 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module MaxPooling_ReLU 
+Detailed RTL Component Info : 
++---Registers : 
+	               12 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+Module BUF2__1 
+Detailed RTL Component Info : 
++---Registers : 
+	               12 Bit    Registers := 16    
+Module BUF2__2 
+Detailed RTL Component Info : 
++---Registers : 
+	               12 Bit    Registers := 16    
+Module BUF2 
+Detailed RTL Component Info : 
++---Registers : 
+	               12 Bit    Registers := 16    
+Module single_port_bram 
+Detailed RTL Component Info : 
++---Registers : 
+	               40 Bit    Registers := 1     
++---RAMs : 
+	              800 Bit         RAMs := 1     
+Module single_port_bram__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	               40 Bit    Registers := 1     
++---RAMs : 
+	              800 Bit         RAMs := 1     
+Module single_port_bram__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	               40 Bit    Registers := 1     
++---RAMs : 
+	              800 Bit         RAMs := 1     
+Module single_port_bram__parameterized2 
+Detailed RTL Component Info : 
++---Registers : 
+	               80 Bit    Registers := 1     
++---RAMs : 
+	               3K Bit         RAMs := 1     
+Module FC_Bias_ROM 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 10    
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 10    
+Module xilinx_true_dual_port_no_change_1_clock_ram 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 2     
++---RAMs : 
+	              61K Bit         RAMs := 1     
+Module Sliding_Window 
+Detailed RTL Component Info : 
++---Registers : 
+	               12 Bit    Registers := 6     
+	                8 Bit    Registers := 224   
+Module Bias_ROM 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 3     
++---Muxes : 
+	   3 Input      8 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+DSP Report: Generating DSP PE_MUL[0].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[0].MUL/result_reg is absorbed into DSP PE_MUL[0].MUL/result_reg.
+DSP Report: operator PE_MUL[0].MUL/result_reg0 is absorbed into DSP PE_MUL[0].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[1].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[1].MUL/result_reg is absorbed into DSP PE_MUL[1].MUL/result_reg.
+DSP Report: operator PE_MUL[1].MUL/result_reg0 is absorbed into DSP PE_MUL[1].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[2].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[2].MUL/result_reg is absorbed into DSP PE_MUL[2].MUL/result_reg.
+DSP Report: operator PE_MUL[2].MUL/result_reg0 is absorbed into DSP PE_MUL[2].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[3].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[3].MUL/result_reg is absorbed into DSP PE_MUL[3].MUL/result_reg.
+DSP Report: operator PE_MUL[3].MUL/result_reg0 is absorbed into DSP PE_MUL[3].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[4].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[4].MUL/result_reg is absorbed into DSP PE_MUL[4].MUL/result_reg.
+DSP Report: operator PE_MUL[4].MUL/result_reg0 is absorbed into DSP PE_MUL[4].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[5].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[5].MUL/result_reg is absorbed into DSP PE_MUL[5].MUL/result_reg.
+DSP Report: operator PE_MUL[5].MUL/result_reg0 is absorbed into DSP PE_MUL[5].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[6].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[6].MUL/result_reg is absorbed into DSP PE_MUL[6].MUL/result_reg.
+DSP Report: operator PE_MUL[6].MUL/result_reg0 is absorbed into DSP PE_MUL[6].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[7].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[7].MUL/result_reg is absorbed into DSP PE_MUL[7].MUL/result_reg.
+DSP Report: operator PE_MUL[7].MUL/result_reg0 is absorbed into DSP PE_MUL[7].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[8].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[8].MUL/result_reg is absorbed into DSP PE_MUL[8].MUL/result_reg.
+DSP Report: operator PE_MUL[8].MUL/result_reg0 is absorbed into DSP PE_MUL[8].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[9].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[9].MUL/result_reg is absorbed into DSP PE_MUL[9].MUL/result_reg.
+DSP Report: operator PE_MUL[9].MUL/result_reg0 is absorbed into DSP PE_MUL[9].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[10].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[10].MUL/result_reg is absorbed into DSP PE_MUL[10].MUL/result_reg.
+DSP Report: operator PE_MUL[10].MUL/result_reg0 is absorbed into DSP PE_MUL[10].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[11].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[11].MUL/result_reg is absorbed into DSP PE_MUL[11].MUL/result_reg.
+DSP Report: operator PE_MUL[11].MUL/result_reg0 is absorbed into DSP PE_MUL[11].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[12].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[12].MUL/result_reg is absorbed into DSP PE_MUL[12].MUL/result_reg.
+DSP Report: operator PE_MUL[12].MUL/result_reg0 is absorbed into DSP PE_MUL[12].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[13].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[13].MUL/result_reg is absorbed into DSP PE_MUL[13].MUL/result_reg.
+DSP Report: operator PE_MUL[13].MUL/result_reg0 is absorbed into DSP PE_MUL[13].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[14].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[14].MUL/result_reg is absorbed into DSP PE_MUL[14].MUL/result_reg.
+DSP Report: operator PE_MUL[14].MUL/result_reg0 is absorbed into DSP PE_MUL[14].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[15].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[15].MUL/result_reg is absorbed into DSP PE_MUL[15].MUL/result_reg.
+DSP Report: operator PE_MUL[15].MUL/result_reg0 is absorbed into DSP PE_MUL[15].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[16].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[16].MUL/result_reg is absorbed into DSP PE_MUL[16].MUL/result_reg.
+DSP Report: operator PE_MUL[16].MUL/result_reg0 is absorbed into DSP PE_MUL[16].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[17].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[17].MUL/result_reg is absorbed into DSP PE_MUL[17].MUL/result_reg.
+DSP Report: operator PE_MUL[17].MUL/result_reg0 is absorbed into DSP PE_MUL[17].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[18].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[18].MUL/result_reg is absorbed into DSP PE_MUL[18].MUL/result_reg.
+DSP Report: operator PE_MUL[18].MUL/result_reg0 is absorbed into DSP PE_MUL[18].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[19].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[19].MUL/result_reg is absorbed into DSP PE_MUL[19].MUL/result_reg.
+DSP Report: operator PE_MUL[19].MUL/result_reg0 is absorbed into DSP PE_MUL[19].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[20].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[20].MUL/result_reg is absorbed into DSP PE_MUL[20].MUL/result_reg.
+DSP Report: operator PE_MUL[20].MUL/result_reg0 is absorbed into DSP PE_MUL[20].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[21].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[21].MUL/result_reg is absorbed into DSP PE_MUL[21].MUL/result_reg.
+DSP Report: operator PE_MUL[21].MUL/result_reg0 is absorbed into DSP PE_MUL[21].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[22].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[22].MUL/result_reg is absorbed into DSP PE_MUL[22].MUL/result_reg.
+DSP Report: operator PE_MUL[22].MUL/result_reg0 is absorbed into DSP PE_MUL[22].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[23].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[23].MUL/result_reg is absorbed into DSP PE_MUL[23].MUL/result_reg.
+DSP Report: operator PE_MUL[23].MUL/result_reg0 is absorbed into DSP PE_MUL[23].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[24].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[24].MUL/result_reg is absorbed into DSP PE_MUL[24].MUL/result_reg.
+DSP Report: operator PE_MUL[24].MUL/result_reg0 is absorbed into DSP PE_MUL[24].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[0].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[0].MUL/result_reg is absorbed into DSP PE_MUL[0].MUL/result_reg.
+DSP Report: operator PE_MUL[0].MUL/result_reg0 is absorbed into DSP PE_MUL[0].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[1].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[1].MUL/result_reg is absorbed into DSP PE_MUL[1].MUL/result_reg.
+DSP Report: operator PE_MUL[1].MUL/result_reg0 is absorbed into DSP PE_MUL[1].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[2].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[2].MUL/result_reg is absorbed into DSP PE_MUL[2].MUL/result_reg.
+DSP Report: operator PE_MUL[2].MUL/result_reg0 is absorbed into DSP PE_MUL[2].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[3].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[3].MUL/result_reg is absorbed into DSP PE_MUL[3].MUL/result_reg.
+DSP Report: operator PE_MUL[3].MUL/result_reg0 is absorbed into DSP PE_MUL[3].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[4].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[4].MUL/result_reg is absorbed into DSP PE_MUL[4].MUL/result_reg.
+DSP Report: operator PE_MUL[4].MUL/result_reg0 is absorbed into DSP PE_MUL[4].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[5].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[5].MUL/result_reg is absorbed into DSP PE_MUL[5].MUL/result_reg.
+DSP Report: operator PE_MUL[5].MUL/result_reg0 is absorbed into DSP PE_MUL[5].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[6].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[6].MUL/result_reg is absorbed into DSP PE_MUL[6].MUL/result_reg.
+DSP Report: operator PE_MUL[6].MUL/result_reg0 is absorbed into DSP PE_MUL[6].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[7].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[7].MUL/result_reg is absorbed into DSP PE_MUL[7].MUL/result_reg.
+DSP Report: operator PE_MUL[7].MUL/result_reg0 is absorbed into DSP PE_MUL[7].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[8].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[8].MUL/result_reg is absorbed into DSP PE_MUL[8].MUL/result_reg.
+DSP Report: operator PE_MUL[8].MUL/result_reg0 is absorbed into DSP PE_MUL[8].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[9].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[9].MUL/result_reg is absorbed into DSP PE_MUL[9].MUL/result_reg.
+DSP Report: operator PE_MUL[9].MUL/result_reg0 is absorbed into DSP PE_MUL[9].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[10].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[10].MUL/result_reg is absorbed into DSP PE_MUL[10].MUL/result_reg.
+DSP Report: operator PE_MUL[10].MUL/result_reg0 is absorbed into DSP PE_MUL[10].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[11].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[11].MUL/result_reg is absorbed into DSP PE_MUL[11].MUL/result_reg.
+DSP Report: operator PE_MUL[11].MUL/result_reg0 is absorbed into DSP PE_MUL[11].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[12].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[12].MUL/result_reg is absorbed into DSP PE_MUL[12].MUL/result_reg.
+DSP Report: operator PE_MUL[12].MUL/result_reg0 is absorbed into DSP PE_MUL[12].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[13].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[13].MUL/result_reg is absorbed into DSP PE_MUL[13].MUL/result_reg.
+DSP Report: operator PE_MUL[13].MUL/result_reg0 is absorbed into DSP PE_MUL[13].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[14].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[14].MUL/result_reg is absorbed into DSP PE_MUL[14].MUL/result_reg.
+DSP Report: operator PE_MUL[14].MUL/result_reg0 is absorbed into DSP PE_MUL[14].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[15].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[15].MUL/result_reg is absorbed into DSP PE_MUL[15].MUL/result_reg.
+DSP Report: operator PE_MUL[15].MUL/result_reg0 is absorbed into DSP PE_MUL[15].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[16].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[16].MUL/result_reg is absorbed into DSP PE_MUL[16].MUL/result_reg.
+DSP Report: operator PE_MUL[16].MUL/result_reg0 is absorbed into DSP PE_MUL[16].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[17].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[17].MUL/result_reg is absorbed into DSP PE_MUL[17].MUL/result_reg.
+DSP Report: operator PE_MUL[17].MUL/result_reg0 is absorbed into DSP PE_MUL[17].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[18].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[18].MUL/result_reg is absorbed into DSP PE_MUL[18].MUL/result_reg.
+DSP Report: operator PE_MUL[18].MUL/result_reg0 is absorbed into DSP PE_MUL[18].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[19].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[19].MUL/result_reg is absorbed into DSP PE_MUL[19].MUL/result_reg.
+DSP Report: operator PE_MUL[19].MUL/result_reg0 is absorbed into DSP PE_MUL[19].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[20].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[20].MUL/result_reg is absorbed into DSP PE_MUL[20].MUL/result_reg.
+DSP Report: operator PE_MUL[20].MUL/result_reg0 is absorbed into DSP PE_MUL[20].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[21].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[21].MUL/result_reg is absorbed into DSP PE_MUL[21].MUL/result_reg.
+DSP Report: operator PE_MUL[21].MUL/result_reg0 is absorbed into DSP PE_MUL[21].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[22].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[22].MUL/result_reg is absorbed into DSP PE_MUL[22].MUL/result_reg.
+DSP Report: operator PE_MUL[22].MUL/result_reg0 is absorbed into DSP PE_MUL[22].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[23].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[23].MUL/result_reg is absorbed into DSP PE_MUL[23].MUL/result_reg.
+DSP Report: operator PE_MUL[23].MUL/result_reg0 is absorbed into DSP PE_MUL[23].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[24].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[24].MUL/result_reg is absorbed into DSP PE_MUL[24].MUL/result_reg.
+DSP Report: operator PE_MUL[24].MUL/result_reg0 is absorbed into DSP PE_MUL[24].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[0].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[0].MUL/result_reg is absorbed into DSP PE_MUL[0].MUL/result_reg.
+DSP Report: operator PE_MUL[0].MUL/result_reg0 is absorbed into DSP PE_MUL[0].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[1].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[1].MUL/result_reg is absorbed into DSP PE_MUL[1].MUL/result_reg.
+DSP Report: operator PE_MUL[1].MUL/result_reg0 is absorbed into DSP PE_MUL[1].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[2].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[2].MUL/result_reg is absorbed into DSP PE_MUL[2].MUL/result_reg.
+DSP Report: operator PE_MUL[2].MUL/result_reg0 is absorbed into DSP PE_MUL[2].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[3].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[3].MUL/result_reg is absorbed into DSP PE_MUL[3].MUL/result_reg.
+DSP Report: operator PE_MUL[3].MUL/result_reg0 is absorbed into DSP PE_MUL[3].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[4].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[4].MUL/result_reg is absorbed into DSP PE_MUL[4].MUL/result_reg.
+DSP Report: operator PE_MUL[4].MUL/result_reg0 is absorbed into DSP PE_MUL[4].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[5].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[5].MUL/result_reg is absorbed into DSP PE_MUL[5].MUL/result_reg.
+DSP Report: operator PE_MUL[5].MUL/result_reg0 is absorbed into DSP PE_MUL[5].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[6].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[6].MUL/result_reg is absorbed into DSP PE_MUL[6].MUL/result_reg.
+DSP Report: operator PE_MUL[6].MUL/result_reg0 is absorbed into DSP PE_MUL[6].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[7].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[7].MUL/result_reg is absorbed into DSP PE_MUL[7].MUL/result_reg.
+DSP Report: operator PE_MUL[7].MUL/result_reg0 is absorbed into DSP PE_MUL[7].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[8].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[8].MUL/result_reg is absorbed into DSP PE_MUL[8].MUL/result_reg.
+DSP Report: operator PE_MUL[8].MUL/result_reg0 is absorbed into DSP PE_MUL[8].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[9].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[9].MUL/result_reg is absorbed into DSP PE_MUL[9].MUL/result_reg.
+DSP Report: operator PE_MUL[9].MUL/result_reg0 is absorbed into DSP PE_MUL[9].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[10].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[10].MUL/result_reg is absorbed into DSP PE_MUL[10].MUL/result_reg.
+DSP Report: operator PE_MUL[10].MUL/result_reg0 is absorbed into DSP PE_MUL[10].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[11].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[11].MUL/result_reg is absorbed into DSP PE_MUL[11].MUL/result_reg.
+DSP Report: operator PE_MUL[11].MUL/result_reg0 is absorbed into DSP PE_MUL[11].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[12].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[12].MUL/result_reg is absorbed into DSP PE_MUL[12].MUL/result_reg.
+DSP Report: operator PE_MUL[12].MUL/result_reg0 is absorbed into DSP PE_MUL[12].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[13].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[13].MUL/result_reg is absorbed into DSP PE_MUL[13].MUL/result_reg.
+DSP Report: operator PE_MUL[13].MUL/result_reg0 is absorbed into DSP PE_MUL[13].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[14].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[14].MUL/result_reg is absorbed into DSP PE_MUL[14].MUL/result_reg.
+DSP Report: operator PE_MUL[14].MUL/result_reg0 is absorbed into DSP PE_MUL[14].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[15].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[15].MUL/result_reg is absorbed into DSP PE_MUL[15].MUL/result_reg.
+DSP Report: operator PE_MUL[15].MUL/result_reg0 is absorbed into DSP PE_MUL[15].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[16].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[16].MUL/result_reg is absorbed into DSP PE_MUL[16].MUL/result_reg.
+DSP Report: operator PE_MUL[16].MUL/result_reg0 is absorbed into DSP PE_MUL[16].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[17].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[17].MUL/result_reg is absorbed into DSP PE_MUL[17].MUL/result_reg.
+DSP Report: operator PE_MUL[17].MUL/result_reg0 is absorbed into DSP PE_MUL[17].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[18].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[18].MUL/result_reg is absorbed into DSP PE_MUL[18].MUL/result_reg.
+DSP Report: operator PE_MUL[18].MUL/result_reg0 is absorbed into DSP PE_MUL[18].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[19].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[19].MUL/result_reg is absorbed into DSP PE_MUL[19].MUL/result_reg.
+DSP Report: operator PE_MUL[19].MUL/result_reg0 is absorbed into DSP PE_MUL[19].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[20].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[20].MUL/result_reg is absorbed into DSP PE_MUL[20].MUL/result_reg.
+DSP Report: operator PE_MUL[20].MUL/result_reg0 is absorbed into DSP PE_MUL[20].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[21].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[21].MUL/result_reg is absorbed into DSP PE_MUL[21].MUL/result_reg.
+DSP Report: operator PE_MUL[21].MUL/result_reg0 is absorbed into DSP PE_MUL[21].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[22].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[22].MUL/result_reg is absorbed into DSP PE_MUL[22].MUL/result_reg.
+DSP Report: operator PE_MUL[22].MUL/result_reg0 is absorbed into DSP PE_MUL[22].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[23].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[23].MUL/result_reg is absorbed into DSP PE_MUL[23].MUL/result_reg.
+DSP Report: operator PE_MUL[23].MUL/result_reg0 is absorbed into DSP PE_MUL[23].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[24].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[24].MUL/result_reg is absorbed into DSP PE_MUL[24].MUL/result_reg.
+DSP Report: operator PE_MUL[24].MUL/result_reg0 is absorbed into DSP PE_MUL[24].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[0].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[0].MUL/result_reg is absorbed into DSP PE_MUL[0].MUL/result_reg.
+DSP Report: operator PE_MUL[0].MUL/result_reg0 is absorbed into DSP PE_MUL[0].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[1].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[1].MUL/result_reg is absorbed into DSP PE_MUL[1].MUL/result_reg.
+DSP Report: operator PE_MUL[1].MUL/result_reg0 is absorbed into DSP PE_MUL[1].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[2].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[2].MUL/result_reg is absorbed into DSP PE_MUL[2].MUL/result_reg.
+DSP Report: operator PE_MUL[2].MUL/result_reg0 is absorbed into DSP PE_MUL[2].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[3].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[3].MUL/result_reg is absorbed into DSP PE_MUL[3].MUL/result_reg.
+DSP Report: operator PE_MUL[3].MUL/result_reg0 is absorbed into DSP PE_MUL[3].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[4].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[4].MUL/result_reg is absorbed into DSP PE_MUL[4].MUL/result_reg.
+DSP Report: operator PE_MUL[4].MUL/result_reg0 is absorbed into DSP PE_MUL[4].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[5].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[5].MUL/result_reg is absorbed into DSP PE_MUL[5].MUL/result_reg.
+DSP Report: operator PE_MUL[5].MUL/result_reg0 is absorbed into DSP PE_MUL[5].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[6].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[6].MUL/result_reg is absorbed into DSP PE_MUL[6].MUL/result_reg.
+DSP Report: operator PE_MUL[6].MUL/result_reg0 is absorbed into DSP PE_MUL[6].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[7].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[7].MUL/result_reg is absorbed into DSP PE_MUL[7].MUL/result_reg.
+DSP Report: operator PE_MUL[7].MUL/result_reg0 is absorbed into DSP PE_MUL[7].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[8].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[8].MUL/result_reg is absorbed into DSP PE_MUL[8].MUL/result_reg.
+DSP Report: operator PE_MUL[8].MUL/result_reg0 is absorbed into DSP PE_MUL[8].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[9].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[9].MUL/result_reg is absorbed into DSP PE_MUL[9].MUL/result_reg.
+DSP Report: operator PE_MUL[9].MUL/result_reg0 is absorbed into DSP PE_MUL[9].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[10].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[10].MUL/result_reg is absorbed into DSP PE_MUL[10].MUL/result_reg.
+DSP Report: operator PE_MUL[10].MUL/result_reg0 is absorbed into DSP PE_MUL[10].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[11].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[11].MUL/result_reg is absorbed into DSP PE_MUL[11].MUL/result_reg.
+DSP Report: operator PE_MUL[11].MUL/result_reg0 is absorbed into DSP PE_MUL[11].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[12].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[12].MUL/result_reg is absorbed into DSP PE_MUL[12].MUL/result_reg.
+DSP Report: operator PE_MUL[12].MUL/result_reg0 is absorbed into DSP PE_MUL[12].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[13].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[13].MUL/result_reg is absorbed into DSP PE_MUL[13].MUL/result_reg.
+DSP Report: operator PE_MUL[13].MUL/result_reg0 is absorbed into DSP PE_MUL[13].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[14].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[14].MUL/result_reg is absorbed into DSP PE_MUL[14].MUL/result_reg.
+DSP Report: operator PE_MUL[14].MUL/result_reg0 is absorbed into DSP PE_MUL[14].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[15].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[15].MUL/result_reg is absorbed into DSP PE_MUL[15].MUL/result_reg.
+DSP Report: operator PE_MUL[15].MUL/result_reg0 is absorbed into DSP PE_MUL[15].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[16].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[16].MUL/result_reg is absorbed into DSP PE_MUL[16].MUL/result_reg.
+DSP Report: operator PE_MUL[16].MUL/result_reg0 is absorbed into DSP PE_MUL[16].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[17].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[17].MUL/result_reg is absorbed into DSP PE_MUL[17].MUL/result_reg.
+DSP Report: operator PE_MUL[17].MUL/result_reg0 is absorbed into DSP PE_MUL[17].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[18].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[18].MUL/result_reg is absorbed into DSP PE_MUL[18].MUL/result_reg.
+DSP Report: operator PE_MUL[18].MUL/result_reg0 is absorbed into DSP PE_MUL[18].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[19].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[19].MUL/result_reg is absorbed into DSP PE_MUL[19].MUL/result_reg.
+DSP Report: operator PE_MUL[19].MUL/result_reg0 is absorbed into DSP PE_MUL[19].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[20].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[20].MUL/result_reg is absorbed into DSP PE_MUL[20].MUL/result_reg.
+DSP Report: operator PE_MUL[20].MUL/result_reg0 is absorbed into DSP PE_MUL[20].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[21].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[21].MUL/result_reg is absorbed into DSP PE_MUL[21].MUL/result_reg.
+DSP Report: operator PE_MUL[21].MUL/result_reg0 is absorbed into DSP PE_MUL[21].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[22].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[22].MUL/result_reg is absorbed into DSP PE_MUL[22].MUL/result_reg.
+DSP Report: operator PE_MUL[22].MUL/result_reg0 is absorbed into DSP PE_MUL[22].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[23].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[23].MUL/result_reg is absorbed into DSP PE_MUL[23].MUL/result_reg.
+DSP Report: operator PE_MUL[23].MUL/result_reg0 is absorbed into DSP PE_MUL[23].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[24].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[24].MUL/result_reg is absorbed into DSP PE_MUL[24].MUL/result_reg.
+DSP Report: operator PE_MUL[24].MUL/result_reg0 is absorbed into DSP PE_MUL[24].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[0].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[0].MUL/result_reg is absorbed into DSP PE_MUL[0].MUL/result_reg.
+DSP Report: operator PE_MUL[0].MUL/result_reg0 is absorbed into DSP PE_MUL[0].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[1].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[1].MUL/result_reg is absorbed into DSP PE_MUL[1].MUL/result_reg.
+DSP Report: operator PE_MUL[1].MUL/result_reg0 is absorbed into DSP PE_MUL[1].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[2].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[2].MUL/result_reg is absorbed into DSP PE_MUL[2].MUL/result_reg.
+DSP Report: operator PE_MUL[2].MUL/result_reg0 is absorbed into DSP PE_MUL[2].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[3].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[3].MUL/result_reg is absorbed into DSP PE_MUL[3].MUL/result_reg.
+DSP Report: operator PE_MUL[3].MUL/result_reg0 is absorbed into DSP PE_MUL[3].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[4].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[4].MUL/result_reg is absorbed into DSP PE_MUL[4].MUL/result_reg.
+DSP Report: operator PE_MUL[4].MUL/result_reg0 is absorbed into DSP PE_MUL[4].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[5].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[5].MUL/result_reg is absorbed into DSP PE_MUL[5].MUL/result_reg.
+DSP Report: operator PE_MUL[5].MUL/result_reg0 is absorbed into DSP PE_MUL[5].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[6].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[6].MUL/result_reg is absorbed into DSP PE_MUL[6].MUL/result_reg.
+DSP Report: operator PE_MUL[6].MUL/result_reg0 is absorbed into DSP PE_MUL[6].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[7].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[7].MUL/result_reg is absorbed into DSP PE_MUL[7].MUL/result_reg.
+DSP Report: operator PE_MUL[7].MUL/result_reg0 is absorbed into DSP PE_MUL[7].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[8].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[8].MUL/result_reg is absorbed into DSP PE_MUL[8].MUL/result_reg.
+DSP Report: operator PE_MUL[8].MUL/result_reg0 is absorbed into DSP PE_MUL[8].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[9].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[9].MUL/result_reg is absorbed into DSP PE_MUL[9].MUL/result_reg.
+DSP Report: operator PE_MUL[9].MUL/result_reg0 is absorbed into DSP PE_MUL[9].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[10].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[10].MUL/result_reg is absorbed into DSP PE_MUL[10].MUL/result_reg.
+DSP Report: operator PE_MUL[10].MUL/result_reg0 is absorbed into DSP PE_MUL[10].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[11].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[11].MUL/result_reg is absorbed into DSP PE_MUL[11].MUL/result_reg.
+DSP Report: operator PE_MUL[11].MUL/result_reg0 is absorbed into DSP PE_MUL[11].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[12].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[12].MUL/result_reg is absorbed into DSP PE_MUL[12].MUL/result_reg.
+DSP Report: operator PE_MUL[12].MUL/result_reg0 is absorbed into DSP PE_MUL[12].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[13].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[13].MUL/result_reg is absorbed into DSP PE_MUL[13].MUL/result_reg.
+DSP Report: operator PE_MUL[13].MUL/result_reg0 is absorbed into DSP PE_MUL[13].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[14].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[14].MUL/result_reg is absorbed into DSP PE_MUL[14].MUL/result_reg.
+DSP Report: operator PE_MUL[14].MUL/result_reg0 is absorbed into DSP PE_MUL[14].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[15].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[15].MUL/result_reg is absorbed into DSP PE_MUL[15].MUL/result_reg.
+DSP Report: operator PE_MUL[15].MUL/result_reg0 is absorbed into DSP PE_MUL[15].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[16].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[16].MUL/result_reg is absorbed into DSP PE_MUL[16].MUL/result_reg.
+DSP Report: operator PE_MUL[16].MUL/result_reg0 is absorbed into DSP PE_MUL[16].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[17].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[17].MUL/result_reg is absorbed into DSP PE_MUL[17].MUL/result_reg.
+DSP Report: operator PE_MUL[17].MUL/result_reg0 is absorbed into DSP PE_MUL[17].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[18].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[18].MUL/result_reg is absorbed into DSP PE_MUL[18].MUL/result_reg.
+DSP Report: operator PE_MUL[18].MUL/result_reg0 is absorbed into DSP PE_MUL[18].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[19].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[19].MUL/result_reg is absorbed into DSP PE_MUL[19].MUL/result_reg.
+DSP Report: operator PE_MUL[19].MUL/result_reg0 is absorbed into DSP PE_MUL[19].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[20].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[20].MUL/result_reg is absorbed into DSP PE_MUL[20].MUL/result_reg.
+DSP Report: operator PE_MUL[20].MUL/result_reg0 is absorbed into DSP PE_MUL[20].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[21].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[21].MUL/result_reg is absorbed into DSP PE_MUL[21].MUL/result_reg.
+DSP Report: operator PE_MUL[21].MUL/result_reg0 is absorbed into DSP PE_MUL[21].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[22].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[22].MUL/result_reg is absorbed into DSP PE_MUL[22].MUL/result_reg.
+DSP Report: operator PE_MUL[22].MUL/result_reg0 is absorbed into DSP PE_MUL[22].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[23].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[23].MUL/result_reg is absorbed into DSP PE_MUL[23].MUL/result_reg.
+DSP Report: operator PE_MUL[23].MUL/result_reg0 is absorbed into DSP PE_MUL[23].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[24].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[24].MUL/result_reg is absorbed into DSP PE_MUL[24].MUL/result_reg.
+DSP Report: operator PE_MUL[24].MUL/result_reg0 is absorbed into DSP PE_MUL[24].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[0].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[0].MUL/result_reg is absorbed into DSP PE_MUL[0].MUL/result_reg.
+DSP Report: operator PE_MUL[0].MUL/result_reg0 is absorbed into DSP PE_MUL[0].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[1].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[1].MUL/result_reg is absorbed into DSP PE_MUL[1].MUL/result_reg.
+DSP Report: operator PE_MUL[1].MUL/result_reg0 is absorbed into DSP PE_MUL[1].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[2].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[2].MUL/result_reg is absorbed into DSP PE_MUL[2].MUL/result_reg.
+DSP Report: operator PE_MUL[2].MUL/result_reg0 is absorbed into DSP PE_MUL[2].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[3].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[3].MUL/result_reg is absorbed into DSP PE_MUL[3].MUL/result_reg.
+DSP Report: operator PE_MUL[3].MUL/result_reg0 is absorbed into DSP PE_MUL[3].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[4].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[4].MUL/result_reg is absorbed into DSP PE_MUL[4].MUL/result_reg.
+DSP Report: operator PE_MUL[4].MUL/result_reg0 is absorbed into DSP PE_MUL[4].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[5].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[5].MUL/result_reg is absorbed into DSP PE_MUL[5].MUL/result_reg.
+DSP Report: operator PE_MUL[5].MUL/result_reg0 is absorbed into DSP PE_MUL[5].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[6].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[6].MUL/result_reg is absorbed into DSP PE_MUL[6].MUL/result_reg.
+DSP Report: operator PE_MUL[6].MUL/result_reg0 is absorbed into DSP PE_MUL[6].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[7].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[7].MUL/result_reg is absorbed into DSP PE_MUL[7].MUL/result_reg.
+DSP Report: operator PE_MUL[7].MUL/result_reg0 is absorbed into DSP PE_MUL[7].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[8].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[8].MUL/result_reg is absorbed into DSP PE_MUL[8].MUL/result_reg.
+DSP Report: operator PE_MUL[8].MUL/result_reg0 is absorbed into DSP PE_MUL[8].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[9].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[9].MUL/result_reg is absorbed into DSP PE_MUL[9].MUL/result_reg.
+DSP Report: operator PE_MUL[9].MUL/result_reg0 is absorbed into DSP PE_MUL[9].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[10].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[10].MUL/result_reg is absorbed into DSP PE_MUL[10].MUL/result_reg.
+DSP Report: operator PE_MUL[10].MUL/result_reg0 is absorbed into DSP PE_MUL[10].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[11].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[11].MUL/result_reg is absorbed into DSP PE_MUL[11].MUL/result_reg.
+DSP Report: operator PE_MUL[11].MUL/result_reg0 is absorbed into DSP PE_MUL[11].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[12].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[12].MUL/result_reg is absorbed into DSP PE_MUL[12].MUL/result_reg.
+DSP Report: operator PE_MUL[12].MUL/result_reg0 is absorbed into DSP PE_MUL[12].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[13].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[13].MUL/result_reg is absorbed into DSP PE_MUL[13].MUL/result_reg.
+DSP Report: operator PE_MUL[13].MUL/result_reg0 is absorbed into DSP PE_MUL[13].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[14].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[14].MUL/result_reg is absorbed into DSP PE_MUL[14].MUL/result_reg.
+DSP Report: operator PE_MUL[14].MUL/result_reg0 is absorbed into DSP PE_MUL[14].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[15].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[15].MUL/result_reg is absorbed into DSP PE_MUL[15].MUL/result_reg.
+DSP Report: operator PE_MUL[15].MUL/result_reg0 is absorbed into DSP PE_MUL[15].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[16].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[16].MUL/result_reg is absorbed into DSP PE_MUL[16].MUL/result_reg.
+DSP Report: operator PE_MUL[16].MUL/result_reg0 is absorbed into DSP PE_MUL[16].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[17].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[17].MUL/result_reg is absorbed into DSP PE_MUL[17].MUL/result_reg.
+DSP Report: operator PE_MUL[17].MUL/result_reg0 is absorbed into DSP PE_MUL[17].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[18].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[18].MUL/result_reg is absorbed into DSP PE_MUL[18].MUL/result_reg.
+DSP Report: operator PE_MUL[18].MUL/result_reg0 is absorbed into DSP PE_MUL[18].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[19].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[19].MUL/result_reg is absorbed into DSP PE_MUL[19].MUL/result_reg.
+DSP Report: operator PE_MUL[19].MUL/result_reg0 is absorbed into DSP PE_MUL[19].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[20].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[20].MUL/result_reg is absorbed into DSP PE_MUL[20].MUL/result_reg.
+DSP Report: operator PE_MUL[20].MUL/result_reg0 is absorbed into DSP PE_MUL[20].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[21].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[21].MUL/result_reg is absorbed into DSP PE_MUL[21].MUL/result_reg.
+DSP Report: operator PE_MUL[21].MUL/result_reg0 is absorbed into DSP PE_MUL[21].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[22].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[22].MUL/result_reg is absorbed into DSP PE_MUL[22].MUL/result_reg.
+DSP Report: operator PE_MUL[22].MUL/result_reg0 is absorbed into DSP PE_MUL[22].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[23].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[23].MUL/result_reg is absorbed into DSP PE_MUL[23].MUL/result_reg.
+DSP Report: operator PE_MUL[23].MUL/result_reg0 is absorbed into DSP PE_MUL[23].MUL/result_reg.
+DSP Report: Generating DSP PE_MUL[24].MUL/result_reg, operation Mode is: (A*B)'.
+DSP Report: register PE_MUL[24].MUL/result_reg is absorbed into DSP PE_MUL[24].MUL/result_reg.
+DSP Report: operator PE_MUL[24].MUL/result_reg0 is absorbed into DSP PE_MUL[24].MUL/result_reg.
+INFO: [Synth 8-4471] merging register 'matmul_inst/mac_inst[1].MAC_inst/mac_en2_reg' into 'matmul_inst/mac_inst[0].MAC_inst/mac_en2_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:26]
+INFO: [Synth 8-4471] merging register 'matmul_inst/mac_inst[1].MAC_inst/clear1_reg' into 'matmul_inst/mac_inst[0].MAC_inst/clear1_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:31]
+INFO: [Synth 8-4471] merging register 'matmul_inst/mac_inst[1].MAC_inst/acc_en_reg' into 'matmul_inst/mac_inst[0].MAC_inst/acc_en_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:27]
+INFO: [Synth 8-4471] merging register 'matmul_inst/mac_inst[2].MAC_inst/mac_en2_reg' into 'matmul_inst/mac_inst[0].MAC_inst/mac_en2_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:26]
+INFO: [Synth 8-4471] merging register 'matmul_inst/mac_inst[2].MAC_inst/clear1_reg' into 'matmul_inst/mac_inst[0].MAC_inst/clear1_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:31]
+INFO: [Synth 8-4471] merging register 'matmul_inst/mac_inst[2].MAC_inst/acc_en_reg' into 'matmul_inst/mac_inst[0].MAC_inst/acc_en_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:27]
+INFO: [Synth 8-4471] merging register 'matmul_inst/mac_inst[3].MAC_inst/mac_en2_reg' into 'matmul_inst/mac_inst[0].MAC_inst/mac_en2_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:26]
+INFO: [Synth 8-4471] merging register 'matmul_inst/mac_inst[3].MAC_inst/clear1_reg' into 'matmul_inst/mac_inst[0].MAC_inst/clear1_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:31]
+INFO: [Synth 8-4471] merging register 'matmul_inst/mac_inst[3].MAC_inst/acc_en_reg' into 'matmul_inst/mac_inst[0].MAC_inst/acc_en_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:27]
+INFO: [Synth 8-4471] merging register 'matmul_inst/mac_inst[4].MAC_inst/mac_en2_reg' into 'matmul_inst/mac_inst[0].MAC_inst/mac_en2_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:26]
+INFO: [Synth 8-4471] merging register 'matmul_inst/mac_inst[4].MAC_inst/clear1_reg' into 'matmul_inst/mac_inst[0].MAC_inst/clear1_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:31]
+INFO: [Synth 8-4471] merging register 'matmul_inst/mac_inst[4].MAC_inst/acc_en_reg' into 'matmul_inst/mac_inst[0].MAC_inst/acc_en_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:27]
+INFO: [Synth 8-4471] merging register 'matmul_inst/mac_inst[5].MAC_inst/mac_en2_reg' into 'matmul_inst/mac_inst[0].MAC_inst/mac_en2_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:26]
+INFO: [Synth 8-4471] merging register 'matmul_inst/mac_inst[5].MAC_inst/clear1_reg' into 'matmul_inst/mac_inst[0].MAC_inst/clear1_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:31]
+INFO: [Synth 8-4471] merging register 'matmul_inst/mac_inst[5].MAC_inst/acc_en_reg' into 'matmul_inst/mac_inst[0].MAC_inst/acc_en_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:27]
+INFO: [Synth 8-4471] merging register 'matmul_inst/mac_inst[6].MAC_inst/mac_en2_reg' into 'matmul_inst/mac_inst[0].MAC_inst/mac_en2_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:26]
+INFO: [Synth 8-4471] merging register 'matmul_inst/mac_inst[6].MAC_inst/clear1_reg' into 'matmul_inst/mac_inst[0].MAC_inst/clear1_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:31]
+INFO: [Synth 8-4471] merging register 'matmul_inst/mac_inst[6].MAC_inst/acc_en_reg' into 'matmul_inst/mac_inst[0].MAC_inst/acc_en_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:27]
+INFO: [Synth 8-4471] merging register 'matmul_inst/mac_inst[7].MAC_inst/mac_en2_reg' into 'matmul_inst/mac_inst[0].MAC_inst/mac_en2_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:26]
+INFO: [Synth 8-4471] merging register 'matmul_inst/mac_inst[7].MAC_inst/clear1_reg' into 'matmul_inst/mac_inst[0].MAC_inst/clear1_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:31]
+INFO: [Synth 8-4471] merging register 'matmul_inst/mac_inst[7].MAC_inst/acc_en_reg' into 'matmul_inst/mac_inst[0].MAC_inst/acc_en_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:27]
+INFO: [Synth 8-4471] merging register 'matmul_inst/mac_inst[8].MAC_inst/mac_en2_reg' into 'matmul_inst/mac_inst[0].MAC_inst/mac_en2_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:26]
+INFO: [Synth 8-4471] merging register 'matmul_inst/mac_inst[8].MAC_inst/clear1_reg' into 'matmul_inst/mac_inst[0].MAC_inst/clear1_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:31]
+INFO: [Synth 8-4471] merging register 'matmul_inst/mac_inst[8].MAC_inst/acc_en_reg' into 'matmul_inst/mac_inst[0].MAC_inst/acc_en_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:27]
+INFO: [Synth 8-4471] merging register 'matmul_inst/mac_inst[9].MAC_inst/mac_en2_reg' into 'matmul_inst/mac_inst[0].MAC_inst/mac_en2_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:26]
+INFO: [Synth 8-4471] merging register 'matmul_inst/mac_inst[9].MAC_inst/clear1_reg' into 'matmul_inst/mac_inst[0].MAC_inst/clear1_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:31]
+INFO: [Synth 8-4471] merging register 'matmul_inst/mac_inst[9].MAC_inst/acc_en_reg' into 'matmul_inst/mac_inst[0].MAC_inst/acc_en_reg' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:27]
+DSP Report: Generating DSP matmul_inst/mac_inst[0].MAC_inst/mul0, operation Mode is: A*B.
+DSP Report: operator matmul_inst/mac_inst[0].MAC_inst/mul0 is absorbed into DSP matmul_inst/mac_inst[0].MAC_inst/mul0.
+DSP Report: Generating DSP matmul_inst/mac_inst[1].MAC_inst/mul0, operation Mode is: A*B.
+DSP Report: operator matmul_inst/mac_inst[1].MAC_inst/mul0 is absorbed into DSP matmul_inst/mac_inst[1].MAC_inst/mul0.
+DSP Report: Generating DSP matmul_inst/mac_inst[2].MAC_inst/mul0, operation Mode is: A*B.
+DSP Report: operator matmul_inst/mac_inst[2].MAC_inst/mul0 is absorbed into DSP matmul_inst/mac_inst[2].MAC_inst/mul0.
+DSP Report: Generating DSP matmul_inst/mac_inst[3].MAC_inst/mul0, operation Mode is: A*B.
+DSP Report: operator matmul_inst/mac_inst[3].MAC_inst/mul0 is absorbed into DSP matmul_inst/mac_inst[3].MAC_inst/mul0.
+DSP Report: Generating DSP matmul_inst/mac_inst[4].MAC_inst/mul0, operation Mode is: A*B.
+DSP Report: operator matmul_inst/mac_inst[4].MAC_inst/mul0 is absorbed into DSP matmul_inst/mac_inst[4].MAC_inst/mul0.
+DSP Report: Generating DSP matmul_inst/mac_inst[5].MAC_inst/mul0, operation Mode is: A*B.
+DSP Report: operator matmul_inst/mac_inst[5].MAC_inst/mul0 is absorbed into DSP matmul_inst/mac_inst[5].MAC_inst/mul0.
+DSP Report: Generating DSP matmul_inst/mac_inst[6].MAC_inst/mul0, operation Mode is: A*B.
+DSP Report: operator matmul_inst/mac_inst[6].MAC_inst/mul0 is absorbed into DSP matmul_inst/mac_inst[6].MAC_inst/mul0.
+DSP Report: Generating DSP matmul_inst/mac_inst[7].MAC_inst/mul0, operation Mode is: A*B.
+DSP Report: operator matmul_inst/mac_inst[7].MAC_inst/mul0 is absorbed into DSP matmul_inst/mac_inst[7].MAC_inst/mul0.
+DSP Report: Generating DSP matmul_inst/mac_inst[8].MAC_inst/mul0, operation Mode is: A*B.
+DSP Report: operator matmul_inst/mac_inst[8].MAC_inst/mul0 is absorbed into DSP matmul_inst/mac_inst[8].MAC_inst/mul0.
+DSP Report: Generating DSP matmul_inst/mac_inst[9].MAC_inst/mul0, operation Mode is: A*B.
+DSP Report: operator matmul_inst/mac_inst[9].MAC_inst/mul0 is absorbed into DSP matmul_inst/mac_inst[9].MAC_inst/mul0.
+WARNING: [Synth 8-3917] design top has port result[4] driven by constant 0
+INFO: [Synth 8-3971] The signal "top/Image_ROM/BRAM_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (Accumulator:/\wr_ptr_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (Accumulator:/\wr_ptr_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (Accumulator:/rd_ptr1_inferred/\rd_ptr_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (BUF1:/\offset_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/global_ctrl/row_base0_inferred/\row_base_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/global_ctrl/row_base0_inferred/\row_base_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/global_ctrl/row_base0_inferred/\row_base_reg[2] )
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[0][0]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[0][1]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[0][2]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[0][3]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[0][4]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[0][5]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[0][6]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[0][7]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[1][0]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[1][1]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[1][2]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[1][3]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[1][4]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[1][5]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[1][6]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[1][7]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[2][0]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[2][1]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[2][2]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[2][3]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[2][4]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[2][5]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[2][6]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[2][7]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[3][0]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[3][1]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[3][2]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[3][3]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[3][4]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[3][5]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[3][6]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[3][7]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[4][0]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[4][1]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[4][2]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[4][3]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[4][4]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[4][5]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[4][6]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[4][7]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[5][0]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[5][1]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[5][2]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[5][3]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[5][4]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[5][5]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[5][6]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[5][7]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[6][0]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[6][1]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[6][2]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[6][3]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[6][4]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[6][5]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[6][6]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[6][7]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[7][0]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[7][1]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[7][2]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[7][3]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[7][4]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[7][5]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[7][6]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[7][7]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[8][0]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[8][1]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[8][2]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[8][3]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[8][4]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[8][5]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[8][6]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[8][7]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[8][7]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[9][0]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[9][0]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[9][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[9][1]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[9][2]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[9][2]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[9][3]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[9][3]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[9][4]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[9][4]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[9][5]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[9][5]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[9][6]'
+INFO: [Synth 8-3886] merging instance 'i_0/FC_BiasROM/data_o_reg[9][6]' (FDC) to 'i_0/FC_BiasROM/data_o_reg[9][7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/FC_BiasROM/\data_o_reg[9][7] )
+INFO: [Synth 8-3886] merging instance 'i_0/fc_Layer/max_finder_inst/stage1_idx_reg[0][1]' (FDRE) to 'i_0/fc_Layer/max_finder_inst/stage1_idx_reg[0][2]'
+INFO: [Synth 8-3886] merging instance 'i_0/fc_Layer/max_finder_inst/stage1_idx_reg[2][1]' (FDRE) to 'i_0/fc_Layer/max_finder_inst/stage1_idx_reg[2][3]'
+INFO: [Synth 8-3886] merging instance 'i_0/fc_Layer/max_finder_inst/stage1_idx_reg[4][1]' (FDRE) to 'i_0/fc_Layer/max_finder_inst/stage1_idx_reg[4][2]'
+INFO: [Synth 8-3886] merging instance 'i_0/fc_Layer/max_finder_inst/stage1_idx_reg[0][2]' (FDRE) to 'i_0/fc_Layer/max_finder_inst/stage1_idx_reg[0][3]'
+INFO: [Synth 8-3886] merging instance 'i_0/fc_Layer/max_finder_inst/stage1_idx_reg[1][2]' (FDRE) to 'i_0/fc_Layer/max_finder_inst/stage1_idx_reg[1][3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/fc_Layer/\max_finder_inst/stage1_idx_reg[4][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/fc_Layer/\max_finder_inst/stage1_idx_reg[0][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/fc_Layer/\max_finder_inst/stage1_idx_reg[1][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/fc_Layer/\max_finder_inst/stage1_idx_reg[2][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/fc_Layer/\max_finder_inst/stage1_idx_reg[3][3] )
+INFO: [Synth 8-3886] merging instance 'i_0/fc_Layer/max_finder_inst/stage2_idx_reg[2][1]' (FDRE) to 'i_0/fc_Layer/max_finder_inst/stage2_idx_reg[2][2]'
+INFO: [Synth 8-3886] merging instance 'i_0/fc_Layer/max_finder_inst/stage3_idx_reg[1][1]' (FDRE) to 'i_0/fc_Layer/max_finder_inst/stage3_idx_reg[1][2]'
+INFO: [Synth 8-3886] merging instance 'i_0/Slide_Image/data_out_reg[5][8]' (FDE) to 'i_0/Slide_Image/data_out_reg[4][8]'
+INFO: [Synth 8-3886] merging instance 'i_0/Slide_Image/data_out_reg[5][9]' (FDE) to 'i_0/Slide_Image/data_out_reg[4][8]'
+INFO: [Synth 8-3886] merging instance 'i_0/Slide_Image/data_out_reg[5][10]' (FDE) to 'i_0/Slide_Image/data_out_reg[4][8]'
+INFO: [Synth 8-3886] merging instance 'i_0/Slide_Image/data_out_reg[5][11]' (FDE) to 'i_0/Slide_Image/data_out_reg[4][8]'
+INFO: [Synth 8-3886] merging instance 'i_0/Slide_Image/data_out_reg[4][8]' (FDE) to 'i_0/Slide_Image/data_out_reg[4][9]'
+INFO: [Synth 8-3886] merging instance 'i_0/Slide_Image/data_out_reg[4][9]' (FDE) to 'i_0/Slide_Image/data_out_reg[4][10]'
+INFO: [Synth 8-3886] merging instance 'i_0/Slide_Image/data_out_reg[4][10]' (FDE) to 'i_0/Slide_Image/data_out_reg[4][11]'
+INFO: [Synth 8-3886] merging instance 'i_0/Slide_Image/data_out_reg[4][11]' (FDE) to 'i_0/Slide_Image/data_out_reg[2][8]'
+INFO: [Synth 8-3886] merging instance 'i_0/Slide_Image/data_out_reg[3][8]' (FDE) to 'i_0/Slide_Image/data_out_reg[2][8]'
+INFO: [Synth 8-3886] merging instance 'i_0/Slide_Image/data_out_reg[3][9]' (FDE) to 'i_0/Slide_Image/data_out_reg[2][8]'
+INFO: [Synth 8-3886] merging instance 'i_0/Slide_Image/data_out_reg[3][10]' (FDE) to 'i_0/Slide_Image/data_out_reg[2][8]'
+INFO: [Synth 8-3886] merging instance 'i_0/Slide_Image/data_out_reg[3][11]' (FDE) to 'i_0/Slide_Image/data_out_reg[2][8]'
+INFO: [Synth 8-3886] merging instance 'i_0/Slide_Image/data_out_reg[2][8]' (FDE) to 'i_0/Slide_Image/data_out_reg[2][9]'
+INFO: [Synth 8-3886] merging instance 'i_0/Slide_Image/data_out_reg[2][9]' (FDE) to 'i_0/Slide_Image/data_out_reg[2][10]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/Slide_Image/\data_out_reg[0][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/BiasROM/\data_o_reg[0][7] )
+WARNING: [Synth 8-3332] Sequential element (ACC_clear_reg) is unused and will be removed from module glbl_controller.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:44 ; elapsed = 00:00:47 . Memory (MB): peak = 1046.594 ; gain = 495.027
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping  Report (see note below)
++---------------------------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name                                  | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++---------------------------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|single_port_bram:                            | mem_reg    | 32 x 40(NO_CHANGE)     | W | R |                        |   |   | Port A           | 2      | 0      | 
+|single_port_bram__parameterized0:            | mem_reg    | 32 x 40(NO_CHANGE)     | W | R |                        |   |   | Port A           | 2      | 0      | 
+|single_port_bram__parameterized1:            | mem_reg    | 32 x 40(NO_CHANGE)     | W | R |                        |   |   | Port A           | 2      | 0      | 
+|single_port_bram__parameterized2:            | mem_reg    | 64 x 80(NO_CHANGE)     | W | R |                        |   |   | Port A           | 3      | 0      | 
+|xilinx_true_dual_port_no_change_1_clock_ram: | BRAM_reg   | 8 K x 8(NO_CHANGE)     | W | R | 8 K x 8(NO_CHANGE)     | W | R | Port A and B     | 0      | 2      | 
++---------------------------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+DSP: Preliminary Mapping  Report (see note below)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|mul         | (A*B)'      | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|MAC         | A*B         | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|MAC         | A*B         | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|MAC         | A*B         | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|MAC         | A*B         | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|MAC         | A*B         | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|MAC         | A*B         | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|MAC         | A*B         | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|MAC         | A*B         | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|MAC         | A*B         | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|MAC         | A*B         | 12     | 8      | -      | -      | 20     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6837] The timing for the instance i_0/i_12/conv_wrom_ch1/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/i_12/conv_wrom_ch1/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/i_12/conv_wrom_ch1/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/i_13/conv_wrom_ch2/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/i_13/conv_wrom_ch2/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/i_13/conv_wrom_ch2/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/i_14/conv_wrom_ch3/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/i_14/conv_wrom_ch3/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/i_14/conv_wrom_ch3/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/i_15/FC_weight_rom/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/i_15/FC_weight_rom/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/i_15/FC_weight_rom/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/i_15/FC_weight_rom/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/i_15/FC_weight_rom/mem_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/i_16/Image_ROM/BRAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/i_16/Image_ROM/BRAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/i_16/Image_ROM/BRAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance i_0/i_16/Image_ROM/BRAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+
+Report RTL Partitions: 
++------+--------------+------------+----------+
+|      |RTL Partition |Replication |Instances |
++------+--------------+------------+----------+
+|1     |Accumulator   |           3|      5497|
+|2     |PE_Array__GC0 |           1|      9079|
+|3     |BUF1          |           3|      7819|
+|4     |top__GC0      |           1|     11242|
++------+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:52 ; elapsed = 00:00:55 . Memory (MB): peak = 1046.594 ; gain = 495.027
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:10 ; elapsed = 00:01:14 . Memory (MB): peak = 1199.262 ; gain = 647.695
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping  Report
++---------------------------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name                                  | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++---------------------------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|single_port_bram:                            | mem_reg    | 32 x 40(NO_CHANGE)     | W | R |                        |   |   | Port A           | 2      | 0      | 
+|single_port_bram__parameterized0:            | mem_reg    | 32 x 40(NO_CHANGE)     | W | R |                        |   |   | Port A           | 2      | 0      | 
+|single_port_bram__parameterized1:            | mem_reg    | 32 x 40(NO_CHANGE)     | W | R |                        |   |   | Port A           | 2      | 0      | 
+|single_port_bram__parameterized2:            | mem_reg    | 64 x 80(NO_CHANGE)     | W | R |                        |   |   | Port A           | 3      | 0      | 
+|xilinx_true_dual_port_no_change_1_clock_ram: | BRAM_reg   | 8 K x 8(NO_CHANGE)     | W | R | 8 K x 8(NO_CHANGE)     | W | R | Port A and B     | 0      | 2      | 
++---------------------------------------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------+------------+----------+
+|      |RTL Partition |Replication |Instances |
++------+--------------+------------+----------+
+|1     |Accumulator   |           3|      5497|
+|2     |BUF1          |           3|      7819|
+|3     |top_GT0       |           1|     20321|
++------+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4765] Removing register instance (\fc_Layer/matmul_inst/mac_inst[8].MAC_inst/valid_out_reg ) from module (top_GT0) as it is equivalent to (\fc_Layer/matmul_inst/mac_inst[9].MAC_inst/valid_out_reg ) and driving same net [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:23]
+INFO: [Synth 8-4765] Removing register instance (\fc_Layer/matmul_inst/mac_inst[6].MAC_inst/valid_out_reg ) from module (top_GT0) as it is equivalent to (\fc_Layer/matmul_inst/mac_inst[9].MAC_inst/valid_out_reg ) and driving same net [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:23]
+INFO: [Synth 8-4765] Removing register instance (\fc_Layer/matmul_inst/mac_inst[4].MAC_inst/valid_out_reg ) from module (top_GT0) as it is equivalent to (\fc_Layer/matmul_inst/mac_inst[9].MAC_inst/valid_out_reg ) and driving same net [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:23]
+INFO: [Synth 8-4765] Removing register instance (\fc_Layer/matmul_inst/mac_inst[2].MAC_inst/valid_out_reg ) from module (top_GT0) as it is equivalent to (\fc_Layer/matmul_inst/mac_inst[9].MAC_inst/valid_out_reg ) and driving same net [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:23]
+INFO: [Synth 8-4765] Removing register instance (\fc_Layer/matmul_inst/mac_inst[0].MAC_inst/valid_out_reg ) from module (top_GT0) as it is equivalent to (\fc_Layer/matmul_inst/mac_inst[9].MAC_inst/valid_out_reg ) and driving same net [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:23]
+INFO: [Synth 8-4765] Removing register instance (\fc_Layer/matmul_inst/mac_inst[1].MAC_inst/valid_out_reg ) from module (top_GT0) as it is equivalent to (\fc_Layer/matmul_inst/mac_inst[9].MAC_inst/valid_out_reg ) and driving same net [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:23]
+INFO: [Synth 8-4765] Removing register instance (\fc_Layer/matmul_inst/mac_inst[3].MAC_inst/valid_out_reg ) from module (top_GT0) as it is equivalent to (\fc_Layer/matmul_inst/mac_inst[9].MAC_inst/valid_out_reg ) and driving same net [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:23]
+INFO: [Synth 8-4765] Removing register instance (\fc_Layer/matmul_inst/mac_inst[5].MAC_inst/valid_out_reg ) from module (top_GT0) as it is equivalent to (\fc_Layer/matmul_inst/mac_inst[9].MAC_inst/valid_out_reg ) and driving same net [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:23]
+INFO: [Synth 8-4765] Removing register instance (\fc_Layer/matmul_inst/mac_inst[7].MAC_inst/valid_out_reg ) from module (top_GT0) as it is equivalent to (\fc_Layer/matmul_inst/mac_inst[9].MAC_inst/valid_out_reg ) and driving same net [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/MAC.sv:23]
+INFO: [Synth 8-6837] The timing for the instance conv_wrom_ch1/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance conv_wrom_ch1/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance conv_wrom_ch1/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance conv_wrom_ch2/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance conv_wrom_ch2/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance conv_wrom_ch2/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance conv_wrom_ch3/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance conv_wrom_ch3/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance conv_wrom_ch3/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance FC_weight_rom/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance FC_weight_rom/mem_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance FC_weight_rom/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance FC_weight_rom/mem_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-6837] The timing for the instance FC_weight_rom/mem_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:22 ; elapsed = 00:01:26 . Memory (MB): peak = 1199.262 ; gain = 647.695
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:25 ; elapsed = 00:01:29 . Memory (MB): peak = 1199.262 ; gain = 647.695
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:25 ; elapsed = 00:01:29 . Memory (MB): peak = 1199.262 ; gain = 647.695
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:28 ; elapsed = 00:01:33 . Memory (MB): peak = 1199.262 ; gain = 647.695
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:28 ; elapsed = 00:01:33 . Memory (MB): peak = 1199.262 ; gain = 647.695
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:29 ; elapsed = 00:01:33 . Memory (MB): peak = 1199.262 ; gain = 647.695
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:29 ; elapsed = 00:01:33 . Memory (MB): peak = 1199.262 ; gain = 647.695
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++------------+----------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name | RTL Name                         | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++------------+----------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|top         | ShiftBuf_ch3/register_reg[0][11] | 16     | 12    | NO           | NO                 | YES               | 12     | 0       | 
+|top         | ShiftBuf_ch2/register_reg[0][11] | 16     | 12    | NO           | NO                 | YES               | 12     | 0       | 
+|top         | ShiftBuf_ch1/register_reg[0][11] | 16     | 12    | NO           | NO                 | YES               | 12     | 0       | 
++------------+----------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |BUFG       |     1|
+|2     |CARRY4     |   853|
+|3     |DSP48E1_1  |    10|
+|4     |DSP48E1_2  |   150|
+|5     |LUT1       |    65|
+|6     |LUT2       |  3622|
+|7     |LUT3       |  5530|
+|8     |LUT4       |   651|
+|9     |LUT5       |   631|
+|10    |LUT6       |  7006|
+|11    |MUXF7      |  1392|
+|12    |MUXF8      |   252|
+|13    |RAMB18E1   |     1|
+|14    |RAMB18E1_1 |     1|
+|15    |RAMB18E1_2 |     1|
+|16    |RAMB18E1_3 |     1|
+|17    |RAMB18E1_4 |     1|
+|18    |RAMB18E1_5 |     1|
+|19    |RAMB18E1_6 |     1|
+|20    |RAMB18E1_7 |     1|
+|21    |RAMB18E1_8 |     1|
+|22    |RAMB36E1_2 |     1|
+|23    |RAMB36E1_3 |     1|
+|24    |SRL16E     |    36|
+|25    |FDCE       |  3240|
+|26    |FDRE       | 12602|
+|27    |FDSE       |    12|
+|28    |LD         |     8|
+|29    |LDC        |    25|
+|30    |IBUF       |     3|
+|31    |OBUF       |     6|
++------+-----------+------+
+
+Report Instance Areas: 
++------+-----------------------------+--------------------------------------------+------+
+|      |Instance                     |Module                                      |Cells |
++------+-----------------------------+--------------------------------------------+------+
+|1     |top                          |                                            | 36106|
+|2     |  Slide_Image                |Sliding_Window                              |  2352|
+|3     |  BUF1_ch1                   |BUF1                                        |  4577|
+|4     |  BUF1_ch2                   |BUF1_0                                      |  4577|
+|5     |  BUF1_ch3                   |BUF1_1                                      |  4575|
+|6     |  FC_Ctrl                    |FC_Controller                               |    75|
+|7     |  FC_weight_rom              |single_port_bram__parameterized2            |     3|
+|8     |  FIFO_ch1                   |FIFO                                        |    55|
+|9     |    FIFO_Comparator          |Comparator_179                              |     2|
+|10    |  FIFO_ch2                   |FIFO_2                                      |    55|
+|11    |    FIFO_Comparator          |Comparator_178                              |     2|
+|12    |  FIFO_ch3                   |FIFO_3                                      |    55|
+|13    |    FIFO_Comparator          |Comparator                                  |     2|
+|14    |  Image_ROM                  |xilinx_true_dual_port_no_change_1_clock_ram |     2|
+|15    |  MaxPooling_ch1             |MaxPooling_ReLU                             |    40|
+|16    |  MaxPooling_ch2             |MaxPooling_ReLU_4                           |    40|
+|17    |  MaxPooling_ch3             |MaxPooling_ReLU_5                           |    40|
+|18    |  PE_Array                   |PE_Array                                    | 16291|
+|19    |    ACC_Ch1                  |Accumulator                                 |  2461|
+|20    |    ACC_Ch2                  |Accumulator_17                              |  2460|
+|21    |    ACC_Ch3                  |Accumulator_18                              |  2460|
+|22    |    \PE_ARRAY1[0].PE_Ch1     |PE                                          |  1325|
+|23    |      ACC                    |acc_152                                     |  1144|
+|24    |      \PE_MUL[0].MUL         |mul_153                                     |     1|
+|25    |      \PE_MUL[10].MUL        |mul_154                                     |     1|
+|26    |      \PE_MUL[11].MUL        |mul_155                                     |     1|
+|27    |      \PE_MUL[12].MUL        |mul_156                                     |     1|
+|28    |      \PE_MUL[13].MUL        |mul_157                                     |     1|
+|29    |      \PE_MUL[14].MUL        |mul_158                                     |     1|
+|30    |      \PE_MUL[15].MUL        |mul_159                                     |     1|
+|31    |      \PE_MUL[16].MUL        |mul_160                                     |     1|
+|32    |      \PE_MUL[17].MUL        |mul_161                                     |     1|
+|33    |      \PE_MUL[18].MUL        |mul_162                                     |     1|
+|34    |      \PE_MUL[19].MUL        |mul_163                                     |     1|
+|35    |      \PE_MUL[1].MUL         |mul_164                                     |     1|
+|36    |      \PE_MUL[20].MUL        |mul_165                                     |     1|
+|37    |      \PE_MUL[21].MUL        |mul_166                                     |     1|
+|38    |      \PE_MUL[22].MUL        |mul_167                                     |     1|
+|39    |      \PE_MUL[23].MUL        |mul_168                                     |     1|
+|40    |      \PE_MUL[24].MUL        |mul_169                                     |     1|
+|41    |      \PE_MUL[2].MUL         |mul_170                                     |     1|
+|42    |      \PE_MUL[3].MUL         |mul_171                                     |     1|
+|43    |      \PE_MUL[4].MUL         |mul_172                                     |     1|
+|44    |      \PE_MUL[5].MUL         |mul_173                                     |     1|
+|45    |      \PE_MUL[6].MUL         |mul_174                                     |     1|
+|46    |      \PE_MUL[7].MUL         |mul_175                                     |     1|
+|47    |      \PE_MUL[8].MUL         |mul_176                                     |     1|
+|48    |      \PE_MUL[9].MUL         |mul_177                                     |     1|
+|49    |    \PE_ARRAY1[1].PE_Ch1     |PE_19                                       |  1829|
+|50    |      ACC                    |acc_126                                     |  1656|
+|51    |      \PE_MUL[0].MUL         |mul_127                                     |     1|
+|52    |      \PE_MUL[10].MUL        |mul_128                                     |     1|
+|53    |      \PE_MUL[11].MUL        |mul_129                                     |     1|
+|54    |      \PE_MUL[12].MUL        |mul_130                                     |     1|
+|55    |      \PE_MUL[13].MUL        |mul_131                                     |     1|
+|56    |      \PE_MUL[14].MUL        |mul_132                                     |     1|
+|57    |      \PE_MUL[15].MUL        |mul_133                                     |     1|
+|58    |      \PE_MUL[16].MUL        |mul_134                                     |     1|
+|59    |      \PE_MUL[17].MUL        |mul_135                                     |     1|
+|60    |      \PE_MUL[18].MUL        |mul_136                                     |     1|
+|61    |      \PE_MUL[19].MUL        |mul_137                                     |     1|
+|62    |      \PE_MUL[1].MUL         |mul_138                                     |     1|
+|63    |      \PE_MUL[20].MUL        |mul_139                                     |     1|
+|64    |      \PE_MUL[21].MUL        |mul_140                                     |     1|
+|65    |      \PE_MUL[22].MUL        |mul_141                                     |     1|
+|66    |      \PE_MUL[23].MUL        |mul_142                                     |     1|
+|67    |      \PE_MUL[24].MUL        |mul_143                                     |     1|
+|68    |      \PE_MUL[2].MUL         |mul_144                                     |     1|
+|69    |      \PE_MUL[3].MUL         |mul_145                                     |     1|
+|70    |      \PE_MUL[4].MUL         |mul_146                                     |     1|
+|71    |      \PE_MUL[5].MUL         |mul_147                                     |     1|
+|72    |      \PE_MUL[6].MUL         |mul_148                                     |     1|
+|73    |      \PE_MUL[7].MUL         |mul_149                                     |     1|
+|74    |      \PE_MUL[8].MUL         |mul_150                                     |     1|
+|75    |      \PE_MUL[9].MUL         |mul_151                                     |     1|
+|76    |    \PE_ARRAY2[0].PE_Ch2     |PE_20                                       |  1169|
+|77    |      ACC                    |acc_100                                     |  1144|
+|78    |      \PE_MUL[0].MUL         |mul_101                                     |     1|
+|79    |      \PE_MUL[10].MUL        |mul_102                                     |     1|
+|80    |      \PE_MUL[11].MUL        |mul_103                                     |     1|
+|81    |      \PE_MUL[12].MUL        |mul_104                                     |     1|
+|82    |      \PE_MUL[13].MUL        |mul_105                                     |     1|
+|83    |      \PE_MUL[14].MUL        |mul_106                                     |     1|
+|84    |      \PE_MUL[15].MUL        |mul_107                                     |     1|
+|85    |      \PE_MUL[16].MUL        |mul_108                                     |     1|
+|86    |      \PE_MUL[17].MUL        |mul_109                                     |     1|
+|87    |      \PE_MUL[18].MUL        |mul_110                                     |     1|
+|88    |      \PE_MUL[19].MUL        |mul_111                                     |     1|
+|89    |      \PE_MUL[1].MUL         |mul_112                                     |     1|
+|90    |      \PE_MUL[20].MUL        |mul_113                                     |     1|
+|91    |      \PE_MUL[21].MUL        |mul_114                                     |     1|
+|92    |      \PE_MUL[22].MUL        |mul_115                                     |     1|
+|93    |      \PE_MUL[23].MUL        |mul_116                                     |     1|
+|94    |      \PE_MUL[24].MUL        |mul_117                                     |     1|
+|95    |      \PE_MUL[2].MUL         |mul_118                                     |     1|
+|96    |      \PE_MUL[3].MUL         |mul_119                                     |     1|
+|97    |      \PE_MUL[4].MUL         |mul_120                                     |     1|
+|98    |      \PE_MUL[5].MUL         |mul_121                                     |     1|
+|99    |      \PE_MUL[6].MUL         |mul_122                                     |     1|
+|100   |      \PE_MUL[7].MUL         |mul_123                                     |     1|
+|101   |      \PE_MUL[8].MUL         |mul_124                                     |     1|
+|102   |      \PE_MUL[9].MUL         |mul_125                                     |     1|
+|103   |    \PE_ARRAY2[1].PE_Ch2     |PE_21                                       |  1693|
+|104   |      ACC                    |acc_74                                      |  1656|
+|105   |      \PE_MUL[0].MUL         |mul_75                                      |     1|
+|106   |      \PE_MUL[10].MUL        |mul_76                                      |     1|
+|107   |      \PE_MUL[11].MUL        |mul_77                                      |     1|
+|108   |      \PE_MUL[12].MUL        |mul_78                                      |     1|
+|109   |      \PE_MUL[13].MUL        |mul_79                                      |     1|
+|110   |      \PE_MUL[14].MUL        |mul_80                                      |     1|
+|111   |      \PE_MUL[15].MUL        |mul_81                                      |     1|
+|112   |      \PE_MUL[16].MUL        |mul_82                                      |     1|
+|113   |      \PE_MUL[17].MUL        |mul_83                                      |     1|
+|114   |      \PE_MUL[18].MUL        |mul_84                                      |     1|
+|115   |      \PE_MUL[19].MUL        |mul_85                                      |     1|
+|116   |      \PE_MUL[1].MUL         |mul_86                                      |     1|
+|117   |      \PE_MUL[20].MUL        |mul_87                                      |     1|
+|118   |      \PE_MUL[21].MUL        |mul_88                                      |     1|
+|119   |      \PE_MUL[22].MUL        |mul_89                                      |     1|
+|120   |      \PE_MUL[23].MUL        |mul_90                                      |     1|
+|121   |      \PE_MUL[24].MUL        |mul_91                                      |     1|
+|122   |      \PE_MUL[2].MUL         |mul_92                                      |     1|
+|123   |      \PE_MUL[3].MUL         |mul_93                                      |     1|
+|124   |      \PE_MUL[4].MUL         |mul_94                                      |     1|
+|125   |      \PE_MUL[5].MUL         |mul_95                                      |     1|
+|126   |      \PE_MUL[6].MUL         |mul_96                                      |     1|
+|127   |      \PE_MUL[7].MUL         |mul_97                                      |     1|
+|128   |      \PE_MUL[8].MUL         |mul_98                                      |     1|
+|129   |      \PE_MUL[9].MUL         |mul_99                                      |     1|
+|130   |    \PE_ARRAY3[0].PE_Ch3     |PE_22                                       |  1181|
+|131   |      ACC                    |acc_48                                      |  1144|
+|132   |      \PE_MUL[0].MUL         |mul_49                                      |     1|
+|133   |      \PE_MUL[10].MUL        |mul_50                                      |     1|
+|134   |      \PE_MUL[11].MUL        |mul_51                                      |     1|
+|135   |      \PE_MUL[12].MUL        |mul_52                                      |     1|
+|136   |      \PE_MUL[13].MUL        |mul_53                                      |     1|
+|137   |      \PE_MUL[14].MUL        |mul_54                                      |     1|
+|138   |      \PE_MUL[15].MUL        |mul_55                                      |     1|
+|139   |      \PE_MUL[16].MUL        |mul_56                                      |     1|
+|140   |      \PE_MUL[17].MUL        |mul_57                                      |     1|
+|141   |      \PE_MUL[18].MUL        |mul_58                                      |     1|
+|142   |      \PE_MUL[19].MUL        |mul_59                                      |     1|
+|143   |      \PE_MUL[1].MUL         |mul_60                                      |     1|
+|144   |      \PE_MUL[20].MUL        |mul_61                                      |     1|
+|145   |      \PE_MUL[21].MUL        |mul_62                                      |     1|
+|146   |      \PE_MUL[22].MUL        |mul_63                                      |     1|
+|147   |      \PE_MUL[23].MUL        |mul_64                                      |     1|
+|148   |      \PE_MUL[24].MUL        |mul_65                                      |     1|
+|149   |      \PE_MUL[2].MUL         |mul_66                                      |     1|
+|150   |      \PE_MUL[3].MUL         |mul_67                                      |     1|
+|151   |      \PE_MUL[4].MUL         |mul_68                                      |     1|
+|152   |      \PE_MUL[5].MUL         |mul_69                                      |     1|
+|153   |      \PE_MUL[6].MUL         |mul_70                                      |     1|
+|154   |      \PE_MUL[7].MUL         |mul_71                                      |     1|
+|155   |      \PE_MUL[8].MUL         |mul_72                                      |     1|
+|156   |      \PE_MUL[9].MUL         |mul_73                                      |     1|
+|157   |    \PE_ARRAY3[1].PE_Ch3     |PE_23                                       |  1713|
+|158   |      ACC                    |acc                                         |  1656|
+|159   |      \PE_MUL[0].MUL         |mul                                         |     1|
+|160   |      \PE_MUL[10].MUL        |mul_24                                      |     1|
+|161   |      \PE_MUL[11].MUL        |mul_25                                      |     1|
+|162   |      \PE_MUL[12].MUL        |mul_26                                      |     1|
+|163   |      \PE_MUL[13].MUL        |mul_27                                      |     1|
+|164   |      \PE_MUL[14].MUL        |mul_28                                      |     1|
+|165   |      \PE_MUL[15].MUL        |mul_29                                      |     1|
+|166   |      \PE_MUL[16].MUL        |mul_30                                      |     1|
+|167   |      \PE_MUL[17].MUL        |mul_31                                      |     1|
+|168   |      \PE_MUL[18].MUL        |mul_32                                      |     1|
+|169   |      \PE_MUL[19].MUL        |mul_33                                      |     1|
+|170   |      \PE_MUL[1].MUL         |mul_34                                      |     1|
+|171   |      \PE_MUL[20].MUL        |mul_35                                      |     1|
+|172   |      \PE_MUL[21].MUL        |mul_36                                      |     1|
+|173   |      \PE_MUL[22].MUL        |mul_37                                      |     1|
+|174   |      \PE_MUL[23].MUL        |mul_38                                      |     1|
+|175   |      \PE_MUL[24].MUL        |mul_39                                      |     1|
+|176   |      \PE_MUL[2].MUL         |mul_40                                      |     1|
+|177   |      \PE_MUL[3].MUL         |mul_41                                      |     1|
+|178   |      \PE_MUL[4].MUL         |mul_42                                      |     1|
+|179   |      \PE_MUL[5].MUL         |mul_43                                      |     1|
+|180   |      \PE_MUL[6].MUL         |mul_44                                      |     1|
+|181   |      \PE_MUL[7].MUL         |mul_45                                      |     1|
+|182   |      \PE_MUL[8].MUL         |mul_46                                      |     1|
+|183   |      \PE_MUL[9].MUL         |mul_47                                      |     1|
+|184   |  ShiftBuf_ch1               |BUF2                                        |    24|
+|185   |  ShiftBuf_ch2               |BUF2_6                                      |    24|
+|186   |  ShiftBuf_ch3               |BUF2_7                                      |    24|
+|187   |  conv_wrom_ch1              |single_port_bram                            |   370|
+|188   |  conv_wrom_ch2              |single_port_bram__parameterized0            |   370|
+|189   |  conv_wrom_ch3              |single_port_bram__parameterized1            |   370|
+|190   |  fc_Layer                   |FC_Layer                                    |   980|
+|191   |    matmul_inst              |matmul                                      |   651|
+|192   |      \mac_inst[0].MAC_inst  |MAC                                         |    75|
+|193   |      \mac_inst[1].MAC_inst  |MAC_8                                       |    58|
+|194   |      \mac_inst[2].MAC_inst  |MAC_9                                       |    70|
+|195   |      \mac_inst[3].MAC_inst  |MAC_10                                      |    58|
+|196   |      \mac_inst[4].MAC_inst  |MAC_11                                      |    70|
+|197   |      \mac_inst[5].MAC_inst  |MAC_12                                      |    58|
+|198   |      \mac_inst[6].MAC_inst  |MAC_13                                      |    70|
+|199   |      \mac_inst[7].MAC_inst  |MAC_14                                      |    58|
+|200   |      \mac_inst[8].MAC_inst  |MAC_15                                      |    70|
+|201   |      \mac_inst[9].MAC_inst  |MAC_16                                      |    64|
+|202   |    max_finder_inst          |Max_finder                                  |   329|
+|203   |  global_ctrl                |glbl_controller                             |   515|
++------+-----------------------------+--------------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:29 ; elapsed = 00:01:33 . Memory (MB): peak = 1199.262 ; gain = 647.695
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 12 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:20 ; elapsed = 00:01:28 . Memory (MB): peak = 1199.262 ; gain = 459.234
+Synthesis Optimization Complete : Time (s): cpu = 00:01:29 ; elapsed = 00:01:34 . Memory (MB): peak = 1199.262 ; gain = 647.695
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 2701 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1199.262 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 33 instances were transformed.
+  LD => LDCE: 8 instances
+  LDC => LDCE: 25 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+279 Infos, 50 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:37 ; elapsed = 00:01:43 . Memory (MB): peak = 1199.262 ; gain = 897.691
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1199.262 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/synth_1/top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Nov 24 10:03:57 2024...

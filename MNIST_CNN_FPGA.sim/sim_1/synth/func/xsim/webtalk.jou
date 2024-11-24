@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Nov 21 16:59:41 2024
+# Process ID: 20640
+# Current directory: F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.sim/sim_1/synth/func/xsim
+# Command line: wbtcv.exe -mode batch -source F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.sim/sim_1/synth/func/xsim/xsim.dir/tb_top_func_synth/webtalk/xsim_webtalk.tcl -notrace
+# Log file: F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.sim/sim_1/synth/func/xsim/webtalk.log
+# Journal file: F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.sim/sim_1/synth/func/xsim\webtalk.jou
+#-----------------------------------------------------------
+source F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.sim/sim_1/synth/func/xsim/xsim.dir/tb_top_func_synth/webtalk/xsim_webtalk.tcl -notrace

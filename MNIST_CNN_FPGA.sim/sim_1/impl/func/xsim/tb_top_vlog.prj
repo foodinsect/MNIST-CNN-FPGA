@@ -1,0 +1,9 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"tb_top_func_impl.v" \
+
+sv xil_defaultlib  \
+"../../../../../MNIST_CNN_FPGA.srcs/sim_1/new/tb_top.sv" \
+
+# Do not sort compile order
+nosort

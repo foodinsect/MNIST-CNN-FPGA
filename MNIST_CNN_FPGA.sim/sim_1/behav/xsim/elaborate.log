@@ -1,0 +1,40 @@
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 00141a858f8644ca84cc9f42cd653d50 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 5 for port 'result' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sim_1/new/tb_top.sv:16]
+WARNING: [VRFC 10-3091] actual bit length 5 differs from formal bit length 4 for port 'result_o' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/top.sv:216]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/TDP.v" Line 8. Module xilinx_true_dual_port_no_change_1_clock_ram(RAM_DEPTH=7840,RAM_PERFORMANCE="LOW_LATENCY",INIT_FILE="F:/cnn_verilog/INT8_input_image_hex.txt") doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.glbl_controller
+Compiling module xil_defaultlib.MAC
+Compiling module xil_defaultlib.matmul_default
+Compiling module xil_defaultlib.Max_finder
+Compiling module xil_defaultlib.FC_Layer
+Compiling module xil_defaultlib.FC_Controller
+Compiling module xil_defaultlib.mul
+Compiling module xil_defaultlib.acc
+Compiling module xil_defaultlib.PE_default
+Compiling module xil_defaultlib.Accumulator
+Compiling module xil_defaultlib.PE_Array_default
+Compiling module xil_defaultlib.Comparator
+Compiling module xil_defaultlib.FIFO
+Compiling module xil_defaultlib.MaxPooling_ReLU
+Compiling module xil_defaultlib.BUF1
+Compiling module xil_defaultlib.BUF2
+Compiling module xil_defaultlib.single_port_bram(INIT_FILE="F:/c...
+Compiling module xil_defaultlib.single_port_bram(INIT_FILE="F:/c...
+Compiling module xil_defaultlib.single_port_bram(INIT_FILE="F:/c...
+Compiling module xil_defaultlib.single_port_bram(WIDTH=80,DEPTH=...
+Compiling module xil_defaultlib.FC_Bias_ROM(FILENAME="F:/cnn_ver...
+Compiling module xil_defaultlib.xilinx_true_dual_port_no_change_...
+Compiling module xil_defaultlib.Sliding_Window
+Compiling module xil_defaultlib.Bias_ROM(FILENAME1="F:/cnn_veril...
+Compiling module xil_defaultlib.top
+Compiling module xil_defaultlib.tb_top
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_top_behav
