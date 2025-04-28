@@ -1,0 +1,87 @@
+#include "xil_printf.h"
+#include "xil_io.h"
+#include "xparameters.h"
+#include "xscugic.h"
+#include "xil_exception.h"
+
+/* — Vivado가 만들어 준 주소 매크로 — */
+#define CNN_BASE     XPAR_MYMNIST_CNN_0_S00_AXI_BASEADDR
+#define BRAM_BASE    XPAR_BRAM_0_BASEADDR
+
+/* CNN IP에 우리가 정의해 둔 레지스터 오프셋
+   (예: Control=0x00, Status=0x04, Length=0x08) */
+#define CNN_REG_CONTROL   0x00
+#define CNN_REG_STATUS    0x04
+#define CNN_REG_LENGTH    0x08
+
+#define IN_IMG_NUM        10
+
+/* Interrupt 설정용 */
+#define INTC_DEVICE_ID   XPAR_SCUGIC_SINGLE_DEVICE_ID
+#define INTR_ID          XPAR_FABRIC_MYMNIST_CNN_0_OIRQ_INTR
+
+static XScuGic Intc;
+
+/* 인터럽트 핸들러 */
+static void done_handler(void *CallbackRef)
+{
+    u32 status = Xil_In32(CNN_BASE + CNN_REG_STATUS);
+    if (status & 0x1) {
+        xil_printf("\r\n=== CNN done, dumping BRAM ===\r\n");
+        for (int i = 0; i < IN_IMG_NUM; i++) {
+            u32 data = Xil_In32(BRAM_BASE + (i << 2));
+            xil_printf("  [%2d] = %u\r\n", i, data);
+        }
+        /* status 클리어 */
+        Xil_Out32(CNN_BASE + CNN_REG_STATUS, 0);
+    }
+}
+
+/* GIC 및 인터럽트 연결 */
+static int setup_interrupt()
+{
+    XScuGic_Config *cfg = XScuGic_LookupConfig(INTC_DEVICE_ID);
+    if (!cfg) return XST_FAILURE;
+    if (XScuGic_CfgInitialize(&Intc, cfg, cfg->CpuBaseAddress) != XST_SUCCESS)
+        return XST_FAILURE;
+
+    Xil_ExceptionInit();
+    Xil_ExceptionRegisterHandler(
+        XIL_EXCEPTION_ID_INT,
+        (Xil_ExceptionHandler)XScuGic_InterruptHandler,
+        &Intc
+    );
+    Xil_ExceptionEnable();
+
+    if (XScuGic_Connect(&Intc, INTR_ID,
+            (Xil_ExceptionHandler)done_handler,
+            NULL) != XST_SUCCESS)
+        return XST_FAILURE;
+
+    XScuGic_Enable(&Intc, INTR_ID);
+    return XST_SUCCESS;
+}
+
+int main()
+{
+    xil_printf("=== PS: start CNN ===\r\n");
+
+    /* 1) 인터럽트 준비 */
+    if (setup_interrupt() != XST_SUCCESS) {
+        xil_printf("ERROR: interrupt setup\r\n");
+        return -1;
+    }
+
+    /* 2) Length 레지스터에 이미지 수 써주기 */
+    Xil_Out32(CNN_BASE + CNN_REG_LENGTH, IN_IMG_NUM);
+
+    /* 3) Control 레지스터에서 bit0=start=1로 토글 */
+    Xil_Out32(CNN_BASE + CNN_REG_CONTROL, 0x1);
+    Xil_Out32(CNN_BASE + CNN_REG_CONTROL, 0x0);
+
+    xil_printf("Waiting for DONE interrupt...\r\n");
+    while (1) {
+        /* idle; 인터럽트 발생 시 handler에서 BRAM 덤프 */
+    }
+    return 0;
+}

@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_top_cnn_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_top_cnn" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="127400000001fs"></ZoomEndTime>
+      <Cursor1Time time="73255000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="206"></NameColumnWidth>
+      <ValueColumnWidth column_width="188"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="72" />
+   <wvobject fp_name="/tb_top_cnn/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/rst_n" type="logic">
+      <obj_property name="ElementShortName">rst_n</obj_property>
+      <obj_property name="ObjectShortName">rst_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/start_i" type="logic">
+      <obj_property name="ElementShortName">start_i</obj_property>
+      <obj_property name="ObjectShortName">start_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/done_intr_o" type="logic">
+      <obj_property name="ElementShortName">done_intr_o</obj_property>
+      <obj_property name="ObjectShortName">done_intr_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/done_led_o" type="logic">
+      <obj_property name="ElementShortName">done_led_o</obj_property>
+      <obj_property name="ObjectShortName">done_led_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/y_buf_en" type="logic">
+      <obj_property name="ElementShortName">y_buf_en</obj_property>
+      <obj_property name="ObjectShortName">y_buf_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/y_buf_wr_en" type="logic">
+      <obj_property name="ElementShortName">y_buf_wr_en</obj_property>
+      <obj_property name="ObjectShortName">y_buf_wr_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/y_buf_data" type="array">
+      <obj_property name="ElementShortName">y_buf_data[3:0]</obj_property>
+      <obj_property name="ObjectShortName">y_buf_data[3:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/y_buf_addr" type="array">
+      <obj_property name="ElementShortName">y_buf_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">y_buf_addr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/IN_IMG_NUM" type="array">
+      <obj_property name="ElementShortName">IN_IMG_NUM[31:0]</obj_property>
+      <obj_property name="ObjectShortName">IN_IMG_NUM[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/Y_BUF_DATA_WIDTH" type="array">
+      <obj_property name="ElementShortName">Y_BUF_DATA_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Y_BUF_DATA_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/Y_BUF_ADDR_WIDTH" type="array">
+      <obj_property name="ElementShortName">Y_BUF_ADDR_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Y_BUF_ADDR_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/RBAW" type="array">
+      <obj_property name="ElementShortName">RBAW[31:0]</obj_property>
+      <obj_property name="ObjectShortName">RBAW[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider1840">
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/all_clear" type="logic">
+      <obj_property name="ElementShortName">all_clear</obj_property>
+      <obj_property name="ObjectShortName">all_clear</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/PE_data_in" type="array">
+      <obj_property name="ElementShortName">PE_data_in[0:5][11:0]</obj_property>
+      <obj_property name="ObjectShortName">PE_data_in[0:5][11:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject fp_name="group1848" type="group">
+      <obj_property name="label">BUF1</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_top_cnn/dut/cnn_core/BUF1_out1" type="array">
+         <obj_property name="ElementShortName">BUF1_out1[0:5][11:0]</obj_property>
+         <obj_property name="ObjectShortName">BUF1_out1[0:5][11:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_cnn/dut/cnn_core/BUF1_out2" type="array">
+         <obj_property name="ElementShortName">BUF1_out2[0:5][11:0]</obj_property>
+         <obj_property name="ObjectShortName">BUF1_out2[0:5][11:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_cnn/dut/cnn_core/BUF1_out3" type="array">
+         <obj_property name="ElementShortName">BUF1_out3[0:5][11:0]</obj_property>
+         <obj_property name="ObjectShortName">BUF1_out3[0:5][11:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/Conv_Layer" type="array">
+      <obj_property name="ElementShortName">Conv_Layer[2:0]</obj_property>
+      <obj_property name="ObjectShortName">Conv_Layer[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/conv_out1" type="array">
+      <obj_property name="ElementShortName">conv_out1[0:1][11:0]</obj_property>
+      <obj_property name="ObjectShortName">conv_out1[0:1][11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/conv_out2" type="array">
+      <obj_property name="ElementShortName">conv_out2[0:1][11:0]</obj_property>
+      <obj_property name="ObjectShortName">conv_out2[0:1][11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/conv_out3" type="array">
+      <obj_property name="ElementShortName">conv_out3[0:1][11:0]</obj_property>
+      <obj_property name="ObjectShortName">conv_out3[0:1][11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/FIFO_out1" type="array">
+      <obj_property name="ElementShortName">FIFO_out1[0:1][11:0]</obj_property>
+      <obj_property name="ObjectShortName">FIFO_out1[0:1][11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/FIFO_out2" type="array">
+      <obj_property name="ElementShortName">FIFO_out2[0:1][11:0]</obj_property>
+      <obj_property name="ObjectShortName">FIFO_out2[0:1][11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/FIFO_out3" type="array">
+      <obj_property name="ElementShortName">FIFO_out3[0:1][11:0]</obj_property>
+      <obj_property name="ObjectShortName">FIFO_out3[0:1][11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/MAX_out1" type="array">
+      <obj_property name="ElementShortName">MAX_out1[11:0]</obj_property>
+      <obj_property name="ObjectShortName">MAX_out1[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/MAX_out2" type="array">
+      <obj_property name="ElementShortName">MAX_out2[11:0]</obj_property>
+      <obj_property name="ObjectShortName">MAX_out2[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/MAX_out3" type="array">
+      <obj_property name="ElementShortName">MAX_out3[11:0]</obj_property>
+      <obj_property name="ObjectShortName">MAX_out3[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/BUF2_out1" type="array">
+      <obj_property name="ElementShortName">BUF2_out1[11:0]</obj_property>
+      <obj_property name="ObjectShortName">BUF2_out1[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/BUF2_out2" type="array">
+      <obj_property name="ElementShortName">BUF2_out2[11:0]</obj_property>
+      <obj_property name="ObjectShortName">BUF2_out2[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/BUF2_out3" type="array">
+      <obj_property name="ElementShortName">BUF2_out3[11:0]</obj_property>
+      <obj_property name="ObjectShortName">BUF2_out3[11:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider389">
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/PE_Array/clk_i" type="logic">
+      <obj_property name="ElementShortName">clk_i</obj_property>
+      <obj_property name="ObjectShortName">clk_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/PE_Array/rstn_i" type="logic">
+      <obj_property name="ElementShortName">rstn_i</obj_property>
+      <obj_property name="ObjectShortName">rstn_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/PE_Array/Layer_change_i" type="logic">
+      <obj_property name="ElementShortName">Layer_change_i</obj_property>
+      <obj_property name="ObjectShortName">Layer_change_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/PE_Array/en_i" type="logic">
+      <obj_property name="ElementShortName">en_i</obj_property>
+      <obj_property name="ObjectShortName">en_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/PE_Array/valid_i" type="logic">
+      <obj_property name="ElementShortName">valid_i</obj_property>
+      <obj_property name="ObjectShortName">valid_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/PE_Array/valid_o" type="logic">
+      <obj_property name="ElementShortName">valid_o</obj_property>
+      <obj_property name="ObjectShortName">valid_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/PE_Array/clear_i" type="logic">
+      <obj_property name="ElementShortName">clear_i</obj_property>
+      <obj_property name="ObjectShortName">clear_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/PE_Array/acc_wr_en_i" type="logic">
+      <obj_property name="ElementShortName">acc_wr_en_i</obj_property>
+      <obj_property name="ObjectShortName">acc_wr_en_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/PE_Array/acc_rd_en_i" type="logic">
+      <obj_property name="ElementShortName">acc_rd_en_i</obj_property>
+      <obj_property name="ObjectShortName">acc_rd_en_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/PE_Array/data_in" type="array">
+      <obj_property name="ElementShortName">data_in[0:5][11:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in[0:5][11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/PE_Array/conv_weight_ch1" type="array">
+      <obj_property name="ElementShortName">conv_weight_ch1[0:24][7:0]</obj_property>
+      <obj_property name="ObjectShortName">conv_weight_ch1[0:24][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/PE_Array/conv_weight_ch2" type="array">
+      <obj_property name="ElementShortName">conv_weight_ch2[0:24][7:0]</obj_property>
+      <obj_property name="ObjectShortName">conv_weight_ch2[0:24][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/PE_Array/conv_weight_ch3" type="array">
+      <obj_property name="ElementShortName">conv_weight_ch3[0:24][7:0]</obj_property>
+      <obj_property name="ObjectShortName">conv_weight_ch3[0:24][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/PE_Array/bias_in" type="array">
+      <obj_property name="ElementShortName">bias_in[0:2][7:0]</obj_property>
+      <obj_property name="ObjectShortName">bias_in[0:2][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/PE_Array/conv_out1" type="array">
+      <obj_property name="ElementShortName">conv_out1[0:1][11:0]</obj_property>
+      <obj_property name="ObjectShortName">conv_out1[0:1][11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/PE_Array/conv_out2" type="array">
+      <obj_property name="ElementShortName">conv_out2[0:1][11:0]</obj_property>
+      <obj_property name="ObjectShortName">conv_out2[0:1][11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/PE_Array/conv_out3" type="array">
+      <obj_property name="ElementShortName">conv_out3[0:1][11:0]</obj_property>
+      <obj_property name="ObjectShortName">conv_out3[0:1][11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/PE_Array/pe_out1" type="array">
+      <obj_property name="ElementShortName">pe_out1[0:1][19:0]</obj_property>
+      <obj_property name="ObjectShortName">pe_out1[0:1][19:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/PE_Array/pe_out2" type="array">
+      <obj_property name="ElementShortName">pe_out2[0:1][19:0]</obj_property>
+      <obj_property name="ObjectShortName">pe_out2[0:1][19:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/PE_Array/pe_out3" type="array">
+      <obj_property name="ElementShortName">pe_out3[0:1][19:0]</obj_property>
+      <obj_property name="ObjectShortName">pe_out3[0:1][19:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/PE_Array/conv_sum1" type="array">
+      <obj_property name="ElementShortName">conv_sum1[0:1][11:0]</obj_property>
+      <obj_property name="ObjectShortName">conv_sum1[0:1][11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/PE_Array/conv_sum2" type="array">
+      <obj_property name="ElementShortName">conv_sum2[0:1][11:0]</obj_property>
+      <obj_property name="ObjectShortName">conv_sum2[0:1][11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/PE_Array/conv_sum3" type="array">
+      <obj_property name="ElementShortName">conv_sum3[0:1][11:0]</obj_property>
+      <obj_property name="ObjectShortName">conv_sum3[0:1][11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/PE_Array/PE_Slice1" type="array">
+      <obj_property name="ElementShortName">PE_Slice1[0:1][11:0]</obj_property>
+      <obj_property name="ObjectShortName">PE_Slice1[0:1][11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/PE_Array/PE_Slice2" type="array">
+      <obj_property name="ElementShortName">PE_Slice2[0:1][11:0]</obj_property>
+      <obj_property name="ObjectShortName">PE_Slice2[0:1][11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/PE_Array/PE_Slice3" type="array">
+      <obj_property name="ElementShortName">PE_Slice3[0:1][11:0]</obj_property>
+      <obj_property name="ObjectShortName">PE_Slice3[0:1][11:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider390">
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/Layer_change" type="logic">
+      <obj_property name="ElementShortName">Layer_change</obj_property>
+      <obj_property name="ObjectShortName">Layer_change</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/Weight_en" type="logic">
+      <obj_property name="ElementShortName">Weight_en</obj_property>
+      <obj_property name="ObjectShortName">Weight_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/Weight_packed_en" type="logic">
+      <obj_property name="ElementShortName">Weight_packed_en</obj_property>
+      <obj_property name="ObjectShortName">Weight_packed_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/Conv_Layer" type="array">
+      <obj_property name="ElementShortName">Conv_Layer[2:0]</obj_property>
+      <obj_property name="ObjectShortName">Conv_Layer[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/conv_weight_ch1_packed" type="array">
+      <obj_property name="ElementShortName">conv_weight_ch1_packed[39:0]</obj_property>
+      <obj_property name="ObjectShortName">conv_weight_ch1_packed[39:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/conv_weight_ch2_packed" type="array">
+      <obj_property name="ElementShortName">conv_weight_ch2_packed[39:0]</obj_property>
+      <obj_property name="ObjectShortName">conv_weight_ch2_packed[39:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/conv_weight_ch3_packed" type="array">
+      <obj_property name="ElementShortName">conv_weight_ch3_packed[39:0]</obj_property>
+      <obj_property name="ObjectShortName">conv_weight_ch3_packed[39:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/conv_weight_ch1" type="array">
+      <obj_property name="ElementShortName">conv_weight_ch1[0:24][7:0]</obj_property>
+      <obj_property name="ObjectShortName">conv_weight_ch1[0:24][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/conv_weight_ch2" type="array">
+      <obj_property name="ElementShortName">conv_weight_ch2[0:24][7:0]</obj_property>
+      <obj_property name="ObjectShortName">conv_weight_ch2[0:24][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/conv_weight_ch3" type="array">
+      <obj_property name="ElementShortName">conv_weight_ch3[0:24][7:0]</obj_property>
+      <obj_property name="ObjectShortName">conv_weight_ch3[0:24][7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_top_cnn/dut/cnn_core/weight_row_counter" type="array">
+      <obj_property name="ElementShortName">weight_row_counter[2:0]</obj_property>
+      <obj_property name="ObjectShortName">weight_row_counter[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider416">
+      <obj_property name="label">Y_BUF</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="group417" type="group">
+      <obj_property name="label">Y_BUF</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/tb_top_cnn/dut/cnn_core/y_buf/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_cnn/dut/cnn_core/y_buf/rst_n" type="logic">
+         <obj_property name="ElementShortName">rst_n</obj_property>
+         <obj_property name="ObjectShortName">rst_n</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_cnn/dut/cnn_core/y_buf/buf_wr_start" type="logic">
+         <obj_property name="ElementShortName">buf_wr_start</obj_property>
+         <obj_property name="ObjectShortName">buf_wr_start</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_cnn/dut/cnn_core/y_buf/data_in" type="array">
+         <obj_property name="ElementShortName">data_in[319:0]</obj_property>
+         <obj_property name="ObjectShortName">data_in[319:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_cnn/dut/cnn_core/y_buf/y_buf_addr" type="array">
+         <obj_property name="ElementShortName">y_buf_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">y_buf_addr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_cnn/dut/cnn_core/y_buf/y_buf_data" type="array">
+         <obj_property name="ElementShortName">y_buf_data[3:0]</obj_property>
+         <obj_property name="ObjectShortName">y_buf_data[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_cnn/dut/cnn_core/y_buf/y_buf_en" type="logic">
+         <obj_property name="ElementShortName">y_buf_en</obj_property>
+         <obj_property name="ObjectShortName">y_buf_en</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_cnn/dut/cnn_core/y_buf/y_buf_done" type="logic">
+         <obj_property name="ElementShortName">y_buf_done</obj_property>
+         <obj_property name="ObjectShortName">y_buf_done</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_cnn/dut/cnn_core/y_buf/fc_data" type="array">
+         <obj_property name="ElementShortName">fc_data[0:9][31:0]</obj_property>
+         <obj_property name="ObjectShortName">fc_data[0:9][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_cnn/dut/cnn_core/y_buf/i" type="array">
+         <obj_property name="ElementShortName">i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_cnn/dut/cnn_core/y_buf/en_pipeline" type="array">
+         <obj_property name="ElementShortName">en_pipeline[9:0]</obj_property>
+         <obj_property name="ObjectShortName">en_pipeline[9:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_cnn/dut/cnn_core/y_buf/y_data_buffer" type="array">
+         <obj_property name="ElementShortName">y_data_buffer[0:9][31:0]</obj_property>
+         <obj_property name="ObjectShortName">y_data_buffer[0:9][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_cnn/dut/cnn_core/y_buf/buf_addr_cnt" type="logic">
+         <obj_property name="ElementShortName">buf_addr_cnt</obj_property>
+         <obj_property name="ObjectShortName">buf_addr_cnt</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top_cnn/dut/cnn_core/y_buf/buf_addr" type="array">
+         <obj_property name="ElementShortName">buf_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">buf_addr[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

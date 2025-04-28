@@ -1,5 +1,0 @@
-dc d4 f1 ef 09
-08 f3 f8 0d fb
-14 f7 f1 ee da
-08 1b d7 e5 f9
-f9 1e 19 30 16

@@ -1,0 +1,1284 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Wed Apr 23 14:12:17 2025
+| Host         : DESKTOP-2TI4DL6 running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -max_paths 10 -file design_1_wrapper_timing_summary_routed.rpt -pb design_1_wrapper_timing_summary_routed.pb -rpx design_1_wrapper_timing_summary_routed.rpx -warn_on_violation
+| Design       : design_1_wrapper
+| Device       : 7z020-clg400
+| Speed File   : -1  PRODUCTION 1.11 2014-09-11
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock
+2. checking constant_clock
+3. checking pulse_width_clock
+4. checking unconstrained_internal_endpoints
+5. checking no_input_delay
+6. checking no_output_delay
+7. checking multiple_clock
+8. checking generated_clocks
+9. checking loops
+10. checking partial_input_delay
+11. checking partial_output_delay
+12. checking latch_loops
+
+1. checking no_clock
+--------------------
+ There are 8 register/latch pins with no clock driven by root clock pin: design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/FC_Ctrl/FSM_onehot_current_state_reg[0]/Q (HIGH)
+
+ There are 8 register/latch pins with no clock driven by root clock pin: design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/FC_Ctrl/FSM_onehot_current_state_reg[1]/Q (HIGH)
+
+ There are 8 register/latch pins with no clock driven by root clock pin: design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/FC_Ctrl/FSM_onehot_current_state_reg[2]/Q (HIGH)
+
+ There are 8 register/latch pins with no clock driven by root clock pin: design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/FC_Ctrl/FSM_onehot_current_state_reg[3]/Q (HIGH)
+
+ There are 8 register/latch pins with no clock driven by root clock pin: design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/FC_Ctrl/FSM_onehot_current_state_reg[4]/Q (HIGH)
+
+ There are 8 register/latch pins with no clock driven by root clock pin: design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/FC_Ctrl/FSM_onehot_current_state_reg[5]/Q (HIGH)
+
+ There are 8 register/latch pins with no clock driven by root clock pin: design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/FC_Ctrl/FSM_onehot_current_state_reg[6]/Q (HIGH)
+
+ There are 8 register/latch pins with no clock driven by root clock pin: design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/FC_Ctrl/FSM_onehot_current_state_reg[7]/Q (HIGH)
+
+ There are 25 register/latch pins with no clock driven by root clock pin: design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/FSM_sequential_current_state_reg[0]/Q (HIGH)
+
+ There are 25 register/latch pins with no clock driven by root clock pin: design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/FSM_sequential_current_state_reg[1]/Q (HIGH)
+
+ There are 25 register/latch pins with no clock driven by root clock pin: design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/FSM_sequential_current_state_reg[2]/Q (HIGH)
+
+ There are 25 register/latch pins with no clock driven by root clock pin: design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/FSM_sequential_current_state_reg[3]/Q (HIGH)
+
+
+2. checking constant_clock
+--------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock
+-----------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints
+--------------------------------------------
+ There are 58 pins that are not constrained for maximum delay. (HIGH)
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay
+--------------------------
+ There are 2 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay
+---------------------------
+ There is 1 port with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock
+--------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks
+----------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops
+-----------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay
+--------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay
+---------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops
+------------------------
+ There are 23 combinational latch loops in the design through latch input (HIGH)
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+      5.253        0.000                      0                55673        0.018        0.000                      0                55673        8.750        0.000                       0                 21746  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock       Waveform(ns)       Period(ns)      Frequency(MHz)
+-----       ------------       ----------      --------------
+clk_fpga_0  {0.000 10.000}     20.000          50.000          
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+clk_fpga_0          5.253        0.000                      0                55673        0.018        0.000                      0                55673        8.750        0.000                       0                 21746  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_fpga_0
+  To Clock:  clk_fpga_0
+
+Setup :            0  Failing Endpoints,  Worst Slack        5.253ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.018ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        8.750ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             5.253ns  (required time - arrival time)
+  Source:                 design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/PE_valid_i_reg/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[9].MUL/result_reg/RSTP
+                            (rising edge-triggered cell DSP48E1 clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (clk_fpga_0 rise@20.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        14.061ns  (logic 0.580ns (4.125%)  route 13.481ns (95.875%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        -0.037ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.877ns = ( 22.877 - 20.000 ) 
+    Source Clock Delay      (SCD):    3.029ns
+    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Uncertainty:      0.302ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.600ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.193     1.193    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     1.294 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       1.735     3.029    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/clk_i
+    SLICE_X81Y38         FDRE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/PE_valid_i_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X81Y38         FDRE (Prop_fdre_C_Q)         0.456     3.485 f  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/PE_valid_i_reg/Q
+                         net (fo=365, routed)         5.824     9.309    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/PE_valid_i
+    SLICE_X31Y68         LUT2 (Prop_lut2_I0_O)        0.124     9.433 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/result_reg_i_1__2/O
+                         net (fo=34, routed)          7.656    17.090    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[9].MUL/result_reg_2
+    DSP48_X4Y22          DSP48E1                                      r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[9].MUL/result_reg/RSTP
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     20.000    20.000 r  
+    PS7_X0Y0             PS7                          0.000    20.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.088    21.088    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    21.179 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       1.698    22.877    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[9].MUL/clk_i
+    DSP48_X4Y22          DSP48E1                                      r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[9].MUL/result_reg/CLK
+                         clock pessimism              0.115    22.992    
+                         clock uncertainty           -0.302    22.690    
+    DSP48_X4Y22          DSP48E1 (Setup_dsp48e1_CLK_RSTP)
+                                                     -0.347    22.343    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[9].MUL/result_reg
+  -------------------------------------------------------------------
+                         required time                         22.343    
+                         arrival time                         -17.090    
+  -------------------------------------------------------------------
+                         slack                                  5.253    
+
+Slack (MET) :             5.586ns  (required time - arrival time)
+  Source:                 design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/PE_valid_i_reg/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[14].MUL/result_reg/RSTP
+                            (rising edge-triggered cell DSP48E1 clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (clk_fpga_0 rise@20.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        13.861ns  (logic 0.580ns (4.185%)  route 13.281ns (95.815%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        0.096ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.895ns = ( 22.895 - 20.000 ) 
+    Source Clock Delay      (SCD):    3.029ns
+    Clock Pessimism Removal (CPR):    0.230ns
+  Clock Uncertainty:      0.302ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.600ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.193     1.193    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     1.294 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       1.735     3.029    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/clk_i
+    SLICE_X81Y38         FDRE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/PE_valid_i_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X81Y38         FDRE (Prop_fdre_C_Q)         0.456     3.485 f  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/PE_valid_i_reg/Q
+                         net (fo=365, routed)         5.824     9.309    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/PE_valid_i
+    SLICE_X31Y68         LUT2 (Prop_lut2_I0_O)        0.124     9.433 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/result_reg_i_1__2/O
+                         net (fo=34, routed)          7.456    16.890    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[14].MUL/result_reg_2
+    DSP48_X4Y19          DSP48E1                                      r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[14].MUL/result_reg/RSTP
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     20.000    20.000 r  
+    PS7_X0Y0             PS7                          0.000    20.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.088    21.088    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    21.179 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       1.716    22.895    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[14].MUL/clk_i
+    DSP48_X4Y19          DSP48E1                                      r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[14].MUL/result_reg/CLK
+                         clock pessimism              0.230    23.125    
+                         clock uncertainty           -0.302    22.822    
+    DSP48_X4Y19          DSP48E1 (Setup_dsp48e1_CLK_RSTP)
+                                                     -0.347    22.475    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[14].MUL/result_reg
+  -------------------------------------------------------------------
+                         required time                         22.475    
+                         arrival time                         -16.890    
+  -------------------------------------------------------------------
+                         slack                                  5.586    
+
+Slack (MET) :             5.766ns  (required time - arrival time)
+  Source:                 design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/PE_valid_i_reg/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[8].MUL/result_reg/RSTP
+                            (rising edge-triggered cell DSP48E1 clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (clk_fpga_0 rise@20.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        13.545ns  (logic 0.580ns (4.282%)  route 12.965ns (95.718%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        -0.040ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.874ns = ( 22.874 - 20.000 ) 
+    Source Clock Delay      (SCD):    3.029ns
+    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Uncertainty:      0.302ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.600ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.193     1.193    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     1.294 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       1.735     3.029    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/clk_i
+    SLICE_X81Y38         FDRE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/PE_valid_i_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X81Y38         FDRE (Prop_fdre_C_Q)         0.456     3.485 f  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/PE_valid_i_reg/Q
+                         net (fo=365, routed)         5.824     9.309    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/PE_valid_i
+    SLICE_X31Y68         LUT2 (Prop_lut2_I0_O)        0.124     9.433 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/result_reg_i_1__2/O
+                         net (fo=34, routed)          7.141    16.574    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[8].MUL/result_reg_2
+    DSP48_X3Y21          DSP48E1                                      r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[8].MUL/result_reg/RSTP
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     20.000    20.000 r  
+    PS7_X0Y0             PS7                          0.000    20.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.088    21.088    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    21.179 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       1.695    22.874    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[8].MUL/clk_i
+    DSP48_X3Y21          DSP48E1                                      r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[8].MUL/result_reg/CLK
+                         clock pessimism              0.115    22.989    
+                         clock uncertainty           -0.302    22.687    
+    DSP48_X3Y21          DSP48E1 (Setup_dsp48e1_CLK_RSTP)
+                                                     -0.347    22.340    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[8].MUL/result_reg
+  -------------------------------------------------------------------
+                         required time                         22.340    
+                         arrival time                         -16.574    
+  -------------------------------------------------------------------
+                         slack                                  5.766    
+
+Slack (MET) :             6.019ns  (required time - arrival time)
+  Source:                 design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/PE_valid_i_reg/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[13].MUL/result_reg/RSTP
+                            (rising edge-triggered cell DSP48E1 clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (clk_fpga_0 rise@20.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        13.426ns  (logic 0.580ns (4.320%)  route 12.846ns (95.680%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        0.095ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.894ns = ( 22.894 - 20.000 ) 
+    Source Clock Delay      (SCD):    3.029ns
+    Clock Pessimism Removal (CPR):    0.230ns
+  Clock Uncertainty:      0.302ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.600ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.193     1.193    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     1.294 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       1.735     3.029    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/clk_i
+    SLICE_X81Y38         FDRE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/PE_valid_i_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X81Y38         FDRE (Prop_fdre_C_Q)         0.456     3.485 f  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/PE_valid_i_reg/Q
+                         net (fo=365, routed)         5.824     9.309    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/PE_valid_i
+    SLICE_X31Y68         LUT2 (Prop_lut2_I0_O)        0.124     9.433 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/result_reg_i_1__2/O
+                         net (fo=34, routed)          7.022    16.455    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[13].MUL/result_reg_2
+    DSP48_X4Y18          DSP48E1                                      r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[13].MUL/result_reg/RSTP
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     20.000    20.000 r  
+    PS7_X0Y0             PS7                          0.000    20.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.088    21.088    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    21.179 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       1.715    22.894    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[13].MUL/clk_i
+    DSP48_X4Y18          DSP48E1                                      r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[13].MUL/result_reg/CLK
+                         clock pessimism              0.230    23.124    
+                         clock uncertainty           -0.302    22.821    
+    DSP48_X4Y18          DSP48E1 (Setup_dsp48e1_CLK_RSTP)
+                                                     -0.347    22.474    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[13].MUL/result_reg
+  -------------------------------------------------------------------
+                         required time                         22.474    
+                         arrival time                         -16.455    
+  -------------------------------------------------------------------
+                         slack                                  6.019    
+
+Slack (MET) :             6.072ns  (required time - arrival time)
+  Source:                 design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/FSM_sequential_current_state_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[3][16]/CE
+                            (rising edge-triggered cell FDCE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (clk_fpga_0 rise@20.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        13.139ns  (logic 0.606ns (4.612%)  route 12.533ns (95.388%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        -0.080ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.830ns = ( 22.830 - 20.000 ) 
+    Source Clock Delay      (SCD):    3.025ns
+    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Uncertainty:      0.302ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.600ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.193     1.193    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     1.294 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       1.731     3.025    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/clk_i
+    SLICE_X78Y37         FDRE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/FSM_sequential_current_state_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X78Y37         FDRE (Prop_fdre_C_Q)         0.456     3.481 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/FSM_sequential_current_state_reg[2]/Q
+                         net (fo=53, routed)          1.105     4.586    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/current_state[2]
+    SLICE_X81Y38         LUT5 (Prop_lut5_I2_O)        0.150     4.736 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/level1[12][19]_i_1/O
+                         net (fo=3240, routed)       11.429    16.164    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/E[0]
+    SLICE_X37Y139        FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[3][16]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     20.000    20.000 r  
+    PS7_X0Y0             PS7                          0.000    20.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.088    21.088    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    21.179 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       1.651    22.830    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/clk_i
+    SLICE_X37Y139        FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[3][16]/C
+                         clock pessimism              0.115    22.945    
+                         clock uncertainty           -0.302    22.643    
+    SLICE_X37Y139        FDCE (Setup_fdce_C_CE)      -0.407    22.236    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[3][16]
+  -------------------------------------------------------------------
+                         required time                         22.236    
+                         arrival time                         -16.164    
+  -------------------------------------------------------------------
+                         slack                                  6.072    
+
+Slack (MET) :             6.072ns  (required time - arrival time)
+  Source:                 design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/FSM_sequential_current_state_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[3][17]/CE
+                            (rising edge-triggered cell FDCE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (clk_fpga_0 rise@20.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        13.139ns  (logic 0.606ns (4.612%)  route 12.533ns (95.388%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        -0.080ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.830ns = ( 22.830 - 20.000 ) 
+    Source Clock Delay      (SCD):    3.025ns
+    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Uncertainty:      0.302ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.600ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.193     1.193    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     1.294 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       1.731     3.025    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/clk_i
+    SLICE_X78Y37         FDRE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/FSM_sequential_current_state_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X78Y37         FDRE (Prop_fdre_C_Q)         0.456     3.481 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/FSM_sequential_current_state_reg[2]/Q
+                         net (fo=53, routed)          1.105     4.586    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/current_state[2]
+    SLICE_X81Y38         LUT5 (Prop_lut5_I2_O)        0.150     4.736 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/level1[12][19]_i_1/O
+                         net (fo=3240, routed)       11.429    16.164    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/E[0]
+    SLICE_X37Y139        FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[3][17]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     20.000    20.000 r  
+    PS7_X0Y0             PS7                          0.000    20.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.088    21.088    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    21.179 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       1.651    22.830    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/clk_i
+    SLICE_X37Y139        FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[3][17]/C
+                         clock pessimism              0.115    22.945    
+                         clock uncertainty           -0.302    22.643    
+    SLICE_X37Y139        FDCE (Setup_fdce_C_CE)      -0.407    22.236    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[3][17]
+  -------------------------------------------------------------------
+                         required time                         22.236    
+                         arrival time                         -16.164    
+  -------------------------------------------------------------------
+                         slack                                  6.072    
+
+Slack (MET) :             6.072ns  (required time - arrival time)
+  Source:                 design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/FSM_sequential_current_state_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[3][18]/CE
+                            (rising edge-triggered cell FDCE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (clk_fpga_0 rise@20.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        13.139ns  (logic 0.606ns (4.612%)  route 12.533ns (95.388%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        -0.080ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.830ns = ( 22.830 - 20.000 ) 
+    Source Clock Delay      (SCD):    3.025ns
+    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Uncertainty:      0.302ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.600ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.193     1.193    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     1.294 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       1.731     3.025    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/clk_i
+    SLICE_X78Y37         FDRE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/FSM_sequential_current_state_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X78Y37         FDRE (Prop_fdre_C_Q)         0.456     3.481 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/FSM_sequential_current_state_reg[2]/Q
+                         net (fo=53, routed)          1.105     4.586    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/current_state[2]
+    SLICE_X81Y38         LUT5 (Prop_lut5_I2_O)        0.150     4.736 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/level1[12][19]_i_1/O
+                         net (fo=3240, routed)       11.429    16.164    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/E[0]
+    SLICE_X37Y139        FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[3][18]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     20.000    20.000 r  
+    PS7_X0Y0             PS7                          0.000    20.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.088    21.088    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    21.179 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       1.651    22.830    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/clk_i
+    SLICE_X37Y139        FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[3][18]/C
+                         clock pessimism              0.115    22.945    
+                         clock uncertainty           -0.302    22.643    
+    SLICE_X37Y139        FDCE (Setup_fdce_C_CE)      -0.407    22.236    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[3][18]
+  -------------------------------------------------------------------
+                         required time                         22.236    
+                         arrival time                         -16.164    
+  -------------------------------------------------------------------
+                         slack                                  6.072    
+
+Slack (MET) :             6.072ns  (required time - arrival time)
+  Source:                 design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/FSM_sequential_current_state_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[3][19]/CE
+                            (rising edge-triggered cell FDCE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (clk_fpga_0 rise@20.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        13.139ns  (logic 0.606ns (4.612%)  route 12.533ns (95.388%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        -0.080ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.830ns = ( 22.830 - 20.000 ) 
+    Source Clock Delay      (SCD):    3.025ns
+    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Uncertainty:      0.302ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.600ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.193     1.193    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     1.294 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       1.731     3.025    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/clk_i
+    SLICE_X78Y37         FDRE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/FSM_sequential_current_state_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X78Y37         FDRE (Prop_fdre_C_Q)         0.456     3.481 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/FSM_sequential_current_state_reg[2]/Q
+                         net (fo=53, routed)          1.105     4.586    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/current_state[2]
+    SLICE_X81Y38         LUT5 (Prop_lut5_I2_O)        0.150     4.736 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/level1[12][19]_i_1/O
+                         net (fo=3240, routed)       11.429    16.164    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/E[0]
+    SLICE_X37Y139        FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[3][19]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     20.000    20.000 r  
+    PS7_X0Y0             PS7                          0.000    20.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.088    21.088    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    21.179 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       1.651    22.830    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/clk_i
+    SLICE_X37Y139        FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[3][19]/C
+                         clock pessimism              0.115    22.945    
+                         clock uncertainty           -0.302    22.643    
+    SLICE_X37Y139        FDCE (Setup_fdce_C_CE)      -0.407    22.236    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[3][19]
+  -------------------------------------------------------------------
+                         required time                         22.236    
+                         arrival time                         -16.164    
+  -------------------------------------------------------------------
+                         slack                                  6.072    
+
+Slack (MET) :             6.091ns  (required time - arrival time)
+  Source:                 design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/PE_valid_i_reg/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[15].MUL/result_reg/RSTP
+                            (rising edge-triggered cell DSP48E1 clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (clk_fpga_0 rise@20.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        13.351ns  (logic 0.580ns (4.344%)  route 12.771ns (95.656%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        0.092ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.891ns = ( 22.891 - 20.000 ) 
+    Source Clock Delay      (SCD):    3.029ns
+    Clock Pessimism Removal (CPR):    0.230ns
+  Clock Uncertainty:      0.302ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.600ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.193     1.193    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     1.294 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       1.735     3.029    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/clk_i
+    SLICE_X81Y38         FDRE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/PE_valid_i_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X81Y38         FDRE (Prop_fdre_C_Q)         0.456     3.485 f  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/PE_valid_i_reg/Q
+                         net (fo=365, routed)         5.824     9.309    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/PE_valid_i
+    SLICE_X31Y68         LUT2 (Prop_lut2_I0_O)        0.124     9.433 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/result_reg_i_1__2/O
+                         net (fo=34, routed)          6.947    16.380    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[15].MUL/result_reg_2
+    DSP48_X3Y18          DSP48E1                                      r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[15].MUL/result_reg/RSTP
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     20.000    20.000 r  
+    PS7_X0Y0             PS7                          0.000    20.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.088    21.088    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    21.179 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       1.712    22.891    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[15].MUL/clk_i
+    DSP48_X3Y18          DSP48E1                                      r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[15].MUL/result_reg/CLK
+                         clock pessimism              0.230    23.121    
+                         clock uncertainty           -0.302    22.818    
+    DSP48_X3Y18          DSP48E1 (Setup_dsp48e1_CLK_RSTP)
+                                                     -0.347    22.471    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[1].PE_Ch1/PE_MUL[15].MUL/result_reg
+  -------------------------------------------------------------------
+                         required time                         22.471    
+                         arrival time                         -16.380    
+  -------------------------------------------------------------------
+                         slack                                  6.091    
+
+Slack (MET) :             6.212ns  (required time - arrival time)
+  Source:                 design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/FSM_sequential_current_state_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[3][12]/CE
+                            (rising edge-triggered cell FDCE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            20.000ns  (clk_fpga_0 rise@20.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        12.998ns  (logic 0.606ns (4.662%)  route 12.392ns (95.338%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        -0.081ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.829ns = ( 22.829 - 20.000 ) 
+    Source Clock Delay      (SCD):    3.025ns
+    Clock Pessimism Removal (CPR):    0.115ns
+  Clock Uncertainty:      0.302ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.600ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.193     1.193    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     1.294 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       1.731     3.025    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/clk_i
+    SLICE_X78Y37         FDRE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/FSM_sequential_current_state_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X78Y37         FDRE (Prop_fdre_C_Q)         0.456     3.481 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/FSM_sequential_current_state_reg[2]/Q
+                         net (fo=53, routed)          1.105     4.586    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/current_state[2]
+    SLICE_X81Y38         LUT5 (Prop_lut5_I2_O)        0.150     4.736 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/level1[12][19]_i_1/O
+                         net (fo=3240, routed)       11.288    16.023    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/E[0]
+    SLICE_X37Y138        FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[3][12]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                     20.000    20.000 r  
+    PS7_X0Y0             PS7                          0.000    20.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           1.088    21.088    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    21.179 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       1.650    22.829    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/clk_i
+    SLICE_X37Y138        FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[3][12]/C
+                         clock pessimism              0.115    22.944    
+                         clock uncertainty           -0.302    22.642    
+    SLICE_X37Y138        FDCE (Setup_fdce_C_CE)      -0.407    22.235    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[3][12]
+  -------------------------------------------------------------------
+                         required time                         22.235    
+                         arrival time                         -16.023    
+  -------------------------------------------------------------------
+                         slack                                  6.212    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.018ns  (arrival time - required time)
+  Source:                 design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[12][6]/C
+                            (rising edge-triggered cell FDCE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level2_reg[6][6]/D
+                            (rising edge-triggered cell FDCE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.286ns  (logic 0.128ns (44.777%)  route 0.158ns (55.223%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.257ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.185ns
+    Source Clock Delay      (SCD):    0.893ns
+    Clock Pessimism Removal (CPR):    0.035ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       0.557     0.893    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/clk_i
+    SLICE_X49Y34         FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[12][6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X49Y34         FDCE (Prop_fdce_C_Q)         0.128     1.021 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[12][6]/Q
+                         net (fo=1, routed)           0.158     1.178    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[12]_216[6]
+    SLICE_X50Y34         FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level2_reg[6][6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       0.819     1.185    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/clk_i
+    SLICE_X50Y34         FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level2_reg[6][6]/C
+                         clock pessimism             -0.035     1.150    
+    SLICE_X50Y34         FDCE (Hold_fdce_C_D)         0.010     1.160    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level2_reg[6][6]
+  -------------------------------------------------------------------
+                         required time                         -1.160    
+                         arrival time                           1.178    
+  -------------------------------------------------------------------
+                         slack                                  0.018    
+
+Slack (MET) :             0.019ns  (arrival time - required time)
+  Source:                 design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[12][5]/C
+                            (rising edge-triggered cell FDCE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level2_reg[6][5]/D
+                            (rising edge-triggered cell FDCE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.287ns  (logic 0.128ns (44.673%)  route 0.159ns (55.327%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.257ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.185ns
+    Source Clock Delay      (SCD):    0.893ns
+    Clock Pessimism Removal (CPR):    0.035ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       0.557     0.893    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/clk_i
+    SLICE_X49Y34         FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[12][5]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X49Y34         FDCE (Prop_fdce_C_Q)         0.128     1.021 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[12][5]/Q
+                         net (fo=1, routed)           0.159     1.179    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[12]_216[5]
+    SLICE_X50Y34         FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level2_reg[6][5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       0.819     1.185    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/clk_i
+    SLICE_X50Y34         FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level2_reg[6][5]/C
+                         clock pessimism             -0.035     1.150    
+    SLICE_X50Y34         FDCE (Hold_fdce_C_D)         0.010     1.160    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level2_reg[6][5]
+  -------------------------------------------------------------------
+                         required time                         -1.160    
+                         arrival time                           1.179    
+  -------------------------------------------------------------------
+                         slack                                  0.019    
+
+Slack (MET) :             0.031ns  (arrival time - required time)
+  Source:                 design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[5]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[16]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.488ns  (logic 0.420ns (86.119%)  route 0.068ns (13.881%))
+  Logic Levels:           4  (CARRY4=4)
+  Clock Path Skew:        0.351ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.330ns
+    Source Clock Delay      (SCD):    0.944ns
+    Clock Pessimism Removal (CPR):    0.035ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       0.608     0.944    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/clk_i
+    SLICE_X95Y97         FDRE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[5]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X95Y97         FDRE (Prop_fdre_C_Q)         0.141     1.085 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[5]/Q
+                         net (fo=2, routed)           0.067     1.152    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg_n_0_[5]
+    SLICE_X95Y97         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.147     1.299 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[7]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     1.299    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[7]_i_1_n_0
+    SLICE_X95Y98         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.039     1.338 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[11]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     1.338    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[11]_i_1_n_0
+    SLICE_X95Y99         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.039     1.377 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[15]_i_1/CO[3]
+                         net (fo=1, routed)           0.001     1.377    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[15]_i_1_n_0
+    SLICE_X95Y100        CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.054     1.431 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[19]_i_1/O[0]
+                         net (fo=1, routed)           0.000     1.431    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[19]_i_1_n_7
+    SLICE_X95Y100        FDRE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[16]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       0.964     1.330    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/clk_i
+    SLICE_X95Y100        FDRE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[16]/C
+                         clock pessimism             -0.035     1.295    
+    SLICE_X95Y100        FDRE (Hold_fdre_C_D)         0.105     1.400    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[16]
+  -------------------------------------------------------------------
+                         required time                         -1.400    
+                         arrival time                           1.431    
+  -------------------------------------------------------------------
+                         slack                                  0.031    
+
+Slack (MET) :             0.037ns  (arrival time - required time)
+  Source:                 design_1_i/axi_smc/inst/m00_exit_pipeline/m00_exit/inst/r_reg/m_vector_i_reg[1062]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            design_1_i/axi_smc/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_24_29/RAMA/I
+                            (rising edge-triggered cell RAMD32 clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.197ns  (logic 0.141ns (71.611%)  route 0.056ns (28.389%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.298ns
+    Source Clock Delay      (SCD):    0.995ns
+    Clock Pessimism Removal (CPR):    0.290ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       0.659     0.995    design_1_i/axi_smc/inst/m00_exit_pipeline/m00_exit/inst/r_reg/aclk
+    SLICE_X55Y102        FDRE                                         r  design_1_i/axi_smc/inst/m00_exit_pipeline/m00_exit/inst/r_reg/m_vector_i_reg[1062]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X55Y102        FDRE (Prop_fdre_C_Q)         0.141     1.136 r  design_1_i/axi_smc/inst/m00_exit_pipeline/m00_exit/inst/r_reg/m_vector_i_reg[1062]/Q
+                         net (fo=1, routed)           0.056     1.192    design_1_i/axi_smc/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_24_29/DIA0
+    SLICE_X54Y102        RAMD32                                       r  design_1_i/axi_smc/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_24_29/RAMA/I
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       0.932     1.298    design_1_i/axi_smc/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_24_29/WCLK
+    SLICE_X54Y102        RAMD32                                       r  design_1_i/axi_smc/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_24_29/RAMA/CLK
+                         clock pessimism             -0.290     1.008    
+    SLICE_X54Y102        RAMD32 (Hold_ramd32_CLK_I)
+                                                      0.147     1.155    design_1_i/axi_smc/inst/m00_nodes/m00_r_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_24_29/RAMA
+  -------------------------------------------------------------------
+                         required time                         -1.155    
+                         arrival time                           1.192    
+  -------------------------------------------------------------------
+                         slack                                  0.037    
+
+Slack (MET) :             0.038ns  (arrival time - required time)
+  Source:                 design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[12][17]/C
+                            (rising edge-triggered cell FDCE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level2_reg[6][17]/D
+                            (rising edge-triggered cell FDCE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.357ns  (logic 0.141ns (39.504%)  route 0.216ns (60.496%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.256ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.187ns
+    Source Clock Delay      (SCD):    0.896ns
+    Clock Pessimism Removal (CPR):    0.035ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       0.560     0.896    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/clk_i
+    SLICE_X45Y38         FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[12][17]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y38         FDCE (Prop_fdce_C_Q)         0.141     1.037 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[12][17]/Q
+                         net (fo=1, routed)           0.216     1.252    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[12]_216[17]
+    SLICE_X50Y37         FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level2_reg[6][17]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       0.821     1.187    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/clk_i
+    SLICE_X50Y37         FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level2_reg[6][17]/C
+                         clock pessimism             -0.035     1.152    
+    SLICE_X50Y37         FDCE (Hold_fdce_C_D)         0.063     1.215    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level2_reg[6][17]
+  -------------------------------------------------------------------
+                         required time                         -1.215    
+                         arrival time                           1.252    
+  -------------------------------------------------------------------
+                         slack                                  0.038    
+
+Slack (MET) :             0.041ns  (arrival time - required time)
+  Source:                 design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[12][12]/C
+                            (rising edge-triggered cell FDCE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level2_reg[6][12]/D
+                            (rising edge-triggered cell FDCE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.367ns  (logic 0.141ns (38.394%)  route 0.226ns (61.606%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.256ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.186ns
+    Source Clock Delay      (SCD):    0.895ns
+    Clock Pessimism Removal (CPR):    0.035ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       0.559     0.895    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/clk_i
+    SLICE_X47Y37         FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[12][12]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X47Y37         FDCE (Prop_fdce_C_Q)         0.141     1.036 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[12][12]/Q
+                         net (fo=1, routed)           0.226     1.262    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[12]_216[12]
+    SLICE_X51Y35         FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level2_reg[6][12]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       0.820     1.186    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/clk_i
+    SLICE_X51Y35         FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level2_reg[6][12]/C
+                         clock pessimism             -0.035     1.151    
+    SLICE_X51Y35         FDCE (Hold_fdce_C_D)         0.070     1.221    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level2_reg[6][12]
+  -------------------------------------------------------------------
+                         required time                         -1.221    
+                         arrival time                           1.262    
+  -------------------------------------------------------------------
+                         slack                                  0.041    
+
+Slack (MET) :             0.041ns  (arrival time - required time)
+  Source:                 design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY3[1].PE_Ch3/ACC/level1_reg[4][8]/C
+                            (rising edge-triggered cell FDCE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY3[1].PE_Ch3/ACC/level2_reg[2][16]/D
+                            (rising edge-triggered cell FDCE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.525ns  (logic 0.403ns (76.801%)  route 0.122ns (23.199%))
+  Logic Levels:           3  (CARRY4=3)
+  Clock Path Skew:        0.349ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.277ns
+    Source Clock Delay      (SCD):    0.893ns
+    Clock Pessimism Removal (CPR):    0.035ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       0.557     0.893    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY3[1].PE_Ch3/ACC/clk_i
+    SLICE_X37Y97         FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY3[1].PE_Ch3/ACC/level1_reg[4][8]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X37Y97         FDCE (Prop_fdce_C_Q)         0.141     1.034 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY3[1].PE_Ch3/ACC/level1_reg[4][8]/Q
+                         net (fo=2, routed)           0.121     1.155    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY3[1].PE_Ch3/ACC/level1_reg[4]_335[8]
+    SLICE_X36Y98         CARRY4 (Prop_carry4_DI[0]_CO[3])
+                                                      0.169     1.324 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY3[1].PE_Ch3/ACC/level2_reg[2][11]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     1.324    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY3[1].PE_Ch3/ACC/level2_reg[2][11]_i_1_n_0
+    SLICE_X36Y99         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.040     1.364 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY3[1].PE_Ch3/ACC/level2_reg[2][15]_i_1/CO[3]
+                         net (fo=1, routed)           0.001     1.364    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY3[1].PE_Ch3/ACC/level2_reg[2][15]_i_1_n_0
+    SLICE_X36Y100        CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.053     1.417 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY3[1].PE_Ch3/ACC/level2_reg[2][19]_i_1/O[0]
+                         net (fo=1, routed)           0.000     1.417    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY3[1].PE_Ch3/ACC/level2_reg[2][19]_i_1_n_7
+    SLICE_X36Y100        FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY3[1].PE_Ch3/ACC/level2_reg[2][16]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       0.911     1.277    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY3[1].PE_Ch3/ACC/clk_i
+    SLICE_X36Y100        FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY3[1].PE_Ch3/ACC/level2_reg[2][16]/C
+                         clock pessimism             -0.035     1.242    
+    SLICE_X36Y100        FDCE (Hold_fdce_C_D)         0.134     1.376    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY3[1].PE_Ch3/ACC/level2_reg[2][16]
+  -------------------------------------------------------------------
+                         required time                         -1.376    
+                         arrival time                           1.417    
+  -------------------------------------------------------------------
+                         slack                                  0.041    
+
+Slack (MET) :             0.042ns  (arrival time - required time)
+  Source:                 design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[5]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[18]/D
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.499ns  (logic 0.431ns (86.426%)  route 0.068ns (13.574%))
+  Logic Levels:           4  (CARRY4=4)
+  Clock Path Skew:        0.351ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.330ns
+    Source Clock Delay      (SCD):    0.944ns
+    Clock Pessimism Removal (CPR):    0.035ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       0.608     0.944    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/clk_i
+    SLICE_X95Y97         FDRE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[5]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X95Y97         FDRE (Prop_fdre_C_Q)         0.141     1.085 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[5]/Q
+                         net (fo=2, routed)           0.067     1.152    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg_n_0_[5]
+    SLICE_X95Y97         CARRY4 (Prop_carry4_DI[1]_CO[3])
+                                                      0.147     1.299 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[7]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     1.299    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[7]_i_1_n_0
+    SLICE_X95Y98         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.039     1.338 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[11]_i_1/CO[3]
+                         net (fo=1, routed)           0.000     1.338    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[11]_i_1_n_0
+    SLICE_X95Y99         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.039     1.377 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[15]_i_1/CO[3]
+                         net (fo=1, routed)           0.001     1.377    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[15]_i_1_n_0
+    SLICE_X95Y100        CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.065     1.442 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[19]_i_1/O[2]
+                         net (fo=1, routed)           0.000     1.442    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[19]_i_1_n_5
+    SLICE_X95Y100        FDRE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[18]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       0.964     1.330    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/clk_i
+    SLICE_X95Y100        FDRE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[18]/C
+                         clock pessimism             -0.035     1.295    
+    SLICE_X95Y100        FDRE (Hold_fdre_C_D)         0.105     1.400    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/acc_reg[18]
+  -------------------------------------------------------------------
+                         required time                         -1.400    
+                         arrival time                           1.442    
+  -------------------------------------------------------------------
+                         slack                                  0.042    
+
+Slack (MET) :             0.043ns  (arrival time - required time)
+  Source:                 design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[12][13]/C
+                            (rising edge-triggered cell FDCE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level2_reg[6][13]/D
+                            (rising edge-triggered cell FDCE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.365ns  (logic 0.141ns (38.625%)  route 0.224ns (61.375%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.256ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.186ns
+    Source Clock Delay      (SCD):    0.895ns
+    Clock Pessimism Removal (CPR):    0.035ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       0.559     0.895    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/clk_i
+    SLICE_X47Y37         FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[12][13]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X47Y37         FDCE (Prop_fdce_C_Q)         0.141     1.036 r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[12][13]/Q
+                         net (fo=1, routed)           0.224     1.260    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level1_reg[12]_216[13]
+    SLICE_X51Y35         FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level2_reg[6][13]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       0.820     1.186    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/clk_i
+    SLICE_X51Y35         FDCE                                         r  design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level2_reg[6][13]/C
+                         clock pessimism             -0.035     1.151    
+    SLICE_X51Y35         FDCE (Hold_fdce_C_D)         0.066     1.217    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY2[1].PE_Ch2/ACC/level2_reg[6][13]
+  -------------------------------------------------------------------
+                         required time                         -1.217    
+                         arrival time                           1.260    
+  -------------------------------------------------------------------
+                         slack                                  0.043    
+
+Slack (MET) :             0.048ns  (arrival time - required time)
+  Source:                 design_1_i/axi_smc/inst/m00_exit_pipeline/m00_exit/inst/b_reg/m_vector_i_reg[1057]/C
+                            (rising edge-triggered cell FDRE clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Destination:            design_1_i/axi_smc/inst/m00_nodes/m00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_6_6/RAMA/I
+                            (rising edge-triggered cell RAMD32 clocked by clk_fpga_0  {rise@0.000ns fall@10.000ns period=20.000ns})
+  Path Group:             clk_fpga_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_fpga_0 rise@0.000ns - clk_fpga_0 rise@0.000ns)
+  Data Path Delay:        0.208ns  (logic 0.141ns (67.788%)  route 0.067ns (32.212%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.283ns
+    Source Clock Delay      (SCD):    0.982ns
+    Clock Pessimism Removal (CPR):    0.288ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.310     0.310    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.336 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       0.646     0.982    design_1_i/axi_smc/inst/m00_exit_pipeline/m00_exit/inst/b_reg/aclk
+    SLICE_X59Y125        FDRE                                         r  design_1_i/axi_smc/inst/m00_exit_pipeline/m00_exit/inst/b_reg/m_vector_i_reg[1057]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X59Y125        FDRE (Prop_fdre_C_Q)         0.141     1.123 r  design_1_i/axi_smc/inst/m00_exit_pipeline/m00_exit/inst/b_reg/m_vector_i_reg[1057]/Q
+                         net (fo=2, routed)           0.067     1.190    design_1_i/axi_smc/inst/m00_nodes/m00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_6_6/DIA0
+    SLICE_X58Y125        RAMD32                                       r  design_1_i/axi_smc/inst/m00_nodes/m00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_6_6/RAMA/I
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_fpga_0 rise edge)
+                                                      0.000     0.000 r  
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0]
+                         net (fo=1, routed)           0.337     0.337    design_1_i/processing_system7_0/inst/FCLK_CLK_unbuffered[0]
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     0.366 r  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/O
+                         net (fo=21746, routed)       0.917     1.283    design_1_i/axi_smc/inst/m00_nodes/m00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_6_6/WCLK
+    SLICE_X58Y125        RAMD32                                       r  design_1_i/axi_smc/inst/m00_nodes/m00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_6_6/RAMA/CLK
+                         clock pessimism             -0.288     0.995    
+    SLICE_X58Y125        RAMD32 (Hold_ramd32_CLK_I)
+                                                      0.147     1.142    design_1_i/axi_smc/inst/m00_nodes/m00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_6_6/RAMA
+  -------------------------------------------------------------------
+                         required time                         -1.142    
+                         arrival time                           1.190    
+  -------------------------------------------------------------------
+                         slack                                  0.048    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk_fpga_0
+Waveform(ns):       { 0.000 10.000 }
+Period(ns):         20.000
+Sources:            { design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0] }
+
+Check Type        Corner  Lib Pin      Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location       Pin
+Min Period        n/a     DSP48E1/CLK  n/a            3.884         20.000      16.116     DSP48_X3Y42    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[0].MAC_inst/mul0/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            3.884         20.000      16.116     DSP48_X3Y35    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[1].MAC_inst/mul0/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            3.884         20.000      16.116     DSP48_X4Y34    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[2].MAC_inst/mul0/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            3.884         20.000      16.116     DSP48_X4Y32    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[3].MAC_inst/mul0/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            3.884         20.000      16.116     DSP48_X4Y36    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[4].MAC_inst/mul0/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            3.884         20.000      16.116     DSP48_X4Y40    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[5].MAC_inst/mul0/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            3.884         20.000      16.116     DSP48_X3Y39    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[6].MAC_inst/mul0/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            3.884         20.000      16.116     DSP48_X3Y44    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[7].MAC_inst/mul0/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            3.884         20.000      16.116     DSP48_X3Y43    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[8].MAC_inst/mul0/CLK
+Min Period        n/a     DSP48E1/CLK  n/a            3.884         20.000      16.116     DSP48_X3Y45    design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/fc_Layer/matmul_inst/mac_inst[9].MAC_inst/mul0/CLK
+Low Pulse Width   Slow    RAMD32/CLK   n/a            1.250         10.000      8.750      SLICE_X54Y121  design_1_i/axi_smc/inst/m01_nodes/m01_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_6_6/RAMA/CLK
+Low Pulse Width   Slow    RAMD32/CLK   n/a            1.250         10.000      8.750      SLICE_X54Y121  design_1_i/axi_smc/inst/m01_nodes/m01_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_6_6/RAMA_D1/CLK
+Low Pulse Width   Slow    RAMD32/CLK   n/a            1.250         10.000      8.750      SLICE_X54Y121  design_1_i/axi_smc/inst/m01_nodes/m01_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_6_6/RAMB/CLK
+Low Pulse Width   Slow    RAMD32/CLK   n/a            1.250         10.000      8.750      SLICE_X54Y121  design_1_i/axi_smc/inst/m01_nodes/m01_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_6_6/RAMB_D1/CLK
+Low Pulse Width   Slow    RAMD32/CLK   n/a            1.250         10.000      8.750      SLICE_X54Y121  design_1_i/axi_smc/inst/m01_nodes/m01_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_6_6/RAMC/CLK
+Low Pulse Width   Slow    RAMD32/CLK   n/a            1.250         10.000      8.750      SLICE_X54Y121  design_1_i/axi_smc/inst/m01_nodes/m01_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_6_6/RAMC_D1/CLK
+Low Pulse Width   Slow    RAMS32/CLK   n/a            1.250         10.000      8.750      SLICE_X54Y121  design_1_i/axi_smc/inst/m01_nodes/m01_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_6_6/RAMD/CLK
+Low Pulse Width   Slow    RAMS32/CLK   n/a            1.250         10.000      8.750      SLICE_X54Y121  design_1_i/axi_smc/inst/m01_nodes/m01_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_6_6/RAMD_D1/CLK
+Low Pulse Width   Slow    RAMD32/CLK   n/a            1.250         10.000      8.750      SLICE_X58Y120  design_1_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_0_5/RAMA/CLK
+Low Pulse Width   Slow    RAMD32/CLK   n/a            1.250         10.000      8.750      SLICE_X58Y120  design_1_i/axi_smc/inst/s00_nodes/s00_b_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_0_5/RAMA_D1/CLK
+High Pulse Width  Fast    RAMD32/CLK   n/a            1.250         10.000      8.750      SLICE_X58Y96   design_1_i/axi_smc/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_102_107/RAMA/CLK
+High Pulse Width  Fast    RAMD32/CLK   n/a            1.250         10.000      8.750      SLICE_X58Y96   design_1_i/axi_smc/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_102_107/RAMA_D1/CLK
+High Pulse Width  Fast    RAMD32/CLK   n/a            1.250         10.000      8.750      SLICE_X58Y96   design_1_i/axi_smc/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_102_107/RAMB/CLK
+High Pulse Width  Fast    RAMD32/CLK   n/a            1.250         10.000      8.750      SLICE_X58Y96   design_1_i/axi_smc/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_102_107/RAMB_D1/CLK
+High Pulse Width  Fast    RAMD32/CLK   n/a            1.250         10.000      8.750      SLICE_X58Y96   design_1_i/axi_smc/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_102_107/RAMC/CLK
+High Pulse Width  Fast    RAMD32/CLK   n/a            1.250         10.000      8.750      SLICE_X58Y96   design_1_i/axi_smc/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_102_107/RAMC_D1/CLK
+High Pulse Width  Fast    RAMS32/CLK   n/a            1.250         10.000      8.750      SLICE_X58Y96   design_1_i/axi_smc/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_102_107/RAMD/CLK
+High Pulse Width  Fast    RAMS32/CLK   n/a            1.250         10.000      8.750      SLICE_X58Y96   design_1_i/axi_smc/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_102_107/RAMD_D1/CLK
+High Pulse Width  Fast    RAMD32/CLK   n/a            1.250         10.000      8.750      SLICE_X58Y94   design_1_i/axi_smc/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_90_95/RAMA/CLK
+High Pulse Width  Fast    RAMD32/CLK   n/a            1.250         10.000      8.750      SLICE_X58Y94   design_1_i/axi_smc/inst/m00_nodes/m00_ar_node/inst/inst_mi_handler/gen_normal_area.inst_fifo_node_payld/gen_xpm_memory_fifo.inst_fifo/gen_mem_rep[0].inst_xpm_memory/xpm_memory_base_inst/gen_wr_a.gen_word_narrow.mem_reg_0_31_90_95/RAMA_D1/CLK
+
+
+

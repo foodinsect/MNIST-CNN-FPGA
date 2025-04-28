@@ -1,0 +1,227 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Wed Apr 23 14:12:07 2025
+| Host         : DESKTOP-2TI4DL6 running 64-bit major release  (build 9200)
+| Command      : report_methodology -file design_1_wrapper_methodology_drc_routed.rpt -pb design_1_wrapper_methodology_drc_routed.pb -rpx design_1_wrapper_methodology_drc_routed.rpx
+| Design       : design_1_wrapper
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Fully Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 38
++-----------+----------+-------------------------------+------------+
+| Rule      | Severity | Description                   | Violations |
++-----------+----------+-------------------------------+------------+
+| LUTAR-1   | Warning  | LUT drives async reset alert  | 2          |
+| TIMING-18 | Warning  | Missing input or output delay | 3          |
+| TIMING-20 | Warning  | Non-clocked latch             | 33         |
++-----------+----------+-------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/done_led_r_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) design_1_i/myMNIST_CNN_0/inst/my_CNN/done_count_d_reg[0]/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/done_count_d_reg[1]/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/done_count_d_reg[2]/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/done_count_d_reg[3]/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/done_count_reg[0]/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/done_count_reg[1]/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/done_count_reg[2]/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/done_count_reg[3]/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/done_intr_r_reg/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/done_led_r_reg/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/fc_done_d_reg/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/y_buf_data_r_reg[0]/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/y_buf_data_r_reg[1]/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/y_buf_data_r_reg[2]/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/y_buf_data_r_reg[3]/CLR (the first 15 of 40 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#2 Warning
+LUT drives async reset alert  
+LUT cell design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/i___6_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[0]/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[10]/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[11]/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[12]/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[13]/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[14]/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[15]/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[16]/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[17]/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[18]/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[19]/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[1]/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[2]/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[3]/CLR, design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[4]/CLR (the first 15 of 3240 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on rstn_i relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on start_i relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An output delay is missing on done_led_o relative to clock(s) clk_fpga_0
+Related violations: <none>
+
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[0] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#2 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[1] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#3 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[2] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#4 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[3] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#5 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[4] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#6 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[5] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#7 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[6] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#8 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[7] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#9 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/Conv_Layer_reg[0] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/Conv_Layer_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#10 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/Conv_Layer_reg[1] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/Conv_Layer_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#11 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/Conv_Layer_reg[2] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/Conv_Layer_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#12 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_BASE_reg[10] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_BASE_reg[10]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#13 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_BASE_reg[11] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_BASE_reg[11]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#14 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_BASE_reg[12] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_BASE_reg[12]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#15 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_BASE_reg[3] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_BASE_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#16 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_BASE_reg[4] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_BASE_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#17 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_BASE_reg[5] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_BASE_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#18 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_BASE_reg[6] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_BASE_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#19 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_BASE_reg[7] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_BASE_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#20 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_BASE_reg[8] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_BASE_reg[8]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#21 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_BASE_reg[9] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_BASE_reg[9]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#22 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_CNT_reg[0] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_CNT_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#23 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_CNT_reg[1] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_CNT_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#24 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_CNT_reg[2] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_CNT_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#25 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_CNT_reg[3] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_CNT_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#26 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_CNT_reg[4] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/IMG_CNT_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#27 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/Weight_base_reg[0] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/Weight_base_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#28 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/Weight_base_reg[1] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/Weight_base_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#29 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/Weight_base_reg[2] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/Weight_base_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#30 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/Weight_base_reg[3] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/Weight_base_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#31 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/Weight_base_reg[4] cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/Weight_base_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#32 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/all_clear_reg cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/all_clear_reg/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#33 Warning
+Non-clocked latch  
+The latch design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/cnt_en_reg cannot be properly analyzed as its control pin design_1_i/myMNIST_CNN_0/inst/my_CNN/cnn_core/global_ctrl/cnt_en_reg/G is not reached by a timing clock
+Related violations: <none>
+
+

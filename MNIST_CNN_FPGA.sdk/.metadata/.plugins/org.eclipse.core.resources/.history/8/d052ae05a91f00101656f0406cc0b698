@@ -1,0 +1,74 @@
+#include "xparameters.h"
+#include "xil_io.h"
+#include "xscugic.h"
+#include "xil_exception.h"
+
+#define INTC_DEVICE_ID    XPAR_PS7_SCUGIC_0_DEVICE_ID
+// ↓ 여러분 IP의 done_intr_o 신호가 AXI 인터럽트로 연결되면서 생기는 매크로
+#define INTC_DEVICE_INT_ID  XPAR_FABRIC_MYMNIST_CNN_0_DONE_INTR_O_INTR
+
+// BRAM 읽을 때 쓸 베이스 어드레스
+#define BRAM_BASE         XPAR_BRAM_0_BASEADDR
+
+static XScuGic Intc;
+
+volatile static int InterruptProcessed = FALSE;
+
+static void DeviceDriverHandler(void *CallbackRef) {
+    // 인터럽트 비활성화
+    XScuGic_Disable(&Intc, INTC_DEVICE_INT_ID);
+    InterruptProcessed = TRUE;
+}
+
+int SetUpInterruptSystem(XScuGic *XScuGicInstancePtr) {
+    // GIC exception handler 등록
+    Xil_ExceptionRegisterHandler(
+        XIL_EXCEPTION_ID_INT,
+        (Xil_ExceptionHandler)XScuGic_InterruptHandler,
+        XScuGicInstancePtr
+    );
+    Xil_ExceptionEnable();
+    return XST_SUCCESS;
+}
+
+int main() {
+    int status;
+    XScuGic_Config *cfg;
+
+    // 1) GIC 초기화
+    cfg = XScuGic_LookupConfig(INTC_DEVICE_ID);
+    status = XScuGic_CfgInitialize(&Intc, cfg, cfg->CpuBaseAddress);
+    if (status != XST_SUCCESS) return XST_FAILURE;
+
+    // 2) 인터럽트 타입/우선순위 설정 (예: 레벨 트리거, 우선순위 3)
+    XScuGic_SetPriorityTriggerType(&Intc,
+                                   INTC_DEVICE_INT_ID,
+                                   0,      // priority
+                                   3);     // trigger type
+    // 3) 콜백 연결
+    XScuGic_Connect(&Intc,
+                    INTC_DEVICE_INT_ID,
+                    (Xil_ExceptionHandler)DeviceDriverHandler,
+                    &Intc);
+    XScuGic_Enable(&Intc, INTC_DEVICE_INT_ID);
+
+    // 4) Cortex 인터럽트 시스템 켜기
+    SetUpInterruptSystem(&Intc);
+
+    // 5) 무한루프에서 인터럽트 발생 대기
+    while (1) {
+        if (InterruptProcessed) {
+            InterruptProcessed = FALSE;
+            // BRAM에 저장된 데이터 0~N-1 단위로 4바이트씩 읽기
+            for (int i = 0; i < 7840; i++) {
+                u32 data = Xil_In32(BRAM_BASE + i*4);
+                // 예: 출력
+                xil_printf("data[%4d] = 0x%08x\r\n", i, data);
+            }
+            // 인터럽트 재인에이블
+            XScuGic_Enable(&Intc, INTC_DEVICE_INT_ID);
+        }
+    }
+
+    return 0;
+}

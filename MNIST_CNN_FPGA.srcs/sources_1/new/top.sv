@@ -1,14 +1,29 @@
 module top #(
-    /////////// MUST write VIVADO project location//////////////////////
-    parameter VIVADO_PROJECT_LOCATION = "F:/cnn_verilog"
+    /////////// MUST write data location//////////////////////
+    parameter VIVADO_PROJECT_LOCATION = "F:/cnn_verilog",
+    parameter IN_IMG_NUM = 10,
+    parameter X_BUF_DATA_WIDTH = 8,  	            
+    parameter X_BUF_DEPTH = 784*IN_IMG_NUM,
+
+    parameter W_BUF_DATA_WIDTH = 40,
+	parameter W_BUF_DEPTH = 20,                           // 5 x 4 phase = 20
+
+    parameter Y_BUF_DATA_WIDTH = 32,
+	parameter Y_BUF_ADDR_WIDTH = 32,  							// add in 2023-05-10
+    parameter Y_BUF_DEPTH = 10*IN_IMG_NUM * 4
     ////////////////////////////////////////////////////////////////////
 )(
-    input wire clk_i,
-    input wire rstn_i,
-    input wire start_i,
+    input wire          clk_i,
+    input wire          rstn_i,
+    input wire          start_i,
 
-    output wire [4:0]   result,
-    output wire done
+    output  wire                            done_intr_o,
+    output  wire                            done_led_o,
+
+    output  wire                            y_buf_en,
+    output  wire                            y_buf_wr_en,
+    output  wire [Y_BUF_ADDR_WIDTH-1:0]     y_buf_addr,			// modify in 2023-05-10, [$clog2(Y_BUF_DEPTH)-1:0] -> [Y_BUF_ADDR_WIDTH-1:0]
+    output  wire [Y_BUF_DATA_WIDTH-1:0]     y_buf_data
 );
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -94,6 +109,8 @@ module top #(
 
     wire signed [11:0] FC_data;
 
+    wire [Y_BUF_DATA_WIDTH-1:0] fc_data_o;
+
     assign FC_data = (fc_data_sel == 2'b01 ? BUF2_out1 :
                         fc_data_sel == 2'b10 ? BUF2_out2 :
                         fc_data_sel == 2'b11 ? BUF2_out3 :
@@ -112,6 +129,9 @@ module top #(
     assign Shift_en = (fc_data_sel == 2'b01 ? 3'b001:
                        fc_data_sel == 2'b10 ? 3'b010:
                        fc_data_sel == 2'b11 ? 3'b100: 3'b000);
+
+
+    assign y_buf_en = y_buf_wr_en;
 
 /////////////////////////////////////////////////////////////////////////////////
 // global Controller
@@ -200,37 +220,11 @@ module top #(
         .BUF2_rd_en         (BUF2_rd_en),
 
         .all_clear          (all_clear),
-        .conv_done          (conv_done)
+        .conv_done          (conv_done),
+        .done_o             ()
     );
 
 
-
-    FC_Layer fc_Layer (
-        .clk_i      (clk_i),
-        .rstn_i     (rstn_i&~all_clear),
-        .en_i       (fc_en),
-        .clear_i    (fc_clear|all_clear),
-        .data_in    (FC_data),
-        .weight_in  (FC_Weight),
-        .bias_in    (FC_Bias),
-        .result_o   (result),
-        .valid_o    (fc_valid_o),
-        .done_o     (FC_done)
-    );
-
-    FC_Controller FC_Ctrl(
-        .clk_i      (clk_i),
-        .rstn_i     (rstn_i&~all_clear),
-        .start_i    (conv_done),
-        .next_i     (FC_done), 
-
-        .data_sel_o (fc_data_sel),
-        .fc_clear_o (fc_clear),
-        .fc_en_o    (fc_en),
-        .weight_en  (fc_weight_en),
-        .weight_idx (fc_weight_addr), 
-        .done       (done)
-    ); 
 
     PE_Array PE_Array(
         .clk_i(clk_i),
@@ -368,6 +362,65 @@ module top #(
         .data_o(BUF2_out3)
     );
 
+    FC_Controller FC_Ctrl(
+        .clk_i      (clk_i),
+        .rstn_i     (rstn_i&~all_clear),
+        .start_i    (conv_done),
+        .next_i     (FC_done), 
+
+        .data_sel_o (fc_data_sel),
+        .fc_clear_o (fc_clear),
+        .fc_en_o    (fc_en),
+        .weight_en  (fc_weight_en),
+        .weight_idx (fc_weight_addr), 
+        .done       (done)
+    ); 
+
+    FC_Layer fc_Layer (
+        .clk_i      (clk_i),
+        .rstn_i     (rstn_i&~all_clear),
+        .en_i       (fc_en),
+        .clear_i    (fc_clear|all_clear),
+        .data_in    (FC_data),
+        .weight_in  (FC_Weight),
+        .bias_in    (FC_Bias),
+        .data_o     (fc_data_o),
+        .valid_o    (fc_valid_o),
+        .done_o     (FC_done)
+    );
+
+    wire buf_wr_done;
+
+    y_buf #(
+        .DATA_WIDTH(Y_BUF_DATA_WIDTH),
+        .ADDR_WIDTH(Y_BUF_ADDR_WIDTH)
+    ) y_buf(
+        .clk            (clk_i),
+        .rst_n          (rstn_i),
+        .data_in        (fc_data_o),
+        .buf_wr_start   (FC_done),
+        .y_buf_addr     (y_buf_addr),
+        .y_buf_data     (y_buf_data),
+        .y_buf_en       (y_buf_wr_en),
+        .y_buf_done     (buf_wr_done)
+    );
+
+    //hold irq pulse for 6 cycles
+    reg     [5:0]   irq_sr;
+    reg             led;
+    assign  done_intr_o = |{irq_sr};
+    assign  done_led_o = led;
+
+    always @(posedge clk_i) begin
+        irq_sr[0] <= buf_wr_done;
+        irq_sr[5:1] <= irq_sr[4:0];
+
+        if(!rstn_i) led <= 1'b0;
+        else begin
+            if(done_intr_o) led <= 1'b1;
+        end
+    end
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Weight Logic
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -377,6 +430,7 @@ module top #(
     always @(posedge clk_i) begin
         if (~rstn_i) begin
             weight_row_counter <= 3'd0;
+            Weight_packed_en <= 1'b0;
 
             // Initialize weights to 0 if necessary
             for (integer i = 0; i < 25; i = i + 1) begin
@@ -428,8 +482,8 @@ module top #(
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     single_port_bram  #(
-        .WIDTH(40),             // 8bit x 5 
-        .DEPTH(20),             // 5 x 4
+        .WIDTH(W_BUF_DATA_WIDTH),             // 8bit x 5 
+        .DEPTH(W_BUF_DEPTH),             // 5 x 4
         .INIT_FILE({{VIVADO_PROJECT_LOCATION},"/data/conv_weight_ch1.txt"})
     ) conv_wrom_ch1 (
         .clk(clk_i),
@@ -441,8 +495,8 @@ module top #(
     );
 
     single_port_bram  #(
-        .WIDTH(40),
-        .DEPTH(20),
+        .WIDTH(W_BUF_DATA_WIDTH),
+        .DEPTH(W_BUF_DEPTH),
         .INIT_FILE({{VIVADO_PROJECT_LOCATION},"/data/conv_weight_ch2.txt"})
     ) conv_wrom_ch2 (
         .clk(clk_i),
@@ -454,8 +508,8 @@ module top #(
     );
 
     single_port_bram  #(
-        .WIDTH(40),
-        .DEPTH(20),
+        .WIDTH(W_BUF_DATA_WIDTH),
+        .DEPTH(W_BUF_DEPTH),
         .INIT_FILE({{VIVADO_PROJECT_LOCATION},"/data/conv_weight_ch3.txt"})
     ) conv_wrom_ch3 (
         .clk(clk_i),
@@ -492,8 +546,8 @@ module top #(
 
     //  Xilinx True Dual Port RAM, No Change, Single Clock
     xilinx_true_dual_port_no_change_1_clock_ram #(
-        .RAM_WIDTH(8),                         // Specify RAM data width
-        .RAM_DEPTH(7840),                       // Specify RAM depth (number of entries)
+        .RAM_WIDTH(X_BUF_DATA_WIDTH),                         // Specify RAM data width
+        .RAM_DEPTH(X_BUF_DEPTH),                       // Specify RAM depth (number of entries)
         .RAM_PERFORMANCE("LOW_LATENCY"),   // Select "HIGH_PERFORMANCE" or "LOW_LATENCY" 
         .INIT_FILE({{VIVADO_PROJECT_LOCATION},"/INT8_input_image_hex.txt"})                         // Specify name/location of RAM initialization file if using one (leave blank if not)
     ) Image_ROM (
@@ -502,8 +556,8 @@ module top #(
         .dina(),        // Port A RAM input data, width determined from RAM_WIDTH
         .dinb(),        // Port B RAM input data, width determined from RAM_WIDTH
         .clka(clk_i),     // Clock
-        .wea(),         // Port A write enable
-        .web(),         // Port B write enable
+        .wea(1'b0),         // Port A write enable
+        .web(1'b0),         // Port B write enable
         .ena(Image_rom_en),         // Port A RAM Enable, for additional power savings, disable port when not in use
         .enb(Image_rom_en),         // Port B RAM Enable, for additional power savings, disable port when not in use
         .rsta(),        // Port A output reset (does not affect memory contents)

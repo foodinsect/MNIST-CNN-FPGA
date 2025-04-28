@@ -30,14 +30,16 @@ module FC_Layer (
     input wire signed [7:0]     weight_in  [0:9],
     input wire signed [7:0]     bias_in    [0:9],
     
-    output wire [3:0]           result_o,
+    output wire [31:0]          data_o,
     output wire                 valid_o,
     output wire                 done_o
 );
 
     // Intermediate wires
     wire signed [11:0] matmul_o [0:9];
-    
+    wire [3:0] result;
+
+    assign data_o = {28'd0, result};
     
     // Instantiate FC_layer
     matmul matmul_inst (
@@ -58,7 +60,7 @@ module FC_Layer (
         .rstn_i     (rstn_i),
         .valid_i    (valid_o),
         .inputs_i   (matmul_o),
-        .result_o   (result_o),
+        .result_o   (result),
         .done_o     (done_o)
     );
 

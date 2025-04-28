@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER myMNIST_CNN
+	OPTION supported_peripherals = (myMNIST_CNN);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = myMNIST_CNN;
+END DRIVER

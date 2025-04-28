@@ -1,5 +1,0 @@
-f9 ee 0d e9 fc
-0d 0f 16 f2 f7
-fc 06 08 ff e9
-11 01 ec 05 ec
-f7 e7 11 fa f4

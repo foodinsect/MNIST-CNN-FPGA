@@ -1,0 +1,23 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Dec  3 06:08:29 2024
+# Process ID: 3596
+# Current directory: F:/MNIST_CNN_FPGA
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent24612 F:\MNIST_CNN_FPGA\MNIST_CNN_FPGA.xpr
+# Log file: F:/MNIST_CNN_FPGA/vivado.log
+# Journal file: F:/MNIST_CNN_FPGA\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.xpr
+update_compile_order -fileset sources_1
+open_run impl_1
+launch_simulation
+open_wave_config F:/MNIST_CNN_FPGA/tb_top_behav.wcfg
+source tb_top.tcl
+run all
+run 5 us
+run 5 us
+run 5 us
+close_sim

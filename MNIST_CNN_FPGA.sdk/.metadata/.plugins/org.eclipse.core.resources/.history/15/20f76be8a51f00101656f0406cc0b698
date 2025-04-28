@@ -1,0 +1,93 @@
+#include "xil_printf.h"
+#include "xil_io.h"
+#include "xparameters.h"
+#include "xscugic.h"
+#include "xil_exception.h"
+
+#define BRAM_BASE_ADDR   XPAR_BRAM_CTRL_0_S_AXI_BASEADDR
+#define IN_IMG_NUM       10
+
+#define INTC_DEVICE_ID   XPAR_SCUGIC_SINGLE_DEVICE_ID
+#define INTR_ID          XPAR_FABRIC_MYMNIST_CNN_0_DONE_INTR_O_INTR  // interrupt 연결 이름
+
+static XScuGic Intc;  // GIC 인스턴스
+
+// 인터럽트 핸들러
+static void done_handler(void *CallbackRef)
+{
+    static int printed = 0;
+    u32 data;
+    u32 addr;
+
+    xil_printf("\r\n=== CNN inference done, dumping y_buf ===\r\n");
+
+    for (int i = 0; i < IN_IMG_NUM; i++) {
+        // 4byte 단위 오프셋: i << 2
+        addr = BRAM_BASE_ADDR + (i << 2);
+        data = Xil_In32(addr);
+        xil_printf("  idx=%2d : %u\r\n", i, data);
+    }
+
+    // 필요에 따라 재-시작 신호(start_i) 토글 or flag 처리...
+}
+
+// GIC 및 인터럽트 연결
+static int setup_interrupt()
+{
+    XScuGic_Config *cfg;
+    int status;
+
+    // 1) GIC 초기화
+    cfg = XScuGic_LookupConfig(INTC_DEVICE_ID);
+    if (!cfg) return XST_FAILURE;
+    status = XScuGic_CfgInitialize(&Intc, cfg, cfg->CpuBaseAddress);
+    if (status != XST_SUCCESS) return status;
+
+    // 2) 인터럽트 리셋
+    Xil_ExceptionInit();
+    Xil_ExceptionRegisterHandler(
+        XIL_EXCEPTION_ID_INT,
+        (Xil_ExceptionHandler)XScuGic_InterruptHandler,
+        &Intc
+    );
+    Xil_ExceptionEnable();
+
+    // 3) our IP의 done_intr_o 인터럽트 연결
+    status = XScuGic_Connect(
+        &Intc,
+        INTR_ID,
+        (Xil_ExceptionHandler)done_handler,
+        NULL
+    );
+    if (status != XST_SUCCESS) return status;
+
+    // 4) 활성화
+    XScuGic_Enable(&Intc, INTR_ID);
+
+    return XST_SUCCESS;
+}
+
+int main()
+{
+    int status;
+
+    xil_printf("=== Hello, CNN BRAM reader ===\r\n");
+
+    // 인터럽트 준비
+    status = setup_interrupt();
+    if (status != XST_SUCCESS) {
+        xil_printf("ERROR: interrupt setup failed (%d)\r\n", status);
+        return -1;
+    }
+
+    // 여기서 start_i 신호를 줘서 CNN 수행을 시작하거나,
+    // PS‑GPIO 등을 통해 start 트리거도 가능합니다.
+    // (생략)
+
+    xil_printf("Waiting for done_intr...\r\n");
+    while (1) {
+        // idle loop, interrupt 가 발생하면 handler 에서 데이터 출력
+    }
+
+    return 0;
+}
