@@ -63,7 +63,7 @@ module glbl_controller #(
     output reg         FIFO_valid,
 
     output reg         BUF2_wr_en,
-    output reg         BUF2_rd_en,
+    output logic       BUF2_rd_en,
 
     output reg         all_clear,
     output reg         conv_done,
@@ -96,8 +96,7 @@ logic Image_rom_control;
 logic rImage_rom_en;
 logic rPE_valid_i;
 logic rBUF1_rd_en;
-reg [4:0] valid_counter;      // 클럭 카운터
-reg first_delay_done;       // 첫 번째 12클럭 지연 완료 플래그
+reg [4:0] valid_counter;     
 
 reg [4:0] col_index;
 reg [9:0] row_base;
@@ -190,6 +189,7 @@ always @(posedge clk_i) begin
     PE_valid_i <= rPE_valid_i;
     BUF1_rd_en <= rBUF1_rd_en;
 end
+// assign BUF1_rd_en = rBUF1_rd_en;
 
 
 always @(posedge clk_i) begin

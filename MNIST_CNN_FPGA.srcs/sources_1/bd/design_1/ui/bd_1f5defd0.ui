@@ -2,37 +2,34 @@
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 5 -x 1410 -y 70 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -lvl 5 -x 1410 -y 90 -defaultsOSRD
-preplace port rstn_i -pg 1 -lvl 0 -x 0 -y 470 -defaultsOSRD
-preplace port start_i -pg 1 -lvl 0 -x 0 -y 490 -defaultsOSRD
-preplace port done_led_o -pg 1 -lvl 5 -x 1410 -y 420 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 1 -x 240 -y 120 -defaultsOSRD
-preplace inst axi_bram_ctrl_0 -pg 1 -lvl 3 -x 930 -y 190 -defaultsOSRD
-preplace inst axi_smc -pg 1 -lvl 2 -x 610 -y 180 -defaultsOSRD
-preplace inst rst_ps7_0_50M -pg 1 -lvl 1 -x 240 -y 370 -defaultsOSRD
-preplace inst axi_bram_ctrl_0_bram -pg 1 -lvl 4 -x 1260 -y 280 -defaultsOSRD
-preplace inst myMNIST_CNN_0 -pg 1 -lvl 3 -x 930 -y 390 -defaultsOSRD
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 4 30 230 450 80 780 270 1080J
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 40 240 440
-preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 1 2 470 100 750
-preplace netloc myMNIST_CNN_0_y_buf_en 1 3 1 1110 320n
-preplace netloc myMNIST_CNN_0_y_buf_wr_en 1 3 1 1130 360n
-preplace netloc myMNIST_CNN_0_y_buf_addr 1 3 1 1090 240n
-preplace netloc myMNIST_CNN_0_y_buf_data 1 3 1 1120 280n
-preplace netloc rstn_i_1 1 0 4 NJ 470 NJ 470 760 280 1100J
-preplace netloc start_i_1 1 0 3 NJ 490 NJ 490 790J
-preplace netloc myMNIST_CNN_0_done_led_o 1 3 2 1100J 420 NJ
-preplace netloc myMNIST_CNN_0_done_intr_o 1 0 4 20 10 NJ 10 NJ 10 1070
-preplace netloc processing_system7_0_DDR 1 1 4 NJ 70 NJ 70 NJ 70 NJ
-preplace netloc processing_system7_0_FIXED_IO 1 1 4 NJ 90 NJ 90 NJ 90 NJ
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 460 130n
-preplace netloc axi_smc_M00_AXI 1 2 1 N 170
-preplace netloc axi_bram_ctrl_0_BRAM_PORTB 1 3 1 N 200
-preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 3 1 1080 180n
-preplace netloc axi_smc_M01_AXI 1 2 1 770 190n
-levelinfo -pg 1 0 240 610 930 1260 1410
-pagesize -pg 1 -db -bbox -sgen -90 0 1540 510
+preplace port DDR -pg 1 -lvl 6 -x 1630 -y 60 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 6 -x 1630 -y 80 -defaultsOSRD
+preplace port rst_n -pg 1 -lvl 0 -x 0 -y 300 -defaultsOSRD
+preplace port start_i -pg 1 -lvl 0 -x 0 -y 430 -defaultsOSRD
+preplace port done_led_o -pg 1 -lvl 6 -x 1630 -y 380 -defaultsOSRD
+preplace port clk -pg 1 -lvl 0 -x 0 -y 220 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 2 -x 530 -y 110 -defaultsOSRD
+preplace inst axi_bram_ctrl_0 -pg 1 -lvl 4 -x 1190 -y 170 -defaultsOSRD
+preplace inst axi_smc -pg 1 -lvl 3 -x 900 -y 160 -defaultsOSRD
+preplace inst axi_bram_ctrl_0_bram -pg 1 -lvl 5 -x 1480 -y 250 -defaultsOSRD
+preplace inst top_cnn_0 -pg 1 -lvl 1 -x 160 -y 410 -defaultsOSRD
+preplace netloc rstn_i_1 1 0 5 20 300 NJ 300 760 300 1050 300 NJ
+preplace netloc clk_1 1 0 5 30 220 300 220 750 240 1040 90 1330J
+preplace netloc start_i_1 1 0 1 NJ 430
+preplace netloc top_cnn_0_done_intr_o 1 1 1 290 120n
+preplace netloc top_cnn_0_done_led_o 1 1 5 NJ 380 NJ 380 NJ 380 NJ 380 NJ
+preplace netloc top_cnn_0_y_buf_en 1 1 4 310 360 NJ 360 NJ 360 1340J
+preplace netloc top_cnn_0_y_buf_wr_en 1 1 4 330J 370 NJ 370 NJ 370 1350
+preplace netloc top_cnn_0_y_buf_addr 1 1 4 300J 290 740J 80 NJ 80 1350
+preplace netloc top_cnn_0_y_buf_data 1 1 4 320J 350 NJ 350 NJ 350 1330
+preplace netloc axi_bram_ctrl_0_BRAM_PORTB 1 4 1 N 180
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 4 1 1340 160n
+preplace netloc processing_system7_0_M_AXI_GP0 1 2 1 760 120n
+preplace netloc axi_smc_M00_AXI 1 3 1 N 150
+preplace netloc processing_system7_0_DDR 1 2 4 NJ 60 NJ 60 NJ 60 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 2 4 730J 70 NJ 70 NJ 70 1610J
+levelinfo -pg 1 0 160 530 900 1190 1480 1630
+pagesize -pg 1 -db -bbox -sgen -90 0 1760 520
 "
 }
 {

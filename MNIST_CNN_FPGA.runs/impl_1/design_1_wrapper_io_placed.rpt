@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date                      : Wed Apr 23 14:11:00 2025
+| Date                      : Tue Apr 29 06:28:09 2025
 | Host                      : DESKTOP-2TI4DL6 running 64-bit major release  (build 9200)
 | Command                   : report_io -file design_1_wrapper_io_placed.rpt
 | Design                    : design_1_wrapper
@@ -25,7 +25,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|           133 |
+|           134 |
 +---------------+
 
 
@@ -169,7 +169,7 @@ Table of Contents
 | G12        |                   |            | GND                     | GND         |                    |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | G13        |                   |            | VCCINT                  | VCCINT      |                    |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | G14        |                   | High Range | IO_0_35                 | User IO     |                    |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| G15        | rstn_i            | High Range | IO_L19N_T3_VREF_35      | INPUT       | LVCMOS33           |      35 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| G15        | rst_n             | High Range | IO_L19N_T3_VREF_35      | INPUT       | LVCMOS33           |      35 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | G16        |                   |            | GND                     | GND         |                    |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | G17        |                   | High Range | IO_L16P_T2_35           | User IO     |                    |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | G18        |                   | High Range | IO_L16N_T2_35           | User IO     |                    |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
@@ -231,7 +231,7 @@ Table of Contents
 | K14        |                   | High Range | IO_L20P_T3_AD6P_35      | User IO     |                    |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | K15        |                   |            | GND                     | GND         |                    |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | K16        |                   | High Range | IO_L24P_T3_AD15P_35     | User IO     |                    |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| K17        |                   | High Range | IO_L12P_T1_MRCC_35      | User IO     |                    |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
+| K17        | clk               | High Range | IO_L12P_T1_MRCC_35      | INPUT       | LVCMOS33           |      35 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | K18        | start_i           | High Range | IO_L12N_T1_MRCC_35      | INPUT       | LVCMOS33           |      35 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | K19        |                   | High Range | IO_L10P_T1_AD11P_35     | User IO     |                    |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | K20        |                   | High Range | VCCO_35                 | VCCO        |                    |      35 |            |      |                     |                      |    3.30 |            |           |          |      |                  |              |                   |              |

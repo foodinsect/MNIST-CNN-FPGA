@@ -1,7 +1,7 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-//Date        : Wed Apr 23 14:08:15 2025
+//Date        : Tue Apr 29 06:22:20 2025
 //Host        : DESKTOP-2TI4DL6 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
@@ -31,8 +31,9 @@ module design_1_wrapper
     FIXED_IO_ps_clk,
     FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb,
+    clk,
     done_led_o,
-    rstn_i,
+    rst_n,
     start_i);
   inout [14:0]DDR_addr;
   inout [2:0]DDR_ba;
@@ -55,8 +56,9 @@ module design_1_wrapper
   inout FIXED_IO_ps_clk;
   inout FIXED_IO_ps_porb;
   inout FIXED_IO_ps_srstb;
+  input clk;
   output done_led_o;
-  input rstn_i;
+  input rst_n;
   input start_i;
 
   wire [14:0]DDR_addr;
@@ -80,8 +82,9 @@ module design_1_wrapper
   wire FIXED_IO_ps_clk;
   wire FIXED_IO_ps_porb;
   wire FIXED_IO_ps_srstb;
+  wire clk;
   wire done_led_o;
-  wire rstn_i;
+  wire rst_n;
   wire start_i;
 
   design_1 design_1_i
@@ -106,7 +109,8 @@ module design_1_wrapper
         .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
         .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
+        .clk(clk),
         .done_led_o(done_led_o),
-        .rstn_i(rstn_i),
+        .rst_n(rst_n),
         .start_i(start_i));
 endmodule

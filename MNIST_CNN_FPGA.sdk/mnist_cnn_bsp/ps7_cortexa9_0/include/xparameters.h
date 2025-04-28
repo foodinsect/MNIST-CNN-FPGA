@@ -282,17 +282,6 @@
 
 /******************************************************************/
 
-/* Definitions for driver MYMNIST_CNN */
-#define XPAR_MYMNIST_CNN_NUM_INSTANCES 1
-
-/* Definitions for peripheral MYMNIST_CNN_0 */
-#define XPAR_MYMNIST_CNN_0_DEVICE_ID 0
-#define XPAR_MYMNIST_CNN_0_S00_AXI_BASEADDR 0x43C00000
-#define XPAR_MYMNIST_CNN_0_S00_AXI_HIGHADDR 0x43C0FFFF
-
-
-/******************************************************************/
-
 /* Definitions for driver QSPIPS */
 #define XPAR_XQSPIPS_NUM_INSTANCES 1
 
@@ -315,16 +304,6 @@
 #define XPAR_XQSPIPS_0_QSPI_MODE 0
 #define XPAR_XQSPIPS_0_QSPI_BUS_WIDTH 2
 
-
-/******************************************************************/
-
-/* Definitions for Fabric interrupts connected to ps7_scugic_0 */
-#define XPAR_FABRIC_MYMNIST_CNN_0_DONE_INTR_O_INTR 61U
-
-/******************************************************************/
-
-/* Canonical definitions for Fabric interrupts connected to ps7_scugic_0 */
-#define XPAR_FABRIC_MYMNIST_CNN_0_VEC_ID XPAR_FABRIC_MYMNIST_CNN_0_DONE_INTR_O_INTR
 
 /******************************************************************/
 

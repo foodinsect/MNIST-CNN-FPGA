@@ -46,7 +46,7 @@ module top_cnn #(
     wire sw_pdet;
 
     assign sw_pdet = ~sw_syncchain[2] & sw_syncchain[1];
-    
+
     always @(posedge clk) begin
         if(!rst_n) sw_syncchain <= 3'b000;
         else begin
@@ -57,12 +57,13 @@ module top_cnn #(
 
 
     top #(
+      .VIVADO_PROJECT_LOCATION("F:/cnn_verilog"),
       .IN_IMG_NUM       (IN_IMG_NUM),
       .X_BUF_DATA_WIDTH (X_BUF_DATA_WIDTH),
       .X_BUF_DEPTH      (X_BUF_DEPTH),
 
-      .W_BUF_DATA_WIDTH (X_BUF_DATA_WIDTH),
-      .W_BUF_DEPTH      (X_BUF_DEPTH),
+      .W_BUF_DATA_WIDTH (W_BUF_DATA_WIDTH),
+      .W_BUF_DEPTH      (W_BUF_DEPTH),
 
       .Y_BUF_DATA_WIDTH (Y_BUF_DATA_WIDTH),
       .Y_BUF_ADDR_WIDTH (Y_BUF_ADDR_WIDTH),

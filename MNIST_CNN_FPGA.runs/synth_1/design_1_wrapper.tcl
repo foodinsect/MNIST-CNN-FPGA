@@ -17,7 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param chipscope.maxJobs 3
 set_msg_config -id {HDL-1065} -limit 10000
 create_project -in_memory -part xc7z020clg400-1
 
@@ -39,6 +38,7 @@ read_verilog -library xil_defaultlib F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sourc
 add_files F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/bd/design_1/design_1.bd
 set_property used_in_implementation false [get_files -all f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/bd/design_1/ip/design_1_processing_system7_0_0_1/design_1_processing_system7_0_0.xdc]
 set_property used_in_implementation false [get_files -all f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/bd/design_1/ip/design_1_axi_bram_ctrl_0_0_1/design_1_axi_bram_ctrl_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/ooc.xdc]
 set_property used_in_implementation false [get_files -all f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_1/bd_6f02_psr_aclk_0_board.xdc]
 set_property used_in_implementation false [get_files -all f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_1/bd_6f02_psr_aclk_0.xdc]
 set_property used_in_implementation false [get_files -all f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_2/bd_6f02_arsw_0_ooc.xdc]
@@ -58,16 +58,6 @@ set_property used_in_implementation false [get_files -all f:/MNIST_CNN_FPGA/MNIS
 set_property used_in_implementation false [get_files -all f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_19/bd_6f02_m00awn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_20/bd_6f02_m00wn_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_21/bd_6f02_m00bn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_23/bd_6f02_m01s2a_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_24/bd_6f02_m01arn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_25/bd_6f02_m01rn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_26/bd_6f02_m01awn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_27/bd_6f02_m01wn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/bd_0/ip/ip_28/bd_6f02_m01bn_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/bd/design_1/ip/design_1_axi_smc_1/ooc.xdc]
-set_property used_in_implementation false [get_files -all f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_1/design_1_rst_ps7_0_50M_1_board.xdc]
-set_property used_in_implementation false [get_files -all f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_1/design_1_rst_ps7_0_50M_1.xdc]
-set_property used_in_implementation false [get_files -all f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_1/design_1_rst_ps7_0_50M_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/bd/design_1/ip/design_1_axi_bram_ctrl_0_bram_1/design_1_axi_bram_ctrl_0_bram_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/bd/design_1/design_1_ooc.xdc]
 

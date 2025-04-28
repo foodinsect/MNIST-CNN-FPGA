@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x9B31E9BC5CDA7C3C",
+      "boundary_crc": "0xABD513B78983B015",
       "device": "xc7z020clg400-1",
       "name": "design_1",
       "synth_flow_mode": "Hierarchical",
@@ -12,9 +12,8 @@
       "processing_system7_0": "",
       "axi_bram_ctrl_0": "",
       "axi_smc": "",
-      "rst_ps7_0_50M": "",
       "axi_bram_ctrl_0_bram": "",
-      "myMNIST_CNN_0": ""
+      "top_cnn_0": ""
     },
     "interface_ports": {
       "DDR": {
@@ -83,7 +82,7 @@
       }
     },
     "ports": {
-      "rstn_i": {
+      "rst_n": {
         "direction": "I"
       },
       "start_i": {
@@ -91,6 +90,9 @@
       },
       "done_led_o": {
         "direction": "O"
+      },
+      "clk": {
+        "direction": "I"
       }
     },
     "components": {
@@ -1159,10 +1161,6 @@
           }
         }
       },
-      "rst_ps7_0_50M": {
-        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
-        "xci_name": "design_1_rst_ps7_0_50M_1"
-      },
       "axi_bram_ctrl_0_bram": {
         "vlnv": "xilinx.com:ip:blk_mem_gen:8.4",
         "xci_name": "design_1_axi_bram_ctrl_0_bram_1",
@@ -1172,9 +1170,61 @@
           }
         }
       },
-      "myMNIST_CNN_0": {
-        "vlnv": "xilinx.com:user:myMNIST_CNN:1.0",
-        "xci_name": "design_1_myMNIST_CNN_0_0"
+      "top_cnn_0": {
+        "vlnv": "xilinx.com:module_ref:top_cnn:1.0",
+        "xci_name": "design_1_top_cnn_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "top_cnn",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst_n": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "constant"
+              }
+            }
+          },
+          "start_i": {
+            "direction": "I"
+          },
+          "done_intr_o": {
+            "direction": "O",
+            "parameters": {
+              "PortWidth": {
+                "value": "1",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "done_led_o": {
+            "direction": "O"
+          },
+          "y_buf_en": {
+            "direction": "O"
+          },
+          "y_buf_wr_en": {
+            "direction": "O"
+          },
+          "y_buf_addr": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "y_buf_data": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
       }
     },
     "interface_nets": {
@@ -1202,12 +1252,6 @@
           "axi_bram_ctrl_0/S_AXI"
         ]
       },
-      "axi_smc_M01_AXI": {
-        "interface_ports": [
-          "axi_smc/M01_AXI",
-          "myMNIST_CNN_0/S00_AXI"
-        ]
-      },
       "processing_system7_0_DDR": {
         "interface_ports": [
           "DDR",
@@ -1222,79 +1266,65 @@
       }
     },
     "nets": {
-      "processing_system7_0_FCLK_CLK0": {
+      "rstn_i_1": {
         "ports": [
-          "processing_system7_0/FCLK_CLK0",
+          "rst_n",
+          "axi_bram_ctrl_0_bram/rstb",
+          "axi_smc/aresetn",
+          "axi_bram_ctrl_0/s_axi_aresetn",
+          "top_cnn_0/rst_n"
+        ]
+      },
+      "clk_1": {
+        "ports": [
+          "clk",
           "processing_system7_0/M_AXI_GP0_ACLK",
           "axi_smc/aclk",
           "axi_bram_ctrl_0/s_axi_aclk",
-          "rst_ps7_0_50M/slowest_sync_clk",
           "axi_bram_ctrl_0_bram/clkb",
-          "myMNIST_CNN_0/clk_i",
-          "myMNIST_CNN_0/s00_axi_aclk"
-        ]
-      },
-      "processing_system7_0_FCLK_RESET0_N": {
-        "ports": [
-          "processing_system7_0/FCLK_RESET0_N",
-          "rst_ps7_0_50M/ext_reset_in"
-        ]
-      },
-      "rst_ps7_0_50M_peripheral_aresetn": {
-        "ports": [
-          "rst_ps7_0_50M/peripheral_aresetn",
-          "axi_bram_ctrl_0/s_axi_aresetn",
-          "axi_smc/aresetn",
-          "myMNIST_CNN_0/s00_axi_aresetn"
-        ]
-      },
-      "myMNIST_CNN_0_y_buf_en": {
-        "ports": [
-          "myMNIST_CNN_0/y_buf_en",
-          "axi_bram_ctrl_0_bram/enb"
-        ]
-      },
-      "myMNIST_CNN_0_y_buf_wr_en": {
-        "ports": [
-          "myMNIST_CNN_0/y_buf_wr_en",
-          "axi_bram_ctrl_0_bram/web"
-        ]
-      },
-      "myMNIST_CNN_0_y_buf_addr": {
-        "ports": [
-          "myMNIST_CNN_0/y_buf_addr",
-          "axi_bram_ctrl_0_bram/addrb"
-        ]
-      },
-      "myMNIST_CNN_0_y_buf_data": {
-        "ports": [
-          "myMNIST_CNN_0/y_buf_data",
-          "axi_bram_ctrl_0_bram/dinb"
-        ]
-      },
-      "rstn_i_1": {
-        "ports": [
-          "rstn_i",
-          "axi_bram_ctrl_0_bram/rstb",
-          "myMNIST_CNN_0/rstn_i"
+          "top_cnn_0/clk"
         ]
       },
       "start_i_1": {
         "ports": [
           "start_i",
-          "myMNIST_CNN_0/start_i"
+          "top_cnn_0/start_i"
         ]
       },
-      "myMNIST_CNN_0_done_led_o": {
+      "top_cnn_0_done_intr_o": {
         "ports": [
-          "myMNIST_CNN_0/done_led_o",
+          "top_cnn_0/done_intr_o",
+          "processing_system7_0/IRQ_F2P"
+        ]
+      },
+      "top_cnn_0_done_led_o": {
+        "ports": [
+          "top_cnn_0/done_led_o",
           "done_led_o"
         ]
       },
-      "myMNIST_CNN_0_done_intr_o": {
+      "top_cnn_0_y_buf_en": {
         "ports": [
-          "myMNIST_CNN_0/done_intr_o",
-          "processing_system7_0/IRQ_F2P"
+          "top_cnn_0/y_buf_en",
+          "axi_bram_ctrl_0_bram/enb"
+        ]
+      },
+      "top_cnn_0_y_buf_wr_en": {
+        "ports": [
+          "top_cnn_0/y_buf_wr_en",
+          "axi_bram_ctrl_0_bram/web"
+        ]
+      },
+      "top_cnn_0_y_buf_addr": {
+        "ports": [
+          "top_cnn_0/y_buf_addr",
+          "axi_bram_ctrl_0_bram/addrb"
+        ]
+      },
+      "top_cnn_0_y_buf_data": {
+        "ports": [
+          "top_cnn_0/y_buf_data",
+          "axi_bram_ctrl_0_bram/dinb"
         ]
       }
     },
@@ -1309,11 +1339,6 @@
                 "address_block": "/axi_bram_ctrl_0/S_AXI/Mem0",
                 "offset": "0x40000000",
                 "range": "8K"
-              },
-              "SEG_myMNIST_CNN_0_S00_AXI_reg": {
-                "address_block": "/myMNIST_CNN_0/S00_AXI/S00_AXI_reg",
-                "offset": "0x43C00000",
-                "range": "64K"
               }
             }
           }

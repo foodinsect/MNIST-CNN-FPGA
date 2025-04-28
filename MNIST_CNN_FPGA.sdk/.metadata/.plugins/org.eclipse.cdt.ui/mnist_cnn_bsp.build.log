@@ -1,4 +1,4 @@
-14:14:35 **** Build of project mnist_cnn_bsp ****
+06:34:27 **** Build of project mnist_cnn_bsp ****
 make -k all 
 "Running Make include in ps7_cortexa9_0/libsrc/bram_v4_3/src"
 make -C ps7_cortexa9_0/libsrc/bram_v4_3/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
@@ -16,8 +16,6 @@ make -C ps7_cortexa9_0/libsrc/dmaps_v2_4/src -s include  "SHELL=CMD" "COMPILER=a
 make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
 "Running Make include in ps7_cortexa9_0/libsrc/gpiops_v3_5/src"
 make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Running Make include in ps7_cortexa9_0/libsrc/myMNIST_CNN_v1_0/src"
-make -C ps7_cortexa9_0/libsrc/myMNIST_CNN_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
 "Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_6/src"
 make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s include  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
 "Running Make include in ps7_cortexa9_0/libsrc/scugic_v4_0/src"
@@ -39,6 +37,7 @@ make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s include  "SHELL=CMD" "COMPILER=
 "Running Make libs in ps7_cortexa9_0/libsrc/bram_v4_3/src"
 make -C ps7_cortexa9_0/libsrc/bram_v4_3/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
 "Compiling bram"
+arm-none-eabi-ar: creating ../../../lib/libxil.a
 "Running Make libs in ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src"
 make -C ps7_cortexa9_0/libsrc/coresightps_dcc_v1_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
 "Compiling coresightps_dcc"
@@ -60,16 +59,6 @@ make -C ps7_cortexa9_0/libsrc/emacps_v3_9/src -s libs  "SHELL=CMD" "COMPILER=arm
 "Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v3_5/src"
 make -C ps7_cortexa9_0/libsrc/gpiops_v3_5/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
 "Compiling gpiops"
-"Running Make libs in ps7_cortexa9_0/libsrc/myMNIST_CNN_v1_0/src"
-make -C ps7_cortexa9_0/libsrc/myMNIST_CNN_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
-"Compiling myMNIST_CNN..."
-myMNIST_CNN_selftest.c: In function 'MYMNIST_CNN_Reg_SelfTest':
-myMNIST_CNN_selftest.c:52:60: warning: comparison of integer expressions of different signedness: 'u32' {aka 'long unsigned int'} and 'int' [-Wsign-compare]
-    if ( MYMNIST_CNN_mReadReg (baseaddr, read_loop_index*4) != (read_loop_index+1)*READ_WRITE_MUL_FACTOR){
-                                                            ^~
-myMNIST_CNN_selftest.c:36:6: warning: unused variable 'Index' [-Wunused-variable]
-  int Index;
-      ^~~~~
 "Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_6/src"
 make -C ps7_cortexa9_0/libsrc/qspips_v3_6/src -s libs  "SHELL=CMD" "COMPILER=arm-none-eabi-gcc" "ARCHIVER=arm-none-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -nostartfiles -g -Wall -Wextra"
 "Compiling qspips"
@@ -115,5 +104,5 @@ make -C ps7_cortexa9_0/libsrc/xadcps_v2_3/src -s libs  "SHELL=CMD" "COMPILER=arm
 "Compiling xadcps"
 'Finished building libraries'
 
-14:14:55 Build Finished (took 20s.181ms)
+06:34:45 Build Finished (took 18s.221ms)
 

@@ -15,7 +15,6 @@ module tb_top();
 
     // Instantiate DUT
     top #(
-        .VIVADO_PROJECT_LOCATION("F:/cnn_verilog"),
         .IN_IMG_NUM(10),
         .X_BUF_DATA_WIDTH(8),
         .X_BUF_DEPTH(7840),

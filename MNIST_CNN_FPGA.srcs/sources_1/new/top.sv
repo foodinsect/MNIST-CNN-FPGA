@@ -159,6 +159,7 @@ module top #(
 
     wire conv_done;
     wire FC_done;
+    wire done;
     reg  done_z;
     reg  done_zz;
     reg  done_zzz;

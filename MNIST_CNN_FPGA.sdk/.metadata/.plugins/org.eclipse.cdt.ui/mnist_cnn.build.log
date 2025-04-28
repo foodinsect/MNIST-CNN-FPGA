@@ -1,11 +1,20 @@
-14:21:14 **** Auto Build of configuration Debug for project mnist_cnn ****
+06:34:46 **** Build of configuration Debug for project mnist_cnn ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
 'Building file: ../src/main.c'
 'Invoking: ARM v7 gcc compiler'
 arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../mnist_cnn_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:131:11: warning: unused variable 'p' [-Wunused-variable]
+  uint8_t* p;
+           ^
 'Finished building: ../src/main.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../mnist_cnn_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
 ' '
 'Building target: mnist_cnn.elf'
 'Invoking: ARM v7 gcc linker'
@@ -15,9 +24,9 @@ arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=non
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size mnist_cnn.elf  |tee "mnist_cnn.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  33168	   2320	  23288	  58776	   e598	mnist_cnn.elf
+  33440	   2320	  23288	  59048	   e6a8	mnist_cnn.elf
 'Finished building: mnist_cnn.elf.size'
 ' '
 
-14:21:15 Build Finished (took 915ms)
+06:34:47 Build Finished (took 1s.45ms)
 
