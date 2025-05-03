@@ -32,50 +32,68 @@ module top #(
 	wire [7:0] Image_data_b;
 	wire signed [71:0] PE_data_in;
 	wire signed [71:0] Image_6rows;
+
 	wire signed [71:0] BUF1_out1;
 	wire signed [71:0] BUF1_out2;
 	wire signed [71:0] BUF1_out3;
+	
 	wire [2:0] Conv_Layer;
 	assign PE_data_in = (Conv_Layer == 3'b000 ? Image_6rows : (Conv_Layer == 3'b001 ? BUF1_out1 : (Conv_Layer == 3'b010 ? BUF1_out2 : (Conv_Layer == 3'b011 ? BUF1_out3 : Image_6rows))));
+
 	wire [39:0] conv_weight_ch1_packed;
 	wire [39:0] conv_weight_ch2_packed;
 	wire [39:0] conv_weight_ch3_packed;
+
 	reg signed [199:0] conv_weight_ch1;
 	reg signed [199:0] conv_weight_ch2;
 	reg signed [199:0] conv_weight_ch3;
-	wire signed [23:0] bias_in;
 	reg [2:0] weight_row_counter;
+
+	wire signed [23:0] bias_in;
+	
 	wire signed [23:0] conv_out1;
 	wire signed [23:0] conv_out2;
 	wire signed [23:0] conv_out3;
+
 	wire signed [23:0] FIFO_out1;
 	wire signed [23:0] FIFO_out2;
 	wire signed [23:0] FIFO_out3;
+	
 	wire [11:0] MAX_out1;
 	wire [11:0] MAX_out2;
 	wire [11:0] MAX_out3;
+	
 	wire signed [11:0] BUF2_out1;
 	wire signed [11:0] BUF2_out2;
 	wire signed [11:0] BUF2_out3;
+	
 	wire MAX_en_1;
 	wire MAX_en_2;
 	wire MAX_en_3;
+	
 	wire BUF_wr_en_1;
 	wire BUF_wr_en_2;
 	wire BUF_wr_en_3;
+	
 	wire [2:0] Shift_en;
+
 	wire fc_en;
 	wire fc_clear;
 	wire fc_valid_o;
 	wire fc_weight_en;
+
 	wire [1:0] fc_data_sel;
 	wire [5:0] fc_weight_addr;
 	wire [79:0] FC_Weight_packed;
+
 	wire signed [79:0] FC_Weight;
 	wire signed [79:0] FC_Bias;
 	wire signed [11:0] FC_data;
+
 	wire [Y_BUF_DATA_WIDTH - 1:0] fc_data_o;
+
 	assign FC_data = (fc_data_sel == 2'b01 ? BUF2_out1 : (fc_data_sel == 2'b10 ? BUF2_out2 : (fc_data_sel == 2'b11 ? BUF2_out3 : 12'hzzz)));
+
 	genvar i;
 	generate
 		for (i = 0; i < 10; i = i + 1) begin : unpack_loop
@@ -83,12 +101,17 @@ module top #(
 			assign FC_Weight[(9 - i) * 8+:8] = FC_Weight_packed[8 * (9 - i)+:8];
 		end
 	endgenerate
+
 	assign Shift_en = (fc_data_sel == 2'b01 ? 3'b001 : (fc_data_sel == 2'b10 ? 3'b010 : (fc_data_sel == 2'b11 ? 3'b100 : 3'b000)));
 	assign y_buf_en = y_buf_wr_en;
+
 	wire Layer_change;
 	wire Weight_en;
+
 	reg Weight_packed_en;
+
 	wire [4:0] Weight_addr;
+
 	wire FIFO_valid;
 	wire BUF1_rd_en;
 	wire BUF2_wr_en;
@@ -97,6 +120,7 @@ module top #(
 	wire PE_en;
 	wire PE_valid_i;
 	wire PE_valid_o;
+
 	wire [4:0] PE_addr;
 	wire conv_done;
 	wire FC_done;
@@ -107,12 +131,14 @@ module top #(
 	reg done_zzzz;
 	wire all_clear;
 	reg [9:0] Imgae_base;
+
 	always @(clk_i) begin
 		done_z <= done;
 		done_zz <= done_z;
 		done_zzz <= done_zz;
 		done_zzzz <= done_zzz;
 	end
+
 	wire Bias_Sel;
 	wire acc_wr_en;
 	wire acc_rd_en;
@@ -121,6 +147,69 @@ module top #(
 	wire Slide_trigger;
 	wire Slide_clear;
 	wire BUF1_wr_en;
+
+
+
+	ila_0 crazy_top_ila (
+		.clk(clk_i), // input wire clk
+
+
+		.probe0(start_i), // input wire [0:0]  probe0  
+		.probe1(conv_weight_ch1), // input wire [199:0]  probe1 
+		.probe2(conv_weight_ch2), // input wire [199:0]  probe2 
+		.probe3(conv_weight_ch3), // input wire [199:0]  probe3 
+		.probe4(FC_Weight_packed), // input wire [79:0]  probe4 
+		.probe5(FC_Weight), // input wire [79:0]  probe5 
+		.probe6(FC_Bias), // input wire [79:0]  probe6 
+		.probe7(PE_data_in), // input wire [71:0]  probe7 
+		.probe8(Image_6rows), // input wire [71:0]  probe8 
+		.probe9(BUF1_out1), // input wire [71:0]  probe9 
+		.probe10(BUF1_out2), // input wire [71:0]  probe10 
+		.probe11(BUF1_out3), // input wire [71:0]  probe11 
+		.probe12(conv_weight_ch1_packed), // input wire [39:0]  probe12 
+		.probe13(conv_weight_ch2_packed), // input wire [39:0]  probe13 
+		.probe14(conv_weight_ch3_packed), // input wire [39:0]  probe14 
+		.probe15(bias_in), // input wire [23:0]  probe15 
+		.probe16(conv_out1), // input wire [23:0]  probe16 
+		.probe17(conv_out2), // input wire [23:0]  probe17 
+		.probe18(conv_out3), // input wire [23:0]  probe18 
+		.probe19(FIFO_out1), // input wire [23:0]  probe19 
+		.probe20(FIFO_out2), // input wire [23:0]  probe20 
+		.probe21(FIFO_out3), // input wire [23:0]  probe21 
+		.probe22(MAX_out1), // input wire [10:0]  probe22 
+		.probe23(MAX_out2), // input wire [10:0]  probe23 
+		.probe24(MAX_out3), // input wire [10:0]  probe24 
+		.probe25(BUF2_out1), // input wire [10:0]  probe25 
+		.probe26(BUF2_out2), // input wire [10:0]  probe26 
+		.probe27(BUF2_out3), // input wire [10:0]  probe27 
+		.probe28(FC_data), // input wire [10:0]  probe28 
+		.probe29(PE_addr), // input wire [4:0]  probe29 
+		.probe30(Weight_addr), // input wire [4:0]  probe30 
+		.probe31(Conv_Layer), // input wire [2:0]  probe31 
+		.probe32(Layer_change), // input wire [0:0]  probe32 
+		.probe33(Weight_packed_en), // input wire [0:0]  probe33 
+		.probe34(FIFO_valid), // input wire [0:0]  probe34 
+		.probe35(BUF1_rd_en), // input wire [0:0]  probe35 
+		.probe36(BUF1_wr_en), // input wire [0:0]  probe36 
+		.probe37(BUF2_rd_en), // input wire [0:0]  probe37 
+		.probe38(BUF2_wr_en), // input wire [0:0]  probe38 
+		.probe39(PE_clear), // input wire [0:0]  probe39 
+		.probe40(PE_en), // input wire [0:0]  probe40 
+		.probe41(PE_valid_i), // input wire [0:0]  probe41 
+		.probe42(PE_valid_o), // input wire [0:0]  probe42 
+		.probe43(conv_done), // input wire [0:0]  probe43 
+		.probe44(FC_done), // input wire [0:0]  probe44 
+		.probe45(done), // input wire [0:0]  probe45 
+		.probe46(Bias_Sel), // input wire [0:0]  probe46 
+		.probe47(acc_wr_en), // input wire [0:0]  probe47 
+		.probe48(acc_rd_en), // input wire [0:0]  probe48 
+		.probe49(Slide_wr_en), // input wire [0:0]  probe49 
+		.probe50(Slide_rd_en), // input wire [0:0]  probe50 
+		.probe51(Slide_trigger), // input wire [0:0]  probe51 
+		.probe52(Slide_clear), // input wire [0:0]  probe52 
+		.probe53(BUF1_wr_en) // input wire [0:0]  probe53
+	);
+
 	glbl_controller global_ctrl(
 		.clk_i(clk_i),
 		.rstn_i(rstn_i),
@@ -154,6 +243,7 @@ module top #(
 		.conv_done(conv_done),
 		.done_o()
 	);
+
 	PE_Array PE_Array(
 		.clk_i(clk_i),
 		.rstn_i(rstn_i & ~all_clear),
@@ -173,6 +263,7 @@ module top #(
 		.conv_out2(conv_out2),
 		.conv_out3(conv_out3)
 	);
+
 	FIFO FIFO_ch1(
 		.clk_i(clk_i),
 		.rstn_i(rstn_i & ~all_clear),
@@ -181,6 +272,7 @@ module top #(
 		.valid_o(MAX_en_1),
 		.data_out(FIFO_out1)
 	);
+
 	FIFO FIFO_ch2(
 		.clk_i(clk_i),
 		.rstn_i(rstn_i & ~all_clear),
@@ -189,6 +281,7 @@ module top #(
 		.valid_o(MAX_en_2),
 		.data_out(FIFO_out2)
 	);
+
 	FIFO FIFO_ch3(
 		.clk_i(clk_i),
 		.rstn_i(rstn_i & ~all_clear),
@@ -197,6 +290,7 @@ module top #(
 		.valid_o(MAX_en_3),
 		.data_out(FIFO_out3)
 	);
+
 	MaxPooling_ReLU MaxPooling_ch1(
 		.clk_i(clk_i),
 		.rstn_i(rstn_i & ~all_clear),
@@ -205,6 +299,7 @@ module top #(
 		.data_o(MAX_out1),
 		.valid_o(BUF_wr_en_1)
 	);
+
 	MaxPooling_ReLU MaxPooling_ch2(
 		.clk_i(clk_i),
 		.rstn_i(rstn_i & ~all_clear),
@@ -213,6 +308,7 @@ module top #(
 		.data_o(MAX_out2),
 		.valid_o(BUF_wr_en_2)
 	);
+
 	MaxPooling_ReLU MaxPooling_ch3(
 		.clk_i(clk_i),
 		.rstn_i(rstn_i & ~all_clear),
@@ -221,6 +317,7 @@ module top #(
 		.data_o(MAX_out3),
 		.valid_o(BUF_wr_en_3)
 	);
+
 	BUF1 BUF1_ch1(
 		.clk_i(clk_i),
 		.rstn_i(rstn_i & ~all_clear),
@@ -231,6 +328,7 @@ module top #(
 		.data_in(MAX_out1),
 		.data_out(BUF1_out1)
 	);
+
 	BUF1 BUF1_ch2(
 		.clk_i(clk_i),
 		.rstn_i(rstn_i & ~all_clear),
@@ -241,6 +339,7 @@ module top #(
 		.data_in(MAX_out2),
 		.data_out(BUF1_out2)
 	);
+
 	BUF1 BUF1_ch3(
 		.clk_i(clk_i),
 		.rstn_i(rstn_i & ~all_clear),
@@ -251,24 +350,28 @@ module top #(
 		.data_in(MAX_out3),
 		.data_out(BUF1_out3)
 	);
+
 	BUF2 ShiftBuf_ch1(
 		.clk_i(clk_i),
 		.shift_en((BUF_wr_en_1 & BUF2_wr_en) | Shift_en[0]),
 		.data_i(MAX_out1),
 		.data_o(BUF2_out1)
 	);
+
 	BUF2 ShiftBuf_ch2(
 		.clk_i(clk_i),
 		.shift_en((BUF_wr_en_2 & BUF2_wr_en) | Shift_en[1]),
 		.data_i(MAX_out2),
 		.data_o(BUF2_out2)
 	);
+
 	BUF2 ShiftBuf_ch3(
 		.clk_i(clk_i),
 		.shift_en((BUF_wr_en_3 & BUF2_wr_en) | Shift_en[2]),
 		.data_i(MAX_out3),
 		.data_o(BUF2_out3)
 	);
+
 	FC_Controller FC_Ctrl(
 		.clk_i(clk_i),
 		.rstn_i(rstn_i & ~all_clear),
@@ -293,7 +396,9 @@ module top #(
 		.valid_o(fc_valid_o),
 		.done_o(FC_done)
 	);
+
 	wire buf_wr_done;
+
 	y_buf #(
 		.DATA_WIDTH(Y_BUF_DATA_WIDTH),
 		.ADDR_WIDTH(Y_BUF_ADDR_WIDTH)
@@ -307,10 +412,13 @@ module top #(
 		.y_buf_en(y_buf_wr_en),
 		.y_buf_done(buf_wr_done)
 	);
+
 	reg [5:0] irq_sr;
 	reg led;
+
 	assign done_intr_o = |{irq_sr};
 	assign done_led_o = led;
+
 	always @(posedge clk_i) begin
 		irq_sr[0] <= buf_wr_done;
 		irq_sr[5:1] <= irq_sr[4:0];
@@ -319,56 +427,41 @@ module top #(
 		else if (done_intr_o)
 			led <= 1'b1;
 	end
+	
+	integer k;
+	reg [4:0] weight_addr_d;
+
 	always @(posedge clk_i) begin
 		if (~rstn_i) begin
-			weight_row_counter <= 3'd0;
-			Weight_packed_en <= 1'b0;
-			begin : sv2v_autoblock_1
-				integer i;
-				for (i = 0; i < 25; i = i + 1)
-					begin
-						conv_weight_ch1[(24 - i) * 8+:8] <= 8'b00000000;
-						conv_weight_ch2[(24 - i) * 8+:8] <= 8'b00000000;
-						conv_weight_ch3[(24 - i) * 8+:8] <= 8'b00000000;
-					end
+			// 초기화
+			for (k = 0; k < 25; k = k + 1) begin
+				conv_weight_ch1[k * 8 +: 8] <= 8'd0;
+				conv_weight_ch2[k * 8 +: 8] <= 8'd0;
+				conv_weight_ch3[k * 8 +: 8] <= 8'd0;
+			end
+			Weight_packed_en <= 0;
+			weight_addr_d <= 0;
+		end
+		else begin
+			Weight_packed_en <= Weight_en;
+			weight_addr_d <= Weight_addr;
+
+			if (Weight_packed_en) begin
+				for (k = 0; k < 5; k = k + 1) begin
+					conv_weight_ch1[((24 - ((weight_addr_d % 5) * 5 + k)) * 8) +: 8] <= conv_weight_ch1_packed[(4 - k)*8 +: 8];
+					conv_weight_ch2[((24 - ((weight_addr_d % 5) * 5 + k)) * 8) +: 8] <= conv_weight_ch2_packed[(4 - k)*8 +: 8];
+					conv_weight_ch3[((24 - ((weight_addr_d % 5) * 5 + k)) * 8) +: 8] <= conv_weight_ch3_packed[(4 - k)*8 +: 8];
+				end
 			end
 		end
-		else if (Weight_packed_en) begin
-			conv_weight_ch1[(24 - (((weight_row_counter - 1) * 5) + 4)) * 8+:8] <= conv_weight_ch1_packed[7:0];
-			conv_weight_ch1[(24 - (((weight_row_counter - 1) * 5) + 3)) * 8+:8] <= conv_weight_ch1_packed[15:8];
-			conv_weight_ch1[(24 - (((weight_row_counter - 1) * 5) + 2)) * 8+:8] <= conv_weight_ch1_packed[23:16];
-			conv_weight_ch1[(24 - (((weight_row_counter - 1) * 5) + 1)) * 8+:8] <= conv_weight_ch1_packed[31:24];
-			conv_weight_ch1[(24 - (((weight_row_counter - 1) * 5) + 0)) * 8+:8] <= conv_weight_ch1_packed[39:32];
-			conv_weight_ch2[(24 - (((weight_row_counter - 1) * 5) + 4)) * 8+:8] <= conv_weight_ch2_packed[7:0];
-			conv_weight_ch2[(24 - (((weight_row_counter - 1) * 5) + 3)) * 8+:8] <= conv_weight_ch2_packed[15:8];
-			conv_weight_ch2[(24 - (((weight_row_counter - 1) * 5) + 2)) * 8+:8] <= conv_weight_ch2_packed[23:16];
-			conv_weight_ch2[(24 - (((weight_row_counter - 1) * 5) + 1)) * 8+:8] <= conv_weight_ch2_packed[31:24];
-			conv_weight_ch2[(24 - (((weight_row_counter - 1) * 5) + 0)) * 8+:8] <= conv_weight_ch2_packed[39:32];
-			conv_weight_ch3[(24 - (((weight_row_counter - 1) * 5) + 4)) * 8+:8] <= conv_weight_ch3_packed[7:0];
-			conv_weight_ch3[(24 - (((weight_row_counter - 1) * 5) + 3)) * 8+:8] <= conv_weight_ch3_packed[15:8];
-			conv_weight_ch3[(24 - (((weight_row_counter - 1) * 5) + 2)) * 8+:8] <= conv_weight_ch3_packed[23:16];
-			conv_weight_ch3[(24 - (((weight_row_counter - 1) * 5) + 1)) * 8+:8] <= conv_weight_ch3_packed[31:24];
-			conv_weight_ch3[(24 - (((weight_row_counter - 1) * 5) + 0)) * 8+:8] <= conv_weight_ch3_packed[39:32];
-			if (weight_row_counter < 3'd5)
-				weight_row_counter <= weight_row_counter + 3'd1;
-			else
-				weight_row_counter <= 3'd1;
-		end
-		else if (Layer_change) begin : sv2v_autoblock_2
-			integer i;
-			for (i = 0; i < 25; i = i + 1)
-				begin
-					conv_weight_ch1[(24 - i) * 8+:8] <= 8'b00000000;
-					conv_weight_ch2[(24 - i) * 8+:8] <= 8'b00000000;
-					conv_weight_ch3[(24 - i) * 8+:8] <= 8'b00000000;
-				end
-		end
-		Weight_packed_en <= Weight_en;
 	end
+
+
+
 	single_port_bram #(
 		.WIDTH(W_BUF_DATA_WIDTH),
 		.DEPTH(W_BUF_DEPTH),
-		.INIT_FILE("./cnn_verilog/data/conv_weight_ch1.txt")
+		.INIT_FILE("../../../../cnn_verilog/data/conv_weight_ch1.txt")
 	) conv_wrom_ch1(
 		.clk(clk_i),
 		.en(Weight_en),
@@ -377,10 +470,11 @@ module top #(
 		.din(),
 		.dout(conv_weight_ch1_packed)
 	);
+
 	single_port_bram #(
 		.WIDTH(W_BUF_DATA_WIDTH),
 		.DEPTH(W_BUF_DEPTH),
-		.INIT_FILE("./cnn_verilog/data/conv_weight_ch2.txt")
+		.INIT_FILE("../../../../cnn_verilog/data/conv_weight_ch2.txt")
 	) conv_wrom_ch2(
 		.clk(clk_i),
 		.en(Weight_en),
@@ -389,10 +483,11 @@ module top #(
 		.din(),
 		.dout(conv_weight_ch2_packed)
 	);
+
 	single_port_bram #(
 		.WIDTH(W_BUF_DATA_WIDTH),
 		.DEPTH(W_BUF_DEPTH),
-		.INIT_FILE("./cnn_verilog/data/conv_weight_ch3.txt")
+		.INIT_FILE("../../../../cnn_verilog/data/conv_weight_ch3.txt")
 	) conv_wrom_ch3(
 		.clk(clk_i),
 		.en(Weight_en),
@@ -401,10 +496,11 @@ module top #(
 		.din(),
 		.dout(conv_weight_ch3_packed)
 	);
+
 	single_port_bram #(
 		.WIDTH(80),
 		.DEPTH(48),
-		.INIT_FILE("./cnn_verilog/data/fc_weight_transposed.txt")
+		.INIT_FILE("../../../../cnn_verilog/data/fc_weight_transposed.txt")
 	) FC_weight_rom(
 		.clk(clk_i),
 		.en(fc_weight_en),
@@ -413,22 +509,22 @@ module top #(
 		.din(),
 		.dout(FC_Weight_packed)
 	);
-	wire FC_en;
+
 	FC_Bias_ROM #(
 		.BIAS_WIDTH(8),
-		.BIAS_DEPTH(10),
-		.FILENAME("./cnn_verilog/data/fc_bias.txt")
+		.BIAS_DEPTH(10)
 	) FC_BiasROM(
 		.clk_i(clk_i),
 		.rstn_i(rstn_i),
-		.en_i(FC_en),
+		.en_i(fc_weight_en),
 		.data_o(FC_Bias)
 	);
+
 	xilinx_true_dual_port_no_change_1_clock_ram #(
 		.RAM_WIDTH(X_BUF_DATA_WIDTH),
 		.RAM_DEPTH(X_BUF_DEPTH),
 		.RAM_PERFORMANCE("LOW_LATENCY"),
-		.INIT_FILE("./cnn_verilog/INT8_input_image_hex.txt")
+		.INIT_FILE("../../../../cnn_verilog/INT8_input_image_hex.txt")
 	) Image_ROM(
 		.addra(Image_addr),
 		.addrb(Image_addr + 10'd28),
@@ -446,6 +542,7 @@ module top #(
 		.douta(Image_data_a),
 		.doutb(Image_data_b)
 	);
+
 	Sliding_Window #(
 		.DATA_WIDHT(8),
 		.PCS(2),
@@ -463,15 +560,14 @@ module top #(
 		.din_b(Image_data_b),
 		.data_out(Image_6rows)
 	);
+
 	Bias_ROM #(
-		.BIAS_WIDTH(8),
-		.BIAS_DEPTH(3),
-		.FILENAME1("./cnn_verilog/data/conv1_bias.txt"),
-		.FILENAME2("./cnn_verilog/data/conv2_bias.txt")
+		.BIAS_WIDTH(8)
 	) BiasROM(
 		.clk_i(clk_i),
 		.rstn_i(rstn_i),
 		.Layer_i(Bias_Sel),
 		.data_o(bias_in)
 	);
+
 endmodule

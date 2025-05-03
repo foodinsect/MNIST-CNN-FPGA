@@ -1,3 +1,5 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/ip/ila_0/sim/ila_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ila_0
 INFO: [VRFC 10-2263] Analyzing Verilog file "F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/imports/cnn/Accumulator.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Accumulator
 INFO: [VRFC 10-2263] Analyzing Verilog file "F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/imports/cnn/BUF1.v" into library xil_defaultlib

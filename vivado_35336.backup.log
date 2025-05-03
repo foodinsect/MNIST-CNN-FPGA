@@ -1,0 +1,326 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Apr 29 08:14:36 2025
+# Process ID: 35336
+# Current directory: F:/MNIST_CNN_FPGA
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent29272 F:\MNIST_CNN_FPGA\MNIST_CNN_FPGA.xpr
+# Log file: F:/MNIST_CNN_FPGA/vivado.log
+# Journal file: F:/MNIST_CNN_FPGA\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.xpr
+WARNING: [Board 49-91] Board repository path 'C:/Users/foodbug/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store' does not exist, it will not be used to search board files.
+Scanning sources...
+Finished scanning sources
+WARNING: [filemgmt 56-3] Board Part Repository Path: Could not find the directory 'C:/Users/foodbug/AppData/Roaming/Xilinx/Vivado/2019.1/xhub/board_store'.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'f:/ip_repo/myMNIST_CNN_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+update_module_reference design_1_top_cnnexit
+INFO: [Common 17-206] Exiting Vivado at Tue Apr 29 08:27:45 2025...
+ 'xilinx.com:signal:reset:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-5107] Inferred bus interface 'clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
+INFO: [IP_Flow 19-4728] Bus Interface 'rst_n': Added interface parameter 'POLARITY' with value 'ACTIVE_LOW'.
+INFO: [IP_Flow 19-818] Not transferring value dependency attribute "spirit:decode(id('MODELPARAM_VALUE.INT_BW'))" into user parameter "X_BUF_DATA_WIDTH".
+INFO: [IP_Flow 19-818] Not transferring value dependency attribute "(784 * spirit:decode(id('MODELPARAM_VALUE.IN_IMG_NUM')))" into user parameter "X_BUF_DEPTH".
+INFO: [IP_Flow 19-818] Not transferring value dependency attribute "(spirit:decode(id('MODELPARAM_VALUE.INT_BW')) * spirit:decode(id('MODELPARAM_VALUE.FILTER_WIDTH')))" into user parameter "W_BUF_DATA_WIDTH".
+INFO: [IP_Flow 19-818] Not transferring value dependency attribute "((10 * spirit:decode(id('MODELPARAM_VALUE.IN_IMG_NUM'))) * 4)" into user parameter "Y_BUF_DEPTH".
+INFO: [IP_Flow 19-818] Not transferring value dependency attribute "spirit:ceil(spirit:log(2,(spirit:decode(id('MODELPARAM_VALUE.IN_IMG_NUM')) * 10)))" into user parameter "RBAW".
+WARNING: [IP_Flow 19-3157] Bus Interface 'rst_n': Bus parameter POLARITY is ACTIVE_LOW but port 'rst_n' is not *resetn - please double check the POLARITY setting.
+WARNING: [IP_Flow 19-3153] Bus Interface 'clk': ASSOCIATED_BUSIF bus parameter is missing.
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'f:/ip_repo/myMNIST_CNN_1.0'.
+Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding component instance block -- xilinx.com:ip:axi_bram_ctrl:4.1 - axi_bram_ctrl_0
+Adding component instance block -- xilinx.com:ip:smartconnect:1.0 - axi_smc
+Adding component instance block -- xilinx.com:ip:blk_mem_gen:8.4 - axi_bram_ctrl_0_bram
+Adding component instance block -- xilinx.com:module_ref:top_cnn:1.0 - top_cnn_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /top_cnn_0/done_intr_o(undef) and /processing_system7_0/IRQ_F2P(intr)
+Successfully read diagram <design_1> from BD file <F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/bd/design_1/design_1.bd>
+Upgrading 'F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3420] Updated design_1_top_cnn_0_0 to use current project options
+WARNING: [BD 41-1731] Type mismatch between connected pins: /processing_system7_0/IRQ_F2P(intr) and /top_cnn_0_upgraded_ipi/done_intr_o(undef)
+Wrote  : <F:\MNIST_CNN_FPGA\MNIST_CNN_FPGA.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+update_compile_order -fileset sources_1
+open_run impl_1
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Netlist 29-17] Analyzing 3511 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2095.957 ; gain = 27.129
+Restored from archive | CPU: 3.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2095.957 ; gain = 27.129
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 2095.957 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 64 instances were transformed.
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 64 instances
+
+open_run: Time (s): cpu = 00:00:24 ; elapsed = 00:00:20 . Memory (MB): peak = 2216.336 ; gain = 1124.234
+check_timing -verbose -name timing_1
+close_design
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+create_ip -name ila -vendor xilinx.com -library ip -version 6.2 -module_name ila_0 -dir f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/ip
+set_property -dict [list CONFIG.C_PROBE31_WIDTH {3} CONFIG.C_PROBE30_WIDTH {5} CONFIG.C_PROBE29_WIDTH {5} CONFIG.C_PROBE28_WIDTH {11} CONFIG.C_PROBE27_WIDTH {11} CONFIG.C_PROBE26_WIDTH {11} CONFIG.C_PROBE25_WIDTH {11} CONFIG.C_PROBE24_WIDTH {11} CONFIG.C_PROBE23_WIDTH {11} CONFIG.C_PROBE22_WIDTH {11} CONFIG.C_PROBE21_WIDTH {24} CONFIG.C_PROBE20_WIDTH {24} CONFIG.C_PROBE19_WIDTH {24} CONFIG.C_PROBE18_WIDTH {24} CONFIG.C_PROBE17_WIDTH {24} CONFIG.C_PROBE16_WIDTH {24} CONFIG.C_PROBE15_WIDTH {24} CONFIG.C_PROBE14_WIDTH {40} CONFIG.C_PROBE13_WIDTH {40} CONFIG.C_PROBE12_WIDTH {40} CONFIG.C_PROBE11_WIDTH {72} CONFIG.C_PROBE10_WIDTH {72} CONFIG.C_PROBE9_WIDTH {72} CONFIG.C_PROBE8_WIDTH {72} CONFIG.C_PROBE7_WIDTH {72} CONFIG.C_PROBE6_WIDTH {80} CONFIG.C_PROBE5_WIDTH {80} CONFIG.C_PROBE4_WIDTH {80} CONFIG.C_PROBE3_WIDTH {200} CONFIG.C_PROBE2_WIDTH {200} CONFIG.C_PROBE1_WIDTH {200} CONFIG.C_NUM_OF_PROBES {54}] [get_ips ila_0]
+generate_target {instantiation_template} [get_files f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/ip/ila_0/ila_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ila_0'...
+update_compile_order -fileset sources_1
+generate_target all [get_files  f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/ip/ila_0/ila_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ila_0'...
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/ip/ila_0/ila_0_ooc.xdc'
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ila_0'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ila_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ila_0'...
+catch { config_ip_cache -export [get_ips -all ila_0] }
+export_ip_user_files -of_objects [get_files f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/ip/ila_0/ila_0.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/ip/ila_0/ila_0.xci]
+launch_runs -jobs 12 ila_0_synth_1
+[Tue Apr 29 08:32:09 2025] Launched ila_0_synth_1...
+Run output will be captured here: F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/ila_0_synth_1/runme.log
+export_simulation -of_objects [get_files f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/ip/ila_0/ila_0.xci] -directory F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.ip_user_files/sim_scripts -ip_user_files_dir F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.ip_user_files -ipstatic_source_dir F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.ip_user_files/ipstatic -lib_map_path [list {modelsim=F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.cache/compile_simlib/modelsim} {questa=F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.cache/compile_simlib/questa} {riviera=F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.cache/compile_simlib/riviera} {activehdl=F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+set_property -dict [list CONFIG.C_PROBE28_WIDTH {12} CONFIG.C_PROBE27_WIDTH {12} CONFIG.C_PROBE26_WIDTH {12} CONFIG.C_PROBE25_WIDTH {12} CONFIG.C_PROBE24_WIDTH {12} CONFIG.C_PROBE23_WIDTH {12} CONFIG.C_PROBE22_WIDTH {12}] [get_ips ila_0]
+generate_target all [get_files  f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/ip/ila_0/ila_0.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ila_0'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ila_0'...
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/ip/ila_0/ila_0_ooc.xdc'
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ila_0'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ila_0'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ila_0'...
+catch { config_ip_cache -export [get_ips -all ila_0] }
+export_ip_user_files -of_objects [get_files f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/ip/ila_0/ila_0.xci] -no_script -sync -force -quiet
+reset_run ila_0_synth_1
+launch_runs -jobs 12 ila_0_synth_1
+[Tue Apr 29 08:37:19 2025] Launched ila_0_synth_1...
+Run output will be captured here: F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/ila_0_synth_1/runme.log
+export_simulation -of_objects [get_files f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/ip/ila_0/ila_0.xci] -directory F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.ip_user_files/sim_scripts -ip_user_files_dir F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.ip_user_files -ipstatic_source_dir F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.ip_user_files/ipstatic -lib_map_path [list {modelsim=F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.cache/compile_simlib/modelsim} {questa=F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.cache/compile_simlib/questa} {riviera=F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.cache/compile_simlib/riviera} {activehdl=F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+update_module_reference design_1_top_cnn_0_0
+ERROR: [filemgmt 56-328] Reference 'top_cnn' contains sub-design file 'f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/ip/ila_0/ila_0.xci', which is configured for out-of-context synthesis. OOC sub-designs are not allowed in the reference. To change the setting, use TCL command: 'set_property generate_synth_checkpoint 0 [get_files ila_0.xci]'.
+ERROR: [Common 17-39] 'update_module_reference' failed due to earlier errors.
+launch_simulation
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2019.1/data/xsim/xsim.ini' copied to run dir:'F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top_cnn' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.sim/sim_1/behav/xsim'
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+"xvlog --incr --relax -L axi_vip_v1_1_5 -L processing_system7_vip_v1_0_7 -L xilinx_vip -prj tb_top_cnn_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/ip/ila_0/sim/ila_0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ila_0
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/imports/cnn/Accumulator.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Accumulator
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/imports/cnn/BUF1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BUF1
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/imports/cnn/BUF2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module BUF2
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/imports/cnn/Bias_ROM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Bias_ROM
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/imports/cnn/Comparator.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Comparator
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/imports/cnn/FC_Bias_ROM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FC_Bias_ROM
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/imports/cnn/FC_Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FC_Controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/imports/cnn/FC_Layer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FC_Layer
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/imports/cnn/FIFO.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FIFO
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/imports/cnn/MAC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MAC
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/imports/cnn/MaxPooling_ReLU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MaxPooling_ReLU
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/imports/cnn/Max_finder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Max_finder
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/imports/cnn/PE.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PE
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/imports/cnn/PE_Array.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PE_Array
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/imports/cnn/Sliding_Window.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Sliding_Window
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/new/TDP.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xilinx_true_dual_port_no_change_1_clock_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/imports/cnn/acc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module acc
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/imports/cnn/glbl_controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl_controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/imports/cnn/matmul.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module matmul
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/imports/cnn/mul.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mul
+INFO: [Common 17-344] 'run_program' was cancelled
+INFO: [Vivado 12-5357] 'compile' step aborted
+INFO: [Common 17-344] 'launch_simulation' was cancelled
+update_module_reference design_1_top_cnn_0_0
+ERROR: [filemgmt 56-328] Reference 'top_cnn' contains sub-design file 'f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/ip/ila_0/ila_0.xci', which is configured for out-of-context synthesis. OOC sub-designs are not allowed in the reference. To change the setting, use TCL command: 'set_property generate_synth_checkpoint 0 [get_files ila_0.xci]'.
+ERROR: [Common 17-39] 'update_module_reference' failed due to earlier errors.
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+[Tue Apr 29 08:40:37 2025] Launched synth_1...
+Run output will be captured here: F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/synth_1/runme.log
+[Tue Apr 29 08:40:37 2025] Launched impl_1...
+Run output will be captured here: F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+[Tue Apr 29 08:43:18 2025] Launched synth_1...
+Run output will be captured here: F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/synth_1/runme.log
+[Tue Apr 29 08:43:18 2025] Launched impl_1...
+Run output will be captured here: F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/impl_1/runme.log
+update_module_reference design_1_top_cnn_0_0
+ERROR: [filemgmt 56-328] Reference 'top_cnn' contains sub-design file 'f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/ip/ila_0/ila_0.xci', which is configured for out-of-context synthesis. OOC sub-designs are not allowed in the reference. To change the setting, use TCL command: 'set_property generate_synth_checkpoint 0 [get_files ila_0.xci]'.
+ERROR: [Common 17-39] 'update_module_reference' failed due to earlier errors.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+[Tue Apr 29 08:47:13 2025] Launched synth_1...
+Run output will be captured here: F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/synth_1/runme.log
+[Tue Apr 29 08:47:13 2025] Launched impl_1...
+Run output will be captured here: F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2019.1
+  **** Build date : May 24 2019 at 15:13:31
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210351BA1F56A
+open_hw_target: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 3070.453 ; gain = 727.180
+set_property PROGRAM.FILE {F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/impl_1/top_cnn.bit} [get_hw_devices xc7z020_1]
+set_property PROBES.FILE {F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/impl_1/top_cnn.ltx} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/impl_1/top_cnn.ltx} [get_hw_devices xc7z020_1]
+current_hw_device [get_hw_devices xc7z020_1]
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3361] The debug hub core was not detected.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active.
+2. Make sure the BSCAN_SWITCH_USER_MASK device property in Vivado Hardware Manager reflects the user scan chain setting in the design and refresh the device.  To determine the user scan chain setting in the design, open the implemented design and use 'get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub]'.
+For more details on setting the scan chain property, consult the Vivado Debug and Programming User Guide (UG908).
+WARNING: [Labtools 27-3413] Dropping logic core with cellname:'cnn_core/crazy_top_ila' at location 'uuid_2584140E273F500AA1B055639665F23B' from probes file, since it cannot be found on the programmed device.
+set_property PROBES.FILE {F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/impl_1/top_cnn.ltx} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/impl_1/top_cnn.ltx} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/impl_1/top_cnn.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+INFO: [Labtools 27-2302] Device xc7z020 (JTAG device index = 1) is programmed with a design that has 1 ILA core(s).
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE neq200'hXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX [get_hw_probes cnn_core/conv_weight_ch1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE neq200'bXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX [get_hw_probes cnn_core/conv_weight_ch1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2025-Apr-29 09:02:45
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2025-Apr-29 09:02:45
+INFO: [Labtools 27-3304] ILA Waveform data saved to file F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property TRIGGER_COMPARE_VALUE eq200'hXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX [get_hw_probes cnn_core/conv_weight_ch1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'b1 [get_hw_probes cnn_core/BUF1_wr_en -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2025-Apr-29 09:03:49
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2025-Apr-29 09:03:56
+INFO: [Labtools 27-3304] ILA Waveform data saved to file F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes cnn_core/BUF1_wr_en -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'b1 [get_hw_probes cnn_core/PE_valid_o -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2025-Apr-29 09:05:59
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2025-Apr-29 09:05:59
+INFO: [Labtools 27-3304] ILA Waveform data saved to file F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes cnn_core/PE_valid_o -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'b1 [get_hw_probes cnn_core/conv_done -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2025-Apr-29 09:07:55
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes cnn_core/conv_done -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq3'bXXX [get_hw_probes cnn_core/Conv_Layer -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq3'b100 [get_hw_probes cnn_core/Conv_Layer -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq3'h4 [get_hw_probes cnn_core/Conv_Layer -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq3'b100 [get_hw_probes cnn_core/Conv_Layer -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq3'h4 [get_hw_probes cnn_core/Conv_Layer -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq3'u4 [get_hw_probes cnn_core/Conv_Layer -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq3'u1 [get_hw_probes cnn_core/Conv_Layer -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq3'hX [get_hw_probes cnn_core/Conv_Layer -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE neq72'hXX_XXXX_XXXX_XXXX_XXXX [get_hw_probes cnn_core/BUF1_out1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE neq72'u0 [get_hw_probes cnn_core/BUF1_out1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq72'hXX_XXXX_XXXX_XXXX_XXXX [get_hw_probes cnn_core/BUF1_out1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE neq24'hXX_XXXX [get_hw_probes cnn_core/conv_out1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE neq24'oXXXXXXXX [get_hw_probes cnn_core/conv_out1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE neq24'u0 [get_hw_probes cnn_core/conv_out1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+INFO: [Labtools 27-1965] The ILA core 'hw_ila_1' trigger was stopped by user at 2025-Apr-29 09:13:29
+WARNING: [Labtools 27-157] hw_ila [hw_ila_1] stopped. No data to upload.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2025-Apr-29 09:13:34
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2025-Apr-29 09:13:34
+INFO: [Labtools 27-3304] ILA Waveform data saved to file F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property TRIGGER_COMPARE_VALUE eq24'hXX_XXXX [get_hw_probes cnn_core/conv_out1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE neq72'hXX_XXXX_XXXX_XXXX_XXXX [get_hw_probes cnn_core/Image_6rows -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2025-Apr-29 09:14:32
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2025-Apr-29 09:14:32
+INFO: [Labtools 27-3304] ILA Waveform data saved to file F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2025-Apr-29 09:14:42
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2025-Apr-29 09:14:42
+INFO: [Labtools 27-3304] ILA Waveform data saved to file F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property TRIGGER_COMPARE_VALUE neq72'oXXXXXXXXXXXXXXXXXXXXXXXX [get_hw_probes cnn_core/Image_6rows -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE neq72'u0 [get_hw_probes cnn_core/Image_6rows -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2025-Apr-29 09:14:56
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+INFO: [Labtools 27-1965] The ILA core 'hw_ila_1' trigger was stopped by user at 2025-Apr-29 09:14:58
+WARNING: [Labtools 27-157] hw_ila [hw_ila_1] stopped. No data to upload.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}] -trigger_now
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2025-Apr-29 09:15:01
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2025-Apr-29 09:15:01
+INFO: [Labtools 27-3304] ILA Waveform data saved to file F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2025-Apr-29 09:15:06
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2025-Apr-29 09:15:09
+INFO: [Labtools 27-3304] ILA Waveform data saved to file F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property TRIGGER_COMPARE_VALUE eq72'hXX_XXXX_XXXX_XXXX_XXXX [get_hw_probes cnn_core/Image_6rows -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'b1 [get_hw_probes cnn_core/Bias_Sel -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2025-Apr-29 09:23:22
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2025-Apr-29 09:23:22
+INFO: [Labtools 27-3304] ILA Waveform data saved to file F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.hw/backup/hw_ila_data_1.ila. Use Tcl command 'read_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+save_wave_config {F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wcfg}

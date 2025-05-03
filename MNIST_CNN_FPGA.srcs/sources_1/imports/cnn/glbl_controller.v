@@ -63,7 +63,7 @@ module glbl_controller #(
     output reg         FIFO_valid,
 
     output reg         BUF2_wr_en,
-    output reg       BUF2_rd_en,
+    output reg         BUF2_rd_en,
 
     output reg         all_clear,
     output reg         conv_done,
@@ -707,35 +707,35 @@ always @(*) begin : FSM
             end
         end
         WAIT_SLIDE_BUF : begin                  // 1
-            if (Image_phase == 3) begin
+            if (Image_phase >= 3) begin
                 next_state = WAIT_FIRST;
             end else begin
                 next_state = WAIT_SLIDE_BUF;
             end
         end
         WAIT_FIRST : begin                      // 2
-            if (cnt == 7) begin 
+            if (cnt >= 7) begin 
                 next_state = CONV_RUN;
             end else begin
                 next_state = WAIT_FIRST;
             end
         end
         CONV_RUN : begin                        // 3
-            if (Image_phase == 15) begin
+            if (Image_phase >= 15) begin
                 next_state = WAIT_BUF1;
             end else begin
                 next_state = CONV_RUN;
             end
         end
         WAIT_BUF1 : begin                       // 4
-            if (cnt == 10) begin
+            if (cnt >= 10) begin
                 next_state = SET_CONV2;
             end else begin
                 next_state = WAIT_BUF1;
             end
         end
         SET_CONV2 : begin                       // 5
-            if (Conv_Layer == 3'd4) begin
+            if (Conv_Layer >= 3'd4) begin
                 next_state = SET_ACC;
             end
             else begin
@@ -743,15 +743,15 @@ always @(*) begin : FSM
             end
         end
         WAIT_WEIGHT : begin                     // 6
-            if (cnt == 4) begin
+            if (cnt >= 4) begin
                 next_state = WAIT_SECOND;
             end else begin
                 next_state = WAIT_WEIGHT;
             end
         end
         WAIT_SECOND : begin                     // 7
-            if (Conv_Layer == 3'd1) begin
-                if (cnt == 12) begin
+            if (Conv_Layer >= 3'd1) begin
+                if (cnt >= 12) begin
                     next_state = CONV2_RUN;
                 end 
                 else begin
@@ -759,7 +759,7 @@ always @(*) begin : FSM
                 end
             end 
             else begin
-                if (cnt == 11) begin
+                if (cnt >= 11) begin
                     next_state = CONV2_RUN;
                 end
                 else begin
@@ -768,7 +768,7 @@ always @(*) begin : FSM
             end
         end
         CONV2_RUN : begin                       // 8
-            if (cnt == 60) begin
+            if (cnt >= 60) begin
                 next_state = SET_CONV2;
             end else begin
                 next_state = CONV2_RUN;
@@ -778,7 +778,7 @@ always @(*) begin : FSM
             next_state = WAIT_BUF2;
         end
         WAIT_BUF2 : begin                       // 10
-            if (cnt == 35) begin
+            if (cnt >= 35) begin
                 next_state = FC_SET;
             end else begin
                 next_state = WAIT_BUF2;
@@ -795,7 +795,7 @@ always @(*) begin : FSM
             end
         end
         CHECK_CNT : begin                       // 13
-            if (IMG_CNT == IMG_NUM) begin
+            if (IMG_CNT >= IMG_NUM) begin
                 next_state = DONE;
             end else begin
                 next_state = IDLE;

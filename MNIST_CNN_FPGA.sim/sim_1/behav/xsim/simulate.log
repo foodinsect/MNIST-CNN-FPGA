@@ -1,14 +1,14 @@
 Vivado Simulator 2019.1
 Time resolution is 1 ps
-% y_buf: addr=4, data=0 at time 7355000 ns
-% y_buf: addr=8, data=1 at time 14665000 ns
-% y_buf: addr=12, data=2 at time 21975000 ns
-% y_buf: addr=16, data=3 at time 29285000 ns
-% y_buf: addr=20, data=4 at time 36595000 ns
-% y_buf: addr=24, data=5 at time 43905000 ns
-% y_buf: addr=28, data=6 at time 51215000 ns
-% y_buf: addr=32, data=7 at time 58525000 ns
-% y_buf: addr=36, data=8 at time 65835000 ns
-% y_buf: addr=40, data=9 at time 73145000 ns
+% y_buf: addr=z, data=z at time 7355000 ns
+% y_buf: addr=z, data=z at time 14665000 ns
+% y_buf: addr=z, data=z at time 21975000 ns
+% y_buf: addr=z, data=z at time 29285000 ns
+% y_buf: addr=z, data=z at time 36595000 ns
+% y_buf: addr=z, data=z at time 43905000 ns
+% y_buf: addr=z, data=z at time 51215000 ns
+% y_buf: addr=z, data=z at time 58525000 ns
+% y_buf: addr=z, data=z at time 65835000 ns
+% y_buf: addr=z, data=z at time 73145000 ns
 % Simulation: processed all 10 images at time 73155000 ns
 $finish called at time : 73185 ns : File "F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sim_1/new/tb_top_cnn.sv" Line 59

@@ -1,0 +1,125 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Apr 29 08:14:36 2025
+# Process ID: 35336
+# Current directory: F:/MNIST_CNN_FPGA
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent29272 F:\MNIST_CNN_FPGA\MNIST_CNN_FPGA.xpr
+# Log file: F:/MNIST_CNN_FPGA/vivado.log
+# Journal file: F:/MNIST_CNN_FPGA\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.xpr
+update_module_reference design_1_top_cnn_0_0
+update_compile_order -fileset sources_1
+open_run impl_1
+check_timing -verbose -name timing_1
+close_design
+create_ip -name ila -vendor xilinx.com -library ip -version 6.2 -module_name ila_0 -dir f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/ip
+set_property -dict [list CONFIG.C_PROBE31_WIDTH {3} CONFIG.C_PROBE30_WIDTH {5} CONFIG.C_PROBE29_WIDTH {5} CONFIG.C_PROBE28_WIDTH {11} CONFIG.C_PROBE27_WIDTH {11} CONFIG.C_PROBE26_WIDTH {11} CONFIG.C_PROBE25_WIDTH {11} CONFIG.C_PROBE24_WIDTH {11} CONFIG.C_PROBE23_WIDTH {11} CONFIG.C_PROBE22_WIDTH {11} CONFIG.C_PROBE21_WIDTH {24} CONFIG.C_PROBE20_WIDTH {24} CONFIG.C_PROBE19_WIDTH {24} CONFIG.C_PROBE18_WIDTH {24} CONFIG.C_PROBE17_WIDTH {24} CONFIG.C_PROBE16_WIDTH {24} CONFIG.C_PROBE15_WIDTH {24} CONFIG.C_PROBE14_WIDTH {40} CONFIG.C_PROBE13_WIDTH {40} CONFIG.C_PROBE12_WIDTH {40} CONFIG.C_PROBE11_WIDTH {72} CONFIG.C_PROBE10_WIDTH {72} CONFIG.C_PROBE9_WIDTH {72} CONFIG.C_PROBE8_WIDTH {72} CONFIG.C_PROBE7_WIDTH {72} CONFIG.C_PROBE6_WIDTH {80} CONFIG.C_PROBE5_WIDTH {80} CONFIG.C_PROBE4_WIDTH {80} CONFIG.C_PROBE3_WIDTH {200} CONFIG.C_PROBE2_WIDTH {200} CONFIG.C_PROBE1_WIDTH {200} CONFIG.C_NUM_OF_PROBES {54}] [get_ips ila_0]
+generate_target {instantiation_template} [get_files f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/ip/ila_0/ila_0.xci]
+update_compile_order -fileset sources_1
+generate_target all [get_files  f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/ip/ila_0/ila_0.xci]
+catch { config_ip_cache -export [get_ips -all ila_0] }
+export_ip_user_files -of_objects [get_files f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/ip/ila_0/ila_0.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/ip/ila_0/ila_0.xci]
+launch_runs -jobs 12 ila_0_synth_1
+export_simulation -of_objects [get_files f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/ip/ila_0/ila_0.xci] -directory F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.ip_user_files/sim_scripts -ip_user_files_dir F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.ip_user_files -ipstatic_source_dir F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.ip_user_files/ipstatic -lib_map_path [list {modelsim=F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.cache/compile_simlib/modelsim} {questa=F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.cache/compile_simlib/questa} {riviera=F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.cache/compile_simlib/riviera} {activehdl=F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+set_property -dict [list CONFIG.C_PROBE28_WIDTH {12} CONFIG.C_PROBE27_WIDTH {12} CONFIG.C_PROBE26_WIDTH {12} CONFIG.C_PROBE25_WIDTH {12} CONFIG.C_PROBE24_WIDTH {12} CONFIG.C_PROBE23_WIDTH {12} CONFIG.C_PROBE22_WIDTH {12}] [get_ips ila_0]
+generate_target all [get_files  f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/ip/ila_0/ila_0.xci]
+catch { config_ip_cache -export [get_ips -all ila_0] }
+export_ip_user_files -of_objects [get_files f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/ip/ila_0/ila_0.xci] -no_script -sync -force -quiet
+reset_run ila_0_synth_1
+launch_runs -jobs 12 ila_0_synth_1
+export_simulation -of_objects [get_files f:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/ip/ila_0/ila_0.xci] -directory F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.ip_user_files/sim_scripts -ip_user_files_dir F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.ip_user_files -ipstatic_source_dir F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.ip_user_files/ipstatic -lib_map_path [list {modelsim=F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.cache/compile_simlib/modelsim} {questa=F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.cache/compile_simlib/questa} {riviera=F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.cache/compile_simlib/riviera} {activehdl=F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+update_module_reference design_1_top_cnn_0_0
+launch_simulation
+update_module_reference design_1_top_cnn_0_0
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+update_module_reference design_1_top_cnn_0_0
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/impl_1/top_cnn.bit} [get_hw_devices xc7z020_1]
+set_property PROBES.FILE {F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/impl_1/top_cnn.ltx} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/impl_1/top_cnn.ltx} [get_hw_devices xc7z020_1]
+current_hw_device [get_hw_devices xc7z020_1]
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+set_property PROBES.FILE {F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/impl_1/top_cnn.ltx} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/impl_1/top_cnn.ltx} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/impl_1/top_cnn.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE neq200'hXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX [get_hw_probes cnn_core/conv_weight_ch1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE neq200'bXXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX [get_hw_probes cnn_core/conv_weight_ch1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq200'hXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX_XXXX [get_hw_probes cnn_core/conv_weight_ch1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'b1 [get_hw_probes cnn_core/BUF1_wr_en -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes cnn_core/BUF1_wr_en -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'b1 [get_hw_probes cnn_core/PE_valid_o -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes cnn_core/PE_valid_o -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'b1 [get_hw_probes cnn_core/conv_done -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes cnn_core/conv_done -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq3'bXXX [get_hw_probes cnn_core/Conv_Layer -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq3'b100 [get_hw_probes cnn_core/Conv_Layer -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq3'h4 [get_hw_probes cnn_core/Conv_Layer -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq3'b100 [get_hw_probes cnn_core/Conv_Layer -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq3'h4 [get_hw_probes cnn_core/Conv_Layer -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq3'u4 [get_hw_probes cnn_core/Conv_Layer -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq3'u1 [get_hw_probes cnn_core/Conv_Layer -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq3'hX [get_hw_probes cnn_core/Conv_Layer -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE neq72'hXX_XXXX_XXXX_XXXX_XXXX [get_hw_probes cnn_core/BUF1_out1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE neq72'u0 [get_hw_probes cnn_core/BUF1_out1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq72'hXX_XXXX_XXXX_XXXX_XXXX [get_hw_probes cnn_core/BUF1_out1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE neq24'hXX_XXXX [get_hw_probes cnn_core/conv_out1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE neq24'oXXXXXXXX [get_hw_probes cnn_core/conv_out1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE neq24'u0 [get_hw_probes cnn_core/conv_out1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq24'hXX_XXXX [get_hw_probes cnn_core/conv_out1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE neq72'hXX_XXXX_XXXX_XXXX_XXXX [get_hw_probes cnn_core/Image_6rows -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}] -trigger_now
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE neq72'oXXXXXXXXXXXXXXXXXXXXXXXX [get_hw_probes cnn_core/Image_6rows -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE neq72'u0 [get_hw_probes cnn_core/Image_6rows -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}] -trigger_now
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq72'hXX_XXXX_XXXX_XXXX_XXXX [get_hw_probes cnn_core/Image_6rows -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'b1 [get_hw_probes cnn_core/Bias_Sel -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z020_1] -filter {CELL_NAME=~"cnn_core/crazy_top_ila"}]]
+save_wave_config {F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wcfg}
