@@ -1,0 +1,60 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Apr 30 07:42:22 2025
+# Process ID: 18716
+# Current directory: D:/MNIST-CNN-FPGA-main
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent19040 D:\MNIST-CNN-FPGA-main\MNIST_CNN_FPGA.xpr
+# Log file: D:/MNIST-CNN-FPGA-main/vivado.log
+# Journal file: D:/MNIST-CNN-FPGA-main\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/MNIST-CNN-FPGA-main/MNIST_CNN_FPGA.xpr
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top top_cnn [current_fileset]
+set_property top_lib xil_defaultlib [current_fileset]
+set_property top_file D:/MNIST-CNN-FPGA-main/MNIST_CNN_FPGA.srcs/sources_1/imports/cnn/top_cnn.v [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config D:/MNIST-CNN-FPGA-main/tb_top_behav.wcfg
+open_wave_config D:/MNIST-CNN-FPGA-main/tb_top_cnn_behav.wcfg
+source tb_top.tcl
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top top [current_fileset]
+set_property top_lib xil_defaultlib [current_fileset]
+set_property top_file D:/MNIST-CNN-FPGA-main/MNIST_CNN_FPGA.srcs/sources_1/imports/cnn/top.v [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+close_sim
+launch_simulation
+open_wave_config D:/MNIST-CNN-FPGA-main/tb_top_behav.wcfg
+open_wave_config D:/MNIST-CNN-FPGA-main/tb_top_cnn_behav.wcfg
+source tb_top.tcl
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+run 10 us
+run 10 us
+relaunch_sim
+run 10 us
+save_wave_config {D:/MNIST-CNN-FPGA-main/tb_top_behav.wcfg}
+close_sim

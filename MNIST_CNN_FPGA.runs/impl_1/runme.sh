@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/impl_1'
+HD_PWD='D:/MNIST-CNN-FPGA-S/MNIST_CNN_FPGA.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -42,6 +42,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log top_cnn.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source top_cnn.tcl -notrace
+EAStep vivado -log design_1_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source design_1_wrapper.tcl -notrace
 
 

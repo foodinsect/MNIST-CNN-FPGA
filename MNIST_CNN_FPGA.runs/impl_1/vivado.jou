@@ -2,11 +2,11 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Wed Apr 30 08:43:31 2025
-# Process ID: 46108
-# Current directory: F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/impl_1
-# Command line: vivado.exe -log top_cnn.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top_cnn.tcl -notrace
-# Log file: F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/impl_1/top_cnn.vdi
-# Journal file: F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/impl_1\vivado.jou
+# Start of session at: Mon May 12 14:41:56 2025
+# Process ID: 1672
+# Current directory: D:/MNIST-CNN-FPGA-S/MNIST_CNN_FPGA.runs/impl_1
+# Command line: vivado.exe -log design_1_wrapper.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source design_1_wrapper.tcl -notrace
+# Log file: D:/MNIST-CNN-FPGA-S/MNIST_CNN_FPGA.runs/impl_1/design_1_wrapper.vdi
+# Journal file: D:/MNIST-CNN-FPGA-S/MNIST_CNN_FPGA.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
-source top_cnn.tcl -notrace
+source design_1_wrapper.tcl -notrace

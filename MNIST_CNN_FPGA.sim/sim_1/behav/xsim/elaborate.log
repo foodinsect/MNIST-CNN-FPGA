@@ -3,39 +3,6 @@ Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
 Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 00141a858f8644ca84cc9f42cd653d50 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L xilinx_vip -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_top_cnn_behav xil_defaultlib.tb_top_cnn xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
-WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 32 for port 'y_buf_addr' [F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sources_1/imports/cnn/top_cnn.v:82]
+WARNING: [VRFC 10-3091] actual bit length 7 differs from formal bit length 32 for port 'y_buf_addr' [D:/MNIST-CNN-FPGA-S/MNIST_CNN_FPGA.srcs/sources_1/imports/cnn/top_cnn.v:80]
 Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.ila_0
-Compiling module xil_defaultlib.glbl_controller
-Compiling module xil_defaultlib.mul
-Compiling module xil_defaultlib.acc
-Compiling module xil_defaultlib.PE_default
-Compiling module xil_defaultlib.Accumulator
-Compiling module xil_defaultlib.PE_Array_default
-Compiling module xil_defaultlib.Comparator
-Compiling module xil_defaultlib.FIFO
-Compiling module xil_defaultlib.MaxPooling_ReLU
-Compiling module xil_defaultlib.BUF1
-Compiling module xil_defaultlib.BUF2
-Compiling module xil_defaultlib.FC_Controller
-Compiling module xil_defaultlib.MAC
-Compiling module xil_defaultlib.matmul_default
-Compiling module xil_defaultlib.Max_finder
-Compiling module xil_defaultlib.FC_Layer
-Compiling module xil_defaultlib.y_buf
-Compiling module xil_defaultlib.single_port_bram(INIT_FILE="../....
-Compiling module xil_defaultlib.single_port_bram(INIT_FILE="../....
-Compiling module xil_defaultlib.single_port_bram(INIT_FILE="../....
-Compiling module xil_defaultlib.single_port_bram(WIDTH=80,DEPTH=...
-Compiling module xil_defaultlib.FC_Bias_ROM
-Compiling module xil_defaultlib.xilinx_true_dual_port_no_change_...
-Compiling module xil_defaultlib.Sliding_Window
-Compiling module xil_defaultlib.Bias_ROM
-Compiling module xil_defaultlib.top(X_BUF_DEPTH=7840,Y_BUF_DEPTH...
-Compiling module xil_defaultlib.top_cnn_default
-Compiling module xil_defaultlib.tb_top_cnn
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_top_cnn_behav
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel

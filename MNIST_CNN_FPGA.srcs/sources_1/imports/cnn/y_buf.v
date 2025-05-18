@@ -27,8 +27,10 @@ always @(posedge clk or negedge rst_n) begin
     end else begin
         if (buf_wr_start) begin
             data_buffer <= data_in;       // capture 1 data
-            buf_addr <= buf_addr + 1'b1;  // address increment
         end 
+        if (buf_active) begin
+            buf_addr <= buf_addr + 1'b1;
+        end
     end
     buf_active <= buf_wr_start;   
 end

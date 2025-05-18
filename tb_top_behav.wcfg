@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="88200000001fs"></ZoomEndTime>
-      <Cursor1Time time="38300000000fs"></Cursor1Time>
+      <ZoomStartTime time="5172300000fs"></ZoomStartTime>
+      <ZoomEndTime time="5297300001fs"></ZoomEndTime>
+      <Cursor1Time time="5215000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="206"></NameColumnWidth>
-      <ValueColumnWidth column_width="200"></ValueColumnWidth>
+      <NameColumnWidth column_width="297"></NameColumnWidth>
+      <ValueColumnWidth column_width="286"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="25" />
    <wvobject fp_name="/tb_top/clk" type="logic">
@@ -65,6 +65,17 @@
          <obj_property name="label">Weight</obj_property>
          <obj_property name="DisplayName">label</obj_property>
       </wvobject>
+      <wvobject fp_name="/tb_top/top_dut/global_ctrl/current_state" type="array">
+         <obj_property name="ElementShortName">current_state[4:0]</obj_property>
+         <obj_property name="ObjectShortName">current_state[4:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/top_dut/global_ctrl/Conv_Layer" type="array">
+         <obj_property name="ElementShortName">Conv_Layer[2:0]</obj_property>
+         <obj_property name="ObjectShortName">Conv_Layer[2:0]</obj_property>
+      </wvobject>
       <wvobject fp_name="/tb_top/top_dut/Layer_change" type="logic">
          <obj_property name="ElementShortName">Layer_change</obj_property>
          <obj_property name="ObjectShortName">Layer_change</obj_property>
@@ -72,6 +83,11 @@
       <wvobject fp_name="/tb_top/top_dut/Weight_en" type="logic">
          <obj_property name="ElementShortName">Weight_en</obj_property>
          <obj_property name="ObjectShortName">Weight_en</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/top_dut/Weight_addr" type="array">
+         <obj_property name="ElementShortName">Weight_addr[4:0]</obj_property>
+         <obj_property name="ObjectShortName">Weight_addr[4:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_top/top_dut/Weight_packed_en" type="logic">
          <obj_property name="ElementShortName">Weight_packed_en</obj_property>
@@ -195,6 +211,7 @@
    <wvobject fp_name="group330" type="group">
       <obj_property name="label">Ctrl</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_top/top_dut/global_ctrl/clk_i" type="logic">
          <obj_property name="ElementShortName">clk_i</obj_property>
          <obj_property name="ObjectShortName">clk_i</obj_property>
@@ -240,6 +257,10 @@
          <obj_property name="ElementShortName">PE_en</obj_property>
          <obj_property name="ObjectShortName">PE_en</obj_property>
       </wvobject>
+      <wvobject fp_name="/tb_top/top_dut/global_ctrl/valid_counter" type="array">
+         <obj_property name="ElementShortName">valid_counter[4:0]</obj_property>
+         <obj_property name="ObjectShortName">valid_counter[4:0]</obj_property>
+      </wvobject>
       <wvobject fp_name="/tb_top/top_dut/global_ctrl/PE_valid_i" type="logic">
          <obj_property name="ElementShortName">PE_valid_i</obj_property>
          <obj_property name="ObjectShortName">PE_valid_i</obj_property>
@@ -284,6 +305,7 @@
          <obj_property name="ElementShortName">Weight_addr[4:0]</obj_property>
          <obj_property name="ObjectShortName">Weight_addr[4:0]</obj_property>
          <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="isExpanded"></obj_property>
       </wvobject>
       <wvobject fp_name="/tb_top/top_dut/global_ctrl/Image_rom_en" type="logic">
          <obj_property name="ElementShortName">Image_rom_en</obj_property>
@@ -362,10 +384,6 @@
       <wvobject fp_name="/tb_top/top_dut/global_ctrl/all_clear" type="logic">
          <obj_property name="ElementShortName">all_clear</obj_property>
          <obj_property name="ObjectShortName">all_clear</obj_property>
-      </wvobject>
-      <wvobject fp_name="/tb_top/top_dut/global_ctrl/valid_counter" type="array">
-         <obj_property name="ElementShortName">valid_counter[4:0]</obj_property>
-         <obj_property name="ObjectShortName">valid_counter[4:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_top/top_dut/global_ctrl/col_index" type="array">
          <obj_property name="ElementShortName">col_index[4:0]</obj_property>
@@ -460,113 +478,30 @@
          <obj_property name="ElementShortName">bias_in[23:0]</obj_property>
          <obj_property name="ObjectShortName">bias_in[23:0]</obj_property>
       </wvobject>
+      <wvobject fp_name="/tb_top/top_dut/global_ctrl/current_state" type="array">
+         <obj_property name="ElementShortName">current_state[4:0]</obj_property>
+         <obj_property name="ObjectShortName">current_state[4:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb_top/top_dut/global_ctrl/Image_phase" type="array">
+         <obj_property name="ElementShortName">Image_phase[5:0]</obj_property>
+         <obj_property name="ObjectShortName">Image_phase[5:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
       <wvobject fp_name="/tb_top/top_dut/PE_Array/valid_o" type="logic">
          <obj_property name="ElementShortName">valid_o</obj_property>
          <obj_property name="ObjectShortName">valid_o</obj_property>
       </wvobject>
-      <wvobject fp_name="vbus4135" type="vbus">
-         <obj_property name="label">conv_out1[0][11:0]</obj_property>
-         <obj_property name="DisplayName">label</obj_property>
-         <wvobject fp_name="/tb_top/top_dut/PE_Array/conv_out1[23]" type="logic">
-            <obj_property name="ElementShortName">[23]</obj_property>
-            <obj_property name="ObjectShortName">[23]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_top/top_dut/PE_Array/conv_out1[22]" type="logic">
-            <obj_property name="ElementShortName">[22]</obj_property>
-            <obj_property name="ObjectShortName">[22]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_top/top_dut/PE_Array/conv_out1[21]" type="logic">
-            <obj_property name="ElementShortName">[21]</obj_property>
-            <obj_property name="ObjectShortName">[21]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_top/top_dut/PE_Array/conv_out1[20]" type="logic">
-            <obj_property name="ElementShortName">[20]</obj_property>
-            <obj_property name="ObjectShortName">[20]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_top/top_dut/PE_Array/conv_out1[19]" type="logic">
-            <obj_property name="ElementShortName">[19]</obj_property>
-            <obj_property name="ObjectShortName">[19]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_top/top_dut/PE_Array/conv_out1[18]" type="logic">
-            <obj_property name="ElementShortName">[18]</obj_property>
-            <obj_property name="ObjectShortName">[18]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_top/top_dut/PE_Array/conv_out1[17]" type="logic">
-            <obj_property name="ElementShortName">[17]</obj_property>
-            <obj_property name="ObjectShortName">[17]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_top/top_dut/PE_Array/conv_out1[16]" type="logic">
-            <obj_property name="ElementShortName">[16]</obj_property>
-            <obj_property name="ObjectShortName">[16]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_top/top_dut/PE_Array/conv_out1[15]" type="logic">
-            <obj_property name="ElementShortName">[15]</obj_property>
-            <obj_property name="ObjectShortName">[15]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_top/top_dut/PE_Array/conv_out1[14]" type="logic">
-            <obj_property name="ElementShortName">[14]</obj_property>
-            <obj_property name="ObjectShortName">[14]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_top/top_dut/PE_Array/conv_out1[13]" type="logic">
-            <obj_property name="ElementShortName">[13]</obj_property>
-            <obj_property name="ObjectShortName">[13]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_top/top_dut/PE_Array/conv_out1[12]" type="logic">
-            <obj_property name="ElementShortName">[12]</obj_property>
-            <obj_property name="ObjectShortName">[12]</obj_property>
-         </wvobject>
+      <wvobject fp_name="/tb_top/top_dut/global_ctrl/Slide_trigger" type="logic">
+         <obj_property name="ElementShortName">Slide_trigger</obj_property>
+         <obj_property name="ObjectShortName">Slide_trigger</obj_property>
       </wvobject>
-      <wvobject fp_name="vbus4161" type="vbus">
-         <obj_property name="label">conv_out1[1][11:0]</obj_property>
-         <obj_property name="DisplayName">label</obj_property>
-         <wvobject fp_name="/tb_top/top_dut/PE_Array/conv_out1[11]" type="logic">
-            <obj_property name="ElementShortName">[11]</obj_property>
-            <obj_property name="ObjectShortName">[11]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_top/top_dut/PE_Array/conv_out1[10]" type="logic">
-            <obj_property name="ElementShortName">[10]</obj_property>
-            <obj_property name="ObjectShortName">[10]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_top/top_dut/PE_Array/conv_out1[9]" type="logic">
-            <obj_property name="ElementShortName">[9]</obj_property>
-            <obj_property name="ObjectShortName">[9]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_top/top_dut/PE_Array/conv_out1[8]" type="logic">
-            <obj_property name="ElementShortName">[8]</obj_property>
-            <obj_property name="ObjectShortName">[8]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_top/top_dut/PE_Array/conv_out1[7]" type="logic">
-            <obj_property name="ElementShortName">[7]</obj_property>
-            <obj_property name="ObjectShortName">[7]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_top/top_dut/PE_Array/conv_out1[6]" type="logic">
-            <obj_property name="ElementShortName">[6]</obj_property>
-            <obj_property name="ObjectShortName">[6]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_top/top_dut/PE_Array/conv_out1[5]" type="logic">
-            <obj_property name="ElementShortName">[5]</obj_property>
-            <obj_property name="ObjectShortName">[5]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_top/top_dut/PE_Array/conv_out1[4]" type="logic">
-            <obj_property name="ElementShortName">[4]</obj_property>
-            <obj_property name="ObjectShortName">[4]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_top/top_dut/PE_Array/conv_out1[3]" type="logic">
-            <obj_property name="ElementShortName">[3]</obj_property>
-            <obj_property name="ObjectShortName">[3]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_top/top_dut/PE_Array/conv_out1[2]" type="logic">
-            <obj_property name="ElementShortName">[2]</obj_property>
-            <obj_property name="ObjectShortName">[2]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_top/top_dut/PE_Array/conv_out1[1]" type="logic">
-            <obj_property name="ElementShortName">[1]</obj_property>
-            <obj_property name="ObjectShortName">[1]</obj_property>
-         </wvobject>
-         <wvobject fp_name="/tb_top/top_dut/PE_Array/conv_out1[0]" type="logic">
-            <obj_property name="ElementShortName">[0]</obj_property>
-            <obj_property name="ObjectShortName">[0]</obj_property>
-         </wvobject>
+      <wvobject fp_name="/tb_top/top_dut/global_ctrl/valid_counter" type="array">
+         <obj_property name="ElementShortName">valid_counter[4:0]</obj_property>
+         <obj_property name="ObjectShortName">valid_counter[4:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/tb_top/top_dut/PE_Array/conv_out1" type="array">
          <obj_property name="ElementShortName">conv_out1[23:0]</obj_property>
@@ -662,7 +597,6 @@
       <wvobject fp_name="group1352" type="group">
          <obj_property name="label">Ch1</obj_property>
          <obj_property name="DisplayName">label</obj_property>
-         <obj_property name="isExpanded"></obj_property>
          <wvobject fp_name="/tb_top/top_dut/PE_Array/ACC_Ch1/rstn_i" type="logic">
             <obj_property name="ElementShortName">rstn_i</obj_property>
             <obj_property name="ObjectShortName">rstn_i</obj_property>
@@ -690,6 +624,7 @@
          <wvobject fp_name="/tb_top/top_dut/PE_Array/ACC_Ch1/acc" type="array">
             <obj_property name="ElementShortName">acc[0:63][19:0]</obj_property>
             <obj_property name="ObjectShortName">acc[0:63][19:0]</obj_property>
+            <obj_property name="isExpanded"></obj_property>
          </wvobject>
          <wvobject fp_name="/tb_top/top_dut/PE_Array/ACC_Ch1/wr_ptr" type="array">
             <obj_property name="ElementShortName">wr_ptr[6:0]</obj_property>
@@ -835,6 +770,7 @@
       <wvobject fp_name="group989" type="group">
          <obj_property name="label">Ch2</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject fp_name="/tb_top/top_dut/FIFO_ch2/data_in" type="array">
             <obj_property name="ElementShortName">data_in[23:0]</obj_property>
             <obj_property name="ObjectShortName">data_in[23:0]</obj_property>
@@ -937,6 +873,7 @@
       <wvobject fp_name="group1020" type="group">
          <obj_property name="label">Ch2</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject fp_name="/tb_top/top_dut/MaxPooling_ch2/valid_i" type="logic">
             <obj_property name="ElementShortName">valid_i</obj_property>
             <obj_property name="ObjectShortName">valid_i</obj_property>
@@ -1010,6 +947,7 @@
    <wvobject fp_name="group1475" type="group">
       <obj_property name="label">BUF1</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/tb_top/top_dut/global_ctrl/BUF1_wr_en" type="logic">
          <obj_property name="ElementShortName">BUF1_wr_en</obj_property>
          <obj_property name="ObjectShortName">BUF1_wr_en</obj_property>
@@ -1076,6 +1014,7 @@
       <wvobject fp_name="group1047" type="group">
          <obj_property name="label">Ch2</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject fp_name="/tb_top/top_dut/BUF1_ch2/rstn_i" type="logic">
             <obj_property name="ElementShortName">rstn_i</obj_property>
             <obj_property name="ObjectShortName">rstn_i</obj_property>
@@ -1104,6 +1043,22 @@
             <obj_property name="ElementShortName">i[31:0]</obj_property>
             <obj_property name="ObjectShortName">i[31:0]</obj_property>
          </wvobject>
+         <wvobject fp_name="/tb_top/top_dut/BUF1_ch2/j" type="array">
+            <obj_property name="ElementShortName">j[31:0]</obj_property>
+            <obj_property name="ObjectShortName">j[31:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_top/top_dut/BUF1_ch2/row_addr" type="array">
+            <obj_property name="ElementShortName">row_addr[3:0]</obj_property>
+            <obj_property name="ObjectShortName">row_addr[3:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_top/top_dut/BUF1_ch2/col_addr" type="array">
+            <obj_property name="ElementShortName">col_addr[3:0]</obj_property>
+            <obj_property name="ObjectShortName">col_addr[3:0]</obj_property>
+         </wvobject>
+         <wvobject fp_name="/tb_top/top_dut/BUF1_ch2/offset" type="array">
+            <obj_property name="ElementShortName">offset[3:0]</obj_property>
+            <obj_property name="ObjectShortName">offset[3:0]</obj_property>
+         </wvobject>
          <wvobject fp_name="/tb_top/top_dut/BUF1_ch2/mem" type="array">
             <obj_property name="ElementShortName">mem[0:11][0:11][11:0]</obj_property>
             <obj_property name="ObjectShortName">mem[0:11][0:11][11:0]</obj_property>
@@ -1113,6 +1068,7 @@
       <wvobject fp_name="group1059" type="group">
          <obj_property name="label">Ch3</obj_property>
          <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="isExpanded"></obj_property>
          <wvobject fp_name="/tb_top/top_dut/BUF1_ch3/clear_i" type="logic">
             <obj_property name="ElementShortName">clear_i</obj_property>
             <obj_property name="ObjectShortName">clear_i</obj_property>

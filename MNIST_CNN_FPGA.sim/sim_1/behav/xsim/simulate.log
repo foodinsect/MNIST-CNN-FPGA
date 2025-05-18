@@ -1,14 +1,15 @@
 Vivado Simulator 2019.1
 Time resolution is 1 ps
-% y_buf: addr=z, data=z at time 7355000 ns
-% y_buf: addr=z, data=z at time 14665000 ns
-% y_buf: addr=z, data=z at time 21975000 ns
-% y_buf: addr=z, data=z at time 29285000 ns
-% y_buf: addr=z, data=z at time 36595000 ns
-% y_buf: addr=z, data=z at time 43905000 ns
-% y_buf: addr=z, data=z at time 51215000 ns
-% y_buf: addr=z, data=z at time 58525000 ns
-% y_buf: addr=z, data=z at time 65835000 ns
-% y_buf: addr=z, data=z at time 73145000 ns
-% Simulation: processed all 10 images at time 73155000 ns
-$finish called at time : 73185 ns : File "F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.srcs/sim_1/new/tb_top_cnn.sv" Line 59
+% y_buf: addr=0, data=0 at time 7475000 ns
+% y_buf: addr=4, data=1 at time 14925000 ns
+% y_buf: addr=8, data=2 at time 22375000 ns
+% y_buf: addr=12, data=3 at time 29825000 ns
+% y_buf: addr=16, data=4 at time 37275000 ns
+% y_buf: addr=20, data=5 at time 44725000 ns
+% y_buf: addr=24, data=6 at time 52175000 ns
+% y_buf: addr=28, data=7 at time 59625000 ns
+% y_buf: addr=32, data=8 at time 67075000 ns
+% y_buf: addr=36, data=9 at time 74525000 ns
+% Simulation: processed all 10 images at time 74545000 ns
+$finish called at time : 74575 ns : File "D:/MNIST-CNN-FPGA-S/MNIST_CNN_FPGA.srcs/sim_1/new/tb_top_cnn.sv" Line 59
+% y_buf: addr=40, data=X at time 81975000 ns

@@ -1,0 +1,41 @@
+$date
+        2025-Apr-29 08:06:05
+$end
+$version
+        Vivado v2019.1 (64-bit)
+$end
+$timescale
+        1ps
+$end
+$scope module dut $end
+$var reg 1 " clk_IBUF_BUFG $end
+$var reg 1 # p_0_in $end
+$var reg 1 $ sw_pdet $end
+$var reg 1 % done_intr_o_OBUF $end
+$var reg 1 & done_led_o_OBUF $end
+$var reg 1 ' y_buf_en_OBUF $end
+$var reg 1 ( y_buf_wr_en_OBUF $end
+$var reg 32 ) y_buf_addr [31:0] $end
+$var reg 32 I y_buf_data [31:0] $end
+$var reg 1 i _TRIGGER $end
+$var reg 1 j _WINDOW $end
+$var reg 1 k _GAP $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0"
+1#
+0$
+0%
+0&
+0'
+0(
+b0 )
+b0 I
+0i
+1j
+0k
+$end
+#512
+1i

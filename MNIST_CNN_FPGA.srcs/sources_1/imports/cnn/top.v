@@ -47,7 +47,6 @@ module top #(
 	reg signed [199:0] conv_weight_ch1;
 	reg signed [199:0] conv_weight_ch2;
 	reg signed [199:0] conv_weight_ch3;
-	reg [2:0] weight_row_counter;
 
 	wire signed [23:0] bias_in;
 	
@@ -132,13 +131,8 @@ module top #(
 	wire all_clear;
 	reg [9:0] Imgae_base;
 
-	always @(clk_i) begin
-		done_z <= done;
-		done_zz <= done_z;
-		done_zzz <= done_zz;
-		done_zzzz <= done_zzz;
-	end
-
+	reg Slide_triggerz;
+	
 	wire Bias_Sel;
 	wire acc_wr_en;
 	wire acc_rd_en;
@@ -149,66 +143,15 @@ module top #(
 	wire BUF1_wr_en;
 
 
+	always @(posedge clk_i) begin
+		done_z <= done;
+		done_zz <= done_z;
+		done_zzz <= done_zz;
+		done_zzzz <= done_zzz;
 
-	ila_0 crazy_top_ila (
-		.clk(clk_i), // input wire clk
+		Slide_triggerz <= Slide_trigger;
+	end
 
-
-		.probe0(start_i), // input wire [0:0]  probe0  
-		.probe1(conv_weight_ch1), // input wire [199:0]  probe1 
-		.probe2(conv_weight_ch2), // input wire [199:0]  probe2 
-		.probe3(conv_weight_ch3), // input wire [199:0]  probe3 
-		.probe4(FC_Weight_packed), // input wire [79:0]  probe4 
-		.probe5(FC_Weight), // input wire [79:0]  probe5 
-		.probe6(FC_Bias), // input wire [79:0]  probe6 
-		.probe7(PE_data_in), // input wire [71:0]  probe7 
-		.probe8(Image_6rows), // input wire [71:0]  probe8 
-		.probe9(BUF1_out1), // input wire [71:0]  probe9 
-		.probe10(BUF1_out2), // input wire [71:0]  probe10 
-		.probe11(BUF1_out3), // input wire [71:0]  probe11 
-		.probe12(conv_weight_ch1_packed), // input wire [39:0]  probe12 
-		.probe13(conv_weight_ch2_packed), // input wire [39:0]  probe13 
-		.probe14(conv_weight_ch3_packed), // input wire [39:0]  probe14 
-		.probe15(bias_in), // input wire [23:0]  probe15 
-		.probe16(conv_out1), // input wire [23:0]  probe16 
-		.probe17(conv_out2), // input wire [23:0]  probe17 
-		.probe18(conv_out3), // input wire [23:0]  probe18 
-		.probe19(FIFO_out1), // input wire [23:0]  probe19 
-		.probe20(FIFO_out2), // input wire [23:0]  probe20 
-		.probe21(FIFO_out3), // input wire [23:0]  probe21 
-		.probe22(MAX_out1), // input wire [10:0]  probe22 
-		.probe23(MAX_out2), // input wire [10:0]  probe23 
-		.probe24(MAX_out3), // input wire [10:0]  probe24 
-		.probe25(BUF2_out1), // input wire [10:0]  probe25 
-		.probe26(BUF2_out2), // input wire [10:0]  probe26 
-		.probe27(BUF2_out3), // input wire [10:0]  probe27 
-		.probe28(FC_data), // input wire [10:0]  probe28 
-		.probe29(PE_addr), // input wire [4:0]  probe29 
-		.probe30(Weight_addr), // input wire [4:0]  probe30 
-		.probe31(Conv_Layer), // input wire [2:0]  probe31 
-		.probe32(Layer_change), // input wire [0:0]  probe32 
-		.probe33(Weight_packed_en), // input wire [0:0]  probe33 
-		.probe34(FIFO_valid), // input wire [0:0]  probe34 
-		.probe35(BUF1_rd_en), // input wire [0:0]  probe35 
-		.probe36(BUF1_wr_en), // input wire [0:0]  probe36 
-		.probe37(BUF2_rd_en), // input wire [0:0]  probe37 
-		.probe38(BUF2_wr_en), // input wire [0:0]  probe38 
-		.probe39(PE_clear), // input wire [0:0]  probe39 
-		.probe40(PE_en), // input wire [0:0]  probe40 
-		.probe41(PE_valid_i), // input wire [0:0]  probe41 
-		.probe42(PE_valid_o), // input wire [0:0]  probe42 
-		.probe43(conv_done), // input wire [0:0]  probe43 
-		.probe44(FC_done), // input wire [0:0]  probe44 
-		.probe45(done), // input wire [0:0]  probe45 
-		.probe46(Bias_Sel), // input wire [0:0]  probe46 
-		.probe47(acc_wr_en), // input wire [0:0]  probe47 
-		.probe48(acc_rd_en), // input wire [0:0]  probe48 
-		.probe49(Slide_wr_en), // input wire [0:0]  probe49 
-		.probe50(Slide_rd_en), // input wire [0:0]  probe50 
-		.probe51(Slide_trigger), // input wire [0:0]  probe51 
-		.probe52(Slide_clear), // input wire [0:0]  probe52 
-		.probe53(BUF1_wr_en) // input wire [0:0]  probe53
-	);
 
 	glbl_controller global_ctrl(
 		.clk_i(clk_i),
@@ -543,6 +486,8 @@ module top #(
 		.doutb(Image_data_b)
 	);
 
+
+
 	Sliding_Window #(
 		.DATA_WIDHT(8),
 		.PCS(2),
@@ -555,7 +500,7 @@ module top #(
 		.wr_en_i(Slide_wr_en),
 		.rd_en_i(Slide_rd_en),
 		.addr_i(PE_addr),
-		.slide_trigger(Slide_trigger),
+		.slide_trigger(Slide_triggerz),
 		.din_a(Image_data_a),
 		.din_b(Image_data_b),
 		.data_out(Image_6rows)

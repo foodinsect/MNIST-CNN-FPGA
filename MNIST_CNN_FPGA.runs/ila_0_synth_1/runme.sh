@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='F:/MNIST_CNN_FPGA/MNIST_CNN_FPGA.runs/ila_0_synth_1'
+HD_PWD='D:/MNIST-CNN-FPGA-main/MNIST_CNN_FPGA.runs/ila_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

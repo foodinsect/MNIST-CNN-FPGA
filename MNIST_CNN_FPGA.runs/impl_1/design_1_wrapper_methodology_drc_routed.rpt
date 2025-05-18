@@ -1,0 +1,102 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Mon May 12 14:48:44 2025
+| Host         : LAPTOP-foodbug running 64-bit major release  (build 9200)
+| Command      : report_methodology -file design_1_wrapper_methodology_drc_routed.rpt -pb design_1_wrapper_methodology_drc_routed.pb -rpx design_1_wrapper_methodology_drc_routed.rpx
+| Design       : design_1_wrapper
+| Device       : xc7z020clg400-1
+| Speed File   : -1
+| Design State : Fully Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 13
++-----------+----------+-------------------------------+------------+
+| Rule      | Severity | Description                   | Violations |
++-----------+----------+-------------------------------+------------+
+| LUTAR-1   | Warning  | LUT drives async reset alert  | 2          |
+| TIMING-18 | Warning  | Missing input or output delay | 3          |
+| TIMING-20 | Warning  | Non-clocked latch             | 8          |
++-----------+----------+-------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell design_1_i/top_cnn_0/inst/cnn_core/global_ctrl/i___10_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) design_1_i/top_cnn_0/inst/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[0]/CLR, design_1_i/top_cnn_0/inst/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[10]/CLR, design_1_i/top_cnn_0/inst/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[11]/CLR, design_1_i/top_cnn_0/inst/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[12]/CLR, design_1_i/top_cnn_0/inst/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[13]/CLR, design_1_i/top_cnn_0/inst/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[14]/CLR, design_1_i/top_cnn_0/inst/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[15]/CLR, design_1_i/top_cnn_0/inst/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[16]/CLR, design_1_i/top_cnn_0/inst/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[17]/CLR, design_1_i/top_cnn_0/inst/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[18]/CLR, design_1_i/top_cnn_0/inst/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[19]/CLR, design_1_i/top_cnn_0/inst/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[1]/CLR, design_1_i/top_cnn_0/inst/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[2]/CLR, design_1_i/top_cnn_0/inst/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[3]/CLR, design_1_i/top_cnn_0/inst/cnn_core/PE_Array/PE_ARRAY1[0].PE_Ch1/ACC/acc_out_reg[4]/CLR (the first 15 of 3240 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#2 Warning
+LUT drives async reset alert  
+LUT cell design_1_i/top_cnn_0/inst/cnn_core/global_ctrl/line_buffer1[4][0]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) design_1_i/top_cnn_0/inst/cnn_core/BiasROM/data_o_reg[16]/CLR, design_1_i/top_cnn_0/inst/cnn_core/BiasROM/data_o_reg[20]/CLR, design_1_i/top_cnn_0/inst/cnn_core/BiasROM/data_o_reg[23]/CLR, design_1_i/top_cnn_0/inst/cnn_core/FC_BiasROM/data_o_reg[7]/CLR, design_1_i/top_cnn_0/inst/cnn_core/y_buf/buf_addr_reg[0]/CLR, design_1_i/top_cnn_0/inst/cnn_core/y_buf/buf_addr_reg[10]/CLR, design_1_i/top_cnn_0/inst/cnn_core/y_buf/buf_addr_reg[11]/CLR, design_1_i/top_cnn_0/inst/cnn_core/y_buf/buf_addr_reg[12]/CLR, design_1_i/top_cnn_0/inst/cnn_core/y_buf/buf_addr_reg[13]/CLR, design_1_i/top_cnn_0/inst/cnn_core/y_buf/buf_addr_reg[14]/CLR, design_1_i/top_cnn_0/inst/cnn_core/y_buf/buf_addr_reg[15]/CLR, design_1_i/top_cnn_0/inst/cnn_core/y_buf/buf_addr_reg[16]/CLR, design_1_i/top_cnn_0/inst/cnn_core/y_buf/buf_addr_reg[17]/CLR, design_1_i/top_cnn_0/inst/cnn_core/y_buf/buf_addr_reg[18]/CLR, design_1_i/top_cnn_0/inst/cnn_core/y_buf/buf_addr_reg[19]/CLR (the first 15 of 76 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An input delay is missing on rst_n relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An input delay is missing on start_i relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An output delay is missing on done_led_o relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch design_1_i/top_cnn_0/inst/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[0] cannot be properly analyzed as its control pin design_1_i/top_cnn_0/inst/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#2 Warning
+Non-clocked latch  
+The latch design_1_i/top_cnn_0/inst/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[1] cannot be properly analyzed as its control pin design_1_i/top_cnn_0/inst/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#3 Warning
+Non-clocked latch  
+The latch design_1_i/top_cnn_0/inst/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[2] cannot be properly analyzed as its control pin design_1_i/top_cnn_0/inst/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#4 Warning
+Non-clocked latch  
+The latch design_1_i/top_cnn_0/inst/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[3] cannot be properly analyzed as its control pin design_1_i/top_cnn_0/inst/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#5 Warning
+Non-clocked latch  
+The latch design_1_i/top_cnn_0/inst/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[4] cannot be properly analyzed as its control pin design_1_i/top_cnn_0/inst/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#6 Warning
+Non-clocked latch  
+The latch design_1_i/top_cnn_0/inst/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[5] cannot be properly analyzed as its control pin design_1_i/top_cnn_0/inst/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#7 Warning
+Non-clocked latch  
+The latch design_1_i/top_cnn_0/inst/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[6] cannot be properly analyzed as its control pin design_1_i/top_cnn_0/inst/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#8 Warning
+Non-clocked latch  
+The latch design_1_i/top_cnn_0/inst/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[7] cannot be properly analyzed as its control pin design_1_i/top_cnn_0/inst/cnn_core/FC_Ctrl/FSM_onehot_next_state_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+

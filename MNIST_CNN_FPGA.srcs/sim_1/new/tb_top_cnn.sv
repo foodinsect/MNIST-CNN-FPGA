@@ -29,9 +29,9 @@ module tb_top_cnn;
     .done_led_o    (done_led_o),  // latched ?all done?? 
 
     .y_buf_en      (y_buf_en),    // buffer enable pulse
-    .y_buf_wr_en   (y_buf_wr_en) // buffer write enable
-    // .y_buf_addr    (y_buf_addr),  // aligned address (shifted by 2)
-    // .y_buf_data    (y_buf_data)   // classification result (0??9)
+    .y_buf_wr_en   (y_buf_wr_en), // buffer write enable
+    .y_buf_addr    (y_buf_addr),  // aligned address (shifted by 2)
+    .y_buf_data    (y_buf_data)   // classification result (0??9)
   );
 
   // Clock generation
