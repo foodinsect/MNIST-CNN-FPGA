@@ -37,6 +37,8 @@
   - [Performance Results](#performance-results)
     - [Inference on 1 Image](#inference-on-1-image)
     - [Inference on 1000 Images](#inference-on-1000-images)
+    - [🔎 Clarification on 1000-Image Inference](#-clarification-on-1000-image-inference)
+      - [📌 Important Format Notice](#-important-format-notice)
   - [Key Design Differentiators](#key-design-differentiators)
   - [FPGA Implementation](#fpga-implementation)
     - [Sliding Window Optimization](#sliding-window-optimization)
@@ -104,6 +106,34 @@ The accelerator achieves efficient inference on a single MNIST image with minima
 The system demonstrates consistent performance when processing 1000 images, showcasing its scalability and robustness.
 
 ![1000 Images Inference](https://velog.velcdn.com/images/foodinsect/post/1930a688-597a-4f9a-97f7-3de74f86f6cc/image.png)
+
+
+### 🔎 Clarification on 1000-Image Inference
+
+> **Note:**
+> The inference result for 1000 MNIST images and the associated waveform shown above were generated using **behavioral simulation** in Vivado during an **ASIC design phase** (e.g., competition submission).
+> This test was not run on the FPGA hardware due to memory and interface limitations at the time of development.
+> The GitHub repository contains the later **FPGA implementation**, which includes inference for **10 consecutive images** tested via on-board UART.
+
+The behavioral simulation used a dedicated testbench `tb_top_1000.v`, which loads the following files for testing:
+
+```verilog
+$readmemh({{VIVADO_PROJECT_LOCATION},{"/data/input_1000.txt"}}, pixels);
+$readmemh({{VIVADO_PROJECT_LOCATION},{"/data/labels_1000.txt"}}, true_labels);
+```
+
+#### 📌 Important Format Notice
+
+The file `input_1000.txt` is **not flattened**.
+Each MNIST image is stored as **28 lines of 28 hexadecimal pixel values**, representing a 2D `28×28` grayscale image in raster-scan order.
+
+This format is handled in the testbench using logic such as:
+
+```verilog
+image_6rows[i] <= {4'h0, pixels[(i + cycle * 2) * 28 + image_idx + img_offset]};
+```
+
+If you're testing the design with these files, ensure the memory loading and indexing logic matches this format.
 
 ---
 
