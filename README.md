@@ -31,7 +31,6 @@
   - [Tools and Platform](#tools-and-platform)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
-  - [Overview](#overview-1)
   - [System Block Diagram](#system-block-diagram)
     - [Key Design Features](#key-design-features)
   - [Performance Results](#performance-results)
@@ -51,18 +50,6 @@
   - [Conclusion](#conclusion)
 
 ---
-
-## Overview
-
-This project focuses on designing a low-power CNN accelerator tailored for the MNIST dataset. By implementing efficient memory access and resource management techniques, the design minimizes power consumption while achieving high inference performance.
-
----
-
-이 구조를 적용하면 최상단에서 타겟 모델을 한눈에 보여주고, 아래에서 하드웨어 설계 설명으로 자연스럽게 이어질 수 있어.
-
-> ✅ 참고로, GitHub README에서는 이미지 바로 아래에 간단한 설명 (`Target Model Structure`) 을 붙여주면 시각적으로도 훨씬 이해하기 좋아.
-
-필요하다면 전체 문서를 `.md` 포맷으로 만들어줄게. 계속 이어서 도와줄까?
 
 ## Overview
 This project focuses on designing a low-power CNN accelerator tailored for the MNIST dataset. By implementing efficient memory access and resource management techniques, the design minimizes power consumption while achieving high inference performance.
